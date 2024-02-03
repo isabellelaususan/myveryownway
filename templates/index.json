@@ -49,15 +49,6 @@
     "multicolumn_gCUTVq": {
       "type": "multicolumn",
       "blocks": {
-        "column_XQmtGP": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_cWgaGA": {
           "type": "column",
           "settings": {
@@ -96,7 +87,6 @@
         }
       },
       "block_order": [
-        "column_XQmtGP",
         "column_cWgaGA",
         "column_7bFbBD",
         "column_8rfL3K",
