@@ -108,10 +108,20 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_liquid_BHzq3L": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  .custom-banner {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    height: 1.5cm;\n    background-color: white;\n    border-top: 1px solid black;\n    border-bottom: 1px solid black;\n    display: flex;\n    align-items: center;\n    overflow: hidden;\n    animation: moveBanner 10s linear infinite; \/* Adjust the animation duration as needed *\/\n  }\n\n  .brand-name {\n    font-size: 1.2em;\n    margin-left: 10px; \/* Adjust the left margin as needed *\/\n  }\n\n  .brand-icon {\n    width: 20px; \/* Adjust the width of the icon as needed *\/\n    margin-left: auto;\n    margin-right: 10px; \/* Adjust the right margin as needed *\/\n  }\n\n  @keyframes moveBanner {\n    0% {\n      transform: translateX(-100%);\n    }\n    100% {\n      transform: translateX(100%);\n    }\n  }\n<\/style>\n\n<div class=\"custom-banner\">\n  <div class=\"brand-name\">myveryownway<\/div>\n  <img class=\"brand-icon\" src=\"path\/to\/your\/icon.png\" alt=\"Brand Icon\">\n<\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "image-with-text",
-    "multicolumn_gCUTVq"
+    "multicolumn_gCUTVq",
+    "custom_liquid_BHzq3L"
   ]
 }
