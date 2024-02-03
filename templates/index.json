@@ -1,1 +1,127 @@
-{"sections":{"image-with-text":{"type":"image-with-text","blocks":{"heading":{"type":"heading","settings":{"heading":"Browse our latest products","heading_size":"h1"}},"button":{"type":"button","settings":{"button_label":"Shop now","button_link":"shopify:\/\/collections\/all","button_style_secondary":false}}},"block_order":["heading","button"],"settings":{"height":"large","desktop_image_width":"large","layout":"text_first","desktop_content_position":"middle","desktop_content_alignment":"left","content_layout":"overlap","section_color_scheme":"background-1","color_scheme":"background-2","image_behavior":"none","mobile_content_alignment":"left","padding_top":0,"padding_bottom":0}},"featured-collection":{"type":"featured-collection","settings":{"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":56,"padding_bottom":68}}},"order":["image-with-text","featured-collection"]}
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Freedom Of Choice",
+            "heading_size": "h1"
+          }
+        },
+        "text_bzy9Jg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Let your creativity run free and express your style with your very own bag<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_bzy9Jg",
+        "button"
+      ],
+      "settings": {
+        "height": "large",
+        "desktop_image_width": "large",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "background-1",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_gCUTVq": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_XQmtGP": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cWgaGA": {
+          "type": "column",
+          "settings": {
+            "title": "Step 1",
+            "text": "<p>Pick your bag design<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7bFbBD": {
+          "type": "column",
+          "settings": {
+            "title": "Step 2",
+            "text": "<p>Pick your strap<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8rfL3K": {
+          "type": "column",
+          "settings": {
+            "title": "Step 3",
+            "text": "<p>Pick your pouch and accessories<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GGYixd": {
+          "type": "column",
+          "settings": {
+            "title": "Step 4",
+            "text": "<p>Enjoy your very own bag<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_XQmtGP",
+        "column_cWgaGA",
+        "column_7bFbBD",
+        "column_8rfL3K",
+        "column_GGYixd"
+      ],
+      "settings": {
+        "title": "How to pick your very own bag",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "mix & match now",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "multicolumn_gCUTVq"
+  ]
+}
