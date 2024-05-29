@@ -4,7 +4,7 @@ function Header({navMenu}: HeaderProps) {
   return (
     <header className="flex items-center border-black border-b-[3px]">
       <div className="p-12 border-black border-r-[3px]">
-        <img src="/assets/icons/round-logo.svg" width="52" />
+        <img src="/icons/round-logo.svg" width="52" />
       </div>
       <nav>
         <ul className="flex text-2xl gap-[73px] px-14">
@@ -19,8 +19,8 @@ function Header({navMenu}: HeaderProps) {
         </ul>
       </nav>
       <div className="flex gap-[55px] px-14 py-12 border-black border-l-[3px]">
-        <img src="/assets/icons/user.svg" />
-        <img src="/assets/icons/cart.svg" />
+        <img src="/icons/user.svg" />
+        <img src="/icons/cart.svg" />
       </div>
     </header>
   );

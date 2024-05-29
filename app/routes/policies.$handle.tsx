@@ -200,7 +200,7 @@ export default function Policy() {
           className="absolute -right-8 2xl:top-80 top-[26rem] 2xl:w-[204px] w-[140px]"
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
-          <div className="flex gap-8">
+          <div className="flex gap-8 justify-center">
             <Card
               className="border-[3px] border-black rounded-[29px]"
               children={
