@@ -17,9 +17,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Shop: Story = {
   args: {
-    img: '/assets/Shop/irisBag.png',
+    img: '/Shop/irisBag.png',
     bagName: 'Iris Bag',
     price: 'THB 1190.00',
-    icon: '/assets/icons/shop.svg',
+    icon: '/icons/shop.svg',
   },
 };
