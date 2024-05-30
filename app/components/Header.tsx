@@ -81,7 +81,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className="font-500 rounded-full text-xl px-7 py-1 hover:text-white hover:bg-orange cursor-pointer hover:no-underline"
+            className="font-500 rounded-full text-xl 2xl:px-7 px-6 py-1 hover:text-white hover:bg-orange cursor-pointer hover:no-underline"
             end
             key={item.id}
             onClick={closeAside}
