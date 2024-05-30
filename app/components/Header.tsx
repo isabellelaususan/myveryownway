@@ -8,6 +8,15 @@ type HeaderProps = Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>;
 
 type Viewport = 'desktop' | 'mobile';
 
+const tailwindClasses = [
+  'hover:bg-lightPink active:bg-lightPink',
+  'hover:bg-orange',
+  'hover:bg-mixMatch',
+  'hover:bg-darkYellow',
+  'hover:bg-electricViolet',
+  'hover:bg-skyBlue',
+];
+
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
   return (
@@ -59,17 +68,11 @@ export function HeaderMenu({
       role="navigation"
     >
       {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={closeAside}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/"
-        >
+        <NavLink end onClick={closeAside} prefetch="intent" to="/">
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {menu?.items.map((item, index) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
@@ -81,12 +84,13 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className="font-500 rounded-full text-xl 2xl:px-7 px-6 py-1 hover:text-white hover:bg-orange cursor-pointer hover:no-underline"
+            className={`font-500 rounded-full text-xl px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline ${
+              tailwindClasses[index % tailwindClasses.length]
+            }`}
             end
             key={item.id}
             onClick={closeAside}
             prefetch="intent"
-            style={activeLinkStyle}
             to={url}
           >
             {item.title}
@@ -107,7 +111,7 @@ function HeaderCtas({
       role="navigation"
     >
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+      <NavLink prefetch="intent" to="/account">
         <Image srcSet="/icons/user.svg" width={36} />
         {/* <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
@@ -150,59 +154,4 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
     // </Suspense>
     <Image srcSet="/icons/cart.svg" width={36} />
   );
-}
-
-const FALLBACK_HEADER_MENU = {
-  id: 'gid://shopify/Menu/199655587896',
-  items: [
-    {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609533496',
-      resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609566264',
-      resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    },
-  ],
-};
-
-function activeLinkStyle({
-  isActive,
-  isPending,
-}: {
-  isActive: boolean;
-  isPending: boolean;
-}) {
-  return {
-    fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
-  };
 }
