@@ -12,8 +12,11 @@ const buttonVariants = cva(
         mixMatch: 'bg-orange hover:bg-connect px-20',
         connect: 'bg-cerulean hover:bg-connect px-16',
         tag: 'bg-pink hover:bg-tag px-20',
-        buy: 'bg-orange hover:bg-connect shadow-none',
+        buy: 'bg-orange text-white hover:bg-black shadow-none',
         cart: 'bg-transparent hover:bg-black hover:text-white border-8 border-black shadow-none',
+        add: 'bg-transparent hover:bg-orange text-orange hover:text-white border-2 border-orange shadow-none py-4',
+        addBlack:
+          'bg-transparent hover:bg-orange text-black hover:text-white border-4 border-black hover:border-orange shadow-none',
       },
     },
   },
