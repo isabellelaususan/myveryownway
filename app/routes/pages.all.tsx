@@ -5,36 +5,26 @@ import {
   Pagination,
   getPaginationVariables,
 } from '@shopify/hydrogen';
-import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useState} from 'react';
 import type {ProductItemFragment} from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
 
-export const meta: MetaFunction<typeof loader> = ({data}) => {
-  return [{title: `Hydrogen | ${data?.collection.title ?? ''} Collection`}];
+export const meta: MetaFunction<typeof loader> = () => {
+  return [{title: `Hydrogen | Products`}];
 };
 
-export async function loader({request, params, context}: LoaderFunctionArgs) {
-  const {handle} = params;
+export async function loader({request, context}: LoaderFunctionArgs) {
   const {storefront} = context;
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 8,
   });
 
-  if (!handle) {
-    return redirect('/collections');
-  }
-
-  const {collection} = await storefront.query(COLLECTION_QUERY, {
-    variables: {handle, ...paginationVariables},
+  const {products} = await storefront.query(CATALOG_QUERY, {
+    variables: {...paginationVariables},
   });
 
-  if (!collection) {
-    throw new Response(`Collection ${handle} not found`, {
-      status: 404,
-    });
-  }
-  return json({collection});
+  return json({products});
 }
 
 export const shop = [
@@ -56,7 +46,7 @@ export const shop = [
 ];
 
 export default function Collection() {
-  const {collection} = useLoaderData<typeof loader>();
+  const {products} = useLoaderData<typeof loader>();
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -68,14 +58,12 @@ export default function Collection() {
         className="absolute top-[30%] -left-24 2xl:w-[232px] w-[180px]"
       />
       <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
-        <div className="flex 2xl:gap-28">
-          {/* <h1>{collection.title}</h1> */}
-          {/* <p className="collection-description">{collection.description}</p> */}
-          <div className="flex flex-col self-start gap-4 w-[22%] font-MontserratBold 2xl:text-[32px] text-2xl sticky top-[50px] ">
+        <div className="flex">
+          <div className="flex flex-col self-start gap-4 w-[22%] font-MontserratBold 2xl:text-[32px] text-2xl sticky top-[50px]">
             {shop.map((tab, index) => (
               <button
                 key={index}
-                className={`hover:bg-fullGreen rounded-full px-4 py-1 w-fit cursor-pointer ${
+                className={`hover:bg-fullGreen rounded-full px-4 py-1 cursor-pointer w-fit ${
                   activeTab === index ? 'bg-fullGreen' : ''
                 }`}
                 onClick={() => setActiveTab(index)}
@@ -84,9 +72,9 @@ export default function Collection() {
               </button>
             ))}
           </div>
-          <Pagination connection={collection.products}>
+          <Pagination connection={products}>
             {({nodes, isLoading, PreviousLink, NextLink}) => (
-              <div>
+              <>
                 <PreviousLink>
                   {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
                 </PreviousLink>
@@ -95,7 +83,7 @@ export default function Collection() {
                 <NextLink>
                   {isLoading ? 'Loading...' : <span>Load more ↓</span>}
                 </NextLink>
-              </div>
+              </>
             )}
           </Pagination>
         </div>
@@ -118,7 +106,7 @@ export default function Collection() {
 
 function ProductsGrid({products}: {products: ProductItemFragment[]}) {
   return (
-    <div className="grid grid-cols-3 gap-12">
+    <div className="grid grid-cols-3 gap-12 2xl:pl-24 ">
       {products.map((product, index) => {
         return (
           <ProductItem
@@ -216,11 +204,9 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
   }
 ` as const;
 
-// NOTE: https://shopify.dev/docs/api/storefront/2022-04/objects/collection
-const COLLECTION_QUERY = `#graphql
-  ${PRODUCT_ITEM_FRAGMENT}
-  query Collection(
-    $handle: String!
+// NOTE: https://shopify.dev/docs/api/storefront/2024-01/objects/product
+const CATALOG_QUERY = `#graphql
+  query Catalog(
     $country: CountryCode
     $language: LanguageCode
     $first: Int
@@ -228,27 +214,17 @@ const COLLECTION_QUERY = `#graphql
     $startCursor: String
     $endCursor: String
   ) @inContext(country: $country, language: $language) {
-    collection(handle: $handle) {
-      id
-      handle
-      title
-      description
-      products(
-        first: $first,
-        last: $last,
-        before: $startCursor,
-        after: $endCursor
-      ) {
-        nodes {
-          ...ProductItem
-        }
-        pageInfo {
-          hasPreviousPage
-          hasNextPage
-          endCursor
-          startCursor
-        }
+    products(first: $first, last: $last, before: $startCursor, after: $endCursor) {
+      nodes {
+        ...ProductItem
+      }
+      pageInfo {
+        hasPreviousPage
+        hasNextPage
+        startCursor
+        endCursor
       }
     }
   }
+  ${PRODUCT_ITEM_FRAGMENT}
 ` as const;
