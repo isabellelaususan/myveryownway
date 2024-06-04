@@ -32,6 +32,7 @@ export default {
       skyBlue: '#00B5E7',
       lightPink: '#F794FF',
       amber: '#ffbf00',
+      lightGreen: '#00AC56',
     },
     fontFamily: {
       MontserratBlack: ['MontserratAlternatesBlack'],
