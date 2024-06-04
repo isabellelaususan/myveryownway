@@ -63,7 +63,7 @@ function FeaturedCollection({
                 Your Very Own Bag
               </p>
               <Button variant="shop" className="rotate-[350deg] block ml-auto">
-                <NavLink to="/">shop now</NavLink>
+                <NavLink to="/pages/shop">shop now</NavLink>
               </Button>
             </div>
             <div className="w-[61%] 2xl:pl-60 pl-36">

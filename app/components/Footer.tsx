@@ -33,13 +33,13 @@ export function Footer({
           <div className="flex flex-col">
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
-              className="text-2xl mb-3 hover:no-underline font-MontserratRegular"
+              className="text-2xl mb-3 hover:no-underline font-MontserratRegular cursor-pointer"
             >
               myveryownway.official@gmail.com
             </NavLink>
             <NavLink
               to="tel:(+66) 90-969-3000"
-              className="text-2xl hover:no-underline font-MontserratRegular"
+              className="text-2xl hover:no-underline font-MontserratRegular cursor-pointer"
             >
               <span className="font-bold font-MontserratBold">Tel.</span> (+66)
               90-969-3000
@@ -66,7 +66,7 @@ export function Footer({
                 <NavLink
                   to={menu.path}
                   key={index}
-                  className="hover:no-underline"
+                  className="hover:no-underline cursor-pointer"
                   target="_blank"
                 >
                   {menu.label}
