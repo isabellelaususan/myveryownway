@@ -35,11 +35,7 @@ export function Layout({
       <SearchAside />
       <MobileMenuAside menu={header?.menu} shop={header?.shop} />
       {header && <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />}
-<<<<<<< Updated upstream
-      <main>{children}</main>
-=======
       <main className="relative overflow-clip">{children}</main>
->>>>>>> Stashed changes
       <Suspense>
         <Await resolve={footer}>
           {(footer) => <Footer menu={footer?.menu} shop={header?.shop} />}
