@@ -142,7 +142,7 @@ function ProductImage({image}: {image: ProductVariantFragment['image']}) {
         data={image}
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
-        className="rounded-[42px]"
+        className="border-[3px] border-black rounded-[42px]"
       />
       <Image
         srcSet="/icons/yellowStar.svg"
@@ -273,25 +273,6 @@ function ProductForm({
   );
 }
 
-// export const shop = [
-//   {
-//     className: 'bg-[#EA4035] w-10 h-10 rounded-full border-black border',
-//     title: '#1 apple red',
-//   },
-//   {
-//     className: 'bg-[#EF8933] w-10 h-10 rounded-full border-black border',
-//   },
-//   {
-//     className: 'bg-[#F6C944] w-10 h-10 rounded-full border-black border',
-//   },
-//   {
-//     className: 'bg-[#A8CC3F] w-10 h-10 rounded-full border-black border',
-//   },
-//   {
-//     className: 'bg-[#A2E14E] w-10 h-10 rounded-full border-black border',
-//   },
-// ];
-
 function ProductOptions({option}: {option: VariantOption}) {
   return (
     <>
@@ -321,16 +302,6 @@ function ProductOptions({option}: {option: VariantOption}) {
           })}
         </div>
       </div>
-      {/* <div className="flex gap-3 my-4">
-        {shop.map((color, index) => (
-          <div key={index} className="flex w-fit  relative">
-            <button className={color.className}></button>
-            <div className="font-MontserratMedium text-[14px] bg-black text-white rounded-full px-2 absolute -top-10 -left-6 w-max ">
-              {color.title}
-            </div>
-          </div>
-        ))}
-      </div> */}
     </>
   );
 }
