@@ -20,16 +20,16 @@ const tailwindClasses = [
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
   return (
-    <header className="flex justify-between items-center border-black border-b-[3px] font-MontserratBold">
+    <header className="flex justify-between items-center border-black border-b-[3px] lg:font-MontserratBold font-MontserratRegular lg:px-0 px-10">
       <NavLink
         prefetch="intent"
         to="/"
-        className="py-7 px-16 border-black border-r-[3px]"
+        className="lg:py-7 lg:px-16 border-black lg:border-r-[3px]"
         end
       >
         <Image
           srcSet="/icons/round-logo.svg"
-          // className="w-8"
+          className="lg:w-12 w-6"
           width={48}
         />
       </NavLink>
@@ -64,7 +64,7 @@ export function HeaderMenu({
 
   return (
     <nav
-      className="flex text-2xl 2xl:gap-[73px] gap-[23px] px-14 font-Montserrat"
+      className="flex text-2xl 2xl:gap-[73px] gap-[23px] lg:px-14 font-Montserrat"
       role="navigation"
     >
       {viewport === 'mobile' && (
@@ -84,7 +84,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className={`font-500 rounded-full text-xl px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline ${
+            className={`font-500 rounded-full lg:text-xl text-lg lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
               tailwindClasses[index % tailwindClasses.length]
             }`}
             end
@@ -107,12 +107,12 @@ function HeaderCtas({
 }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
   return (
     <nav
-      className="flex gap-8 py-[34px] px-16 border-black border-l-[3px]"
+      className="flex lg:gap-8 gap-4 lg:py-[34px] py-8 lg:px-16 border-black lg:border-l-[3px]"
       role="navigation"
     >
       <HeaderMenuMobileToggle />
       <NavLink prefetch="intent" to="/account">
-        <Image srcSet="/icons/user.svg" width={36} />
+        <Image srcSet="/icons/user.svg" width={36} className="lg:w-9 w-6" />
         {/* <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
             {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
@@ -152,6 +152,6 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
     //     }}
     //   </Await>
     // </Suspense>
-    <Image srcSet="/icons/cart.svg" width={36} />
+    <Image srcSet="/icons/cart.svg" width={36} className="lg:w-9 w-6" />
   );
 }
