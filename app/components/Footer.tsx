@@ -9,22 +9,22 @@ export function Footer({
   shop,
 }: FooterQuery & {shop: HeaderQuery['shop']}) {
   return (
-    <footer className="border-t-[3px]">
+    <footer className="border-t-[3px] lg:overflow-auto overflow-clip">
       {/* {menu && shop?.primaryDomain?.url && (
         <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
       )} */}
-      <div className="flex">
-        <div className="border-r-[3px] w-[52%] pt-56 2xl:pl-60 pl-44 pb-20 relative">
+      <div className="lg:flex block lg:px-0 lg:py-0 py-14 px-[106px]">
+        <div className="lg:border-r-[3px] border-r-0 w-[52%] lg:pt-56 2xl:pl-60 lg:pl-44 lg:pb-20 pb-10 relative">
           <Image
             srcSet="/icons/black-zigzag.svg"
             alt="blackZigzag"
-            className="absolute left-0 bottom-40 2xl:w-[130px] w-[100px]"
+            className="absolute lg:left-0 -left-32 lg:top-auto top-0 bottom-40 2xl:w-[130px] w-[100px]"
             width={130}
           />
           <Image
             srcSet="/icons/black-heart.svg"
             alt="blackHeart"
-            className="absolute top-16 2xl:right-72 right-44 2xl:w-[150px] w-[130px]"
+            className="absolute lg:top-16 top-0 2xl:right-72 lg:right-44 -right-[26rem] 2xl:w-[150px] w-[130px]"
             width={150}
           />
           <h2 className="text-3xl font-bold mb-8 font-MontserratExtraBold">
@@ -46,20 +46,20 @@ export function Footer({
             </NavLink>
           </div>
         </div>
-        <div className="w-[48%] pt-56 2xl:pl-80 pl-48 relative">
+        <div className="w-[48%] lg:pt-56 2xl:pl-80 lg:pl-48 relative">
           <Image
             srcSet="/icons/curvround.svg"
             alt="curvRound"
             width={140}
-            className="absolute 2xl:left-20 left-12 top-48 2xl:w-[140px] w-[110px]"
+            className="absolute 2xl:left-20 lg:left-12 -left-40 bottom-0 lg:top-48 2xl:w-[140px] w-[110px]"
           />
           <Image
             srcSet="/icons/half-round.svg"
             alt="half-round"
             width={140}
-            className="absolute left-96 -top-[2px]"
+            className="absolute left-96 -top-[2px] lg:block hidden"
           />
-          <ul className="text-2xl px-14 grid grid-cols-2 gap-7 font-MontserratBold">
+          <ul className="text-2xl lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 gap-x-44 font-MontserratBold">
             {socialMedia.map((menu, index: number) => (
               <div key={menu.label} className="flex items-center gap-3">
                 <img src={menu.icon} alt="icon" width={40} />
