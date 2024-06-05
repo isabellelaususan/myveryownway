@@ -1,22 +1,22 @@
+import {Image} from '@shopify/hydrogen';
 import type {MyVeryProps} from './types';
 
 function Slider({mySlider}: MyVeryProps) {
   return (
-    <div className="overflow-hidden flex border-y-[3px] border-black py-7">
-      <div className="flex gap-14 animate-marquee">
+    <div className="overflow-hidden flex border-y-[3px] border-black lg:py-7 py-5">
+      <div className="flex lg:gap-14 gap-10 animate-marquee">
         {mySlider.map((slider) => (
           <div
             key={slider.id}
-            className="flex shrink-0 w-auto items-center gap-14"
+            className="flex shrink-0 w-auto items-center lg:gap-14 gap-10"
           >
-            <img
+            <Image
               alt={slider.alt}
-              src={slider.image}
-              className="w-auto"
-              height={45}
+              srcSet={slider.image}
+              className="lg:w-[45px] w-7"
               width={45}
             />
-            <div className="text-[30px] font-MontserratBold">
+            <div className="lg:text-[30px] text-2xl font-MontserratBold">
               {slider.label}
             </div>
           </div>
