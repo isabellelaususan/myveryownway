@@ -51,6 +51,7 @@ export default {
       tag: 'linear-gradient(180deg, #FBCE08 0%, #FF531B 100%)',
       mixMatch:
         'linear-gradient(260deg, #00b8ea 0%, #93c300 48%, #fbce08 100%)',
+      collect: 'linear-gradient(180deg, #93c300 0%, #f4eded 50%, #00b5e7)',
     },
     keyframes: {
       marquee: {
