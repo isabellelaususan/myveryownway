@@ -10,8 +10,8 @@ const buttonVariants = cva(
       variant: {
         shop: 'bg-fullGreen hover:bg-shop lg:px-10 px-7',
         mixMatch: 'bg-orange hover:bg-connect lg:px-20 md:px-14 px-5',
-        connect: 'bg-cerulean hover:bg-connect px-16',
-        tag: 'bg-pink hover:bg-tag px-20',
+        connect: 'bg-cerulean hover:bg-connect lg:px-16 px-9',
+        tag: 'bg-pink hover:bg-tag lg:px-20 px-11',
         buy: 'bg-orange text-white hover:bg-black shadow-none',
         cart: 'bg-transparent hover:bg-black hover:text-white border-8 border-black shadow-none',
         add: 'bg-transparent hover:bg-orange text-orange hover:text-white border-2 border-orange shadow-none py-4',
