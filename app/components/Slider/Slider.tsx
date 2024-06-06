@@ -3,7 +3,7 @@ import type {MyVeryProps} from './types';
 
 function Slider({mySlider}: MyVeryProps) {
   return (
-    <div className="overflow-hidden flex md:border-y-[3px] border-y-2 border-black lg:py-7 md:py-5 py-2.5">
+    <div className="overflow-hidden flex lg:border-y-[3px] border-y-2 border-black lg:py-7 md:py-5 py-2.5">
       <div className="flex lg:gap-14 md:gap-10 gap-2.5 animate-marquee">
         {mySlider.map((slider) => (
           <div
