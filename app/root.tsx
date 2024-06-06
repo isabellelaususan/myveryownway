@@ -4,7 +4,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  isRouteErrorResponse,
   useLoaderData,
+  useLocation,
+  useRouteError,
   type ShouldRevalidateFunction,
 } from '@remix-run/react';
 import {useNonce} from '@shopify/hydrogen';
@@ -93,6 +96,8 @@ export async function loader({context}: LoaderFunctionArgs) {
 export default function App() {
   const nonce = useNonce();
   const data = useLoaderData<typeof loader>();
+  const location = useLocation();
+  const isCollectionsPage = location.pathname === '/collections';
 
   return (
     <html lang="en">
@@ -102,7 +107,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className={isCollectionsPage ? 'bg-collect' : ''}>
         <Layout {...data}>
           <Outlet />
         </Layout>

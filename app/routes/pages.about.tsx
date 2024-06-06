@@ -53,7 +53,7 @@ export default function About() {
               srcSet="/icons/pinkRound.svg"
               alt="orangeZig"
               width={100}
-              className="absolute bottom-28 2xl:left-[34%] lg:left-1/4 left-[12%] lg:w-[100] w-[76px]"
+              className="absolute bottom-28 2xl:left-[34%] lg:left-1/4 left-[12%] lg:w-[100px] w-[76px]"
             />
             <Image
               srcSet="/icons/orangeZig.svg"
