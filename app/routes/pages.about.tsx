@@ -236,7 +236,7 @@ export default function About() {
         <Image
           srcSet="/icons/greenLine.svg"
           alt="greenLine"
-          className="absolute -left-24 top-32 lg;block hidden"
+          className="absolute -left-24 top-32 lg:block"
           width={241}
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
@@ -313,7 +313,7 @@ export default function About() {
             <Image
               srcSet="/icons/redFlower.svg"
               alt="redFlower"
-              className="absolute 2xl:-right-36 lg:-right-20 lg:top-32 top-16 -z-10 2xl:w-[241px] lg:w-[160px] w-[96px]"
+              className="absolute 2xl:right-44 lg:right-44 lg:top-24 top-16 -z-10 2xl:w-[241px] lg:w-[160px] w-[96px]"
               width={241}
             />
           </div>
