@@ -179,10 +179,17 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
+<<<<<<< Updated upstream
                   <h4 className="md:text-2xl text-lg font-MontserratBold italic">
                     Step 1
                   </h4>
                   <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+=======
+                  <h4 className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratBold italic">
+                    Step 1
+                  </h4>
+                  <p className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratSemiBold leading-10">
+>>>>>>> Stashed changes
                     Pick Your <span className="md:block"> Bag Design</span>
                   </p>
                 </div>
@@ -194,10 +201,17 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
+<<<<<<< Updated upstream
                   <h4 className="md:text-2xl text-lg font-MontserratBold italic">
                     Step 2
                   </h4>
                   <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+=======
+                  <h4 className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratBold italic">
+                    Step 2
+                  </h4>
+                  <p className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratSemiBold leading-10">
+>>>>>>> Stashed changes
                     Pick Your <span className="md:block"> Strap(s)</span>
                   </p>
                 </div>
@@ -209,10 +223,17 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col sm:items-center items-start justify-center gap-5">
+<<<<<<< Updated upstream
                   <h4 className="md:text-2xl text-lg font-MontserratBold italic flex-shrink-0">
                     Step 3
                   </h4>
                   <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+=======
+                  <h4 className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratBold italic flex-shrink-0">
+                    Step 3
+                  </h4>
+                  <p className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratSemiBold leading-10">
+>>>>>>> Stashed changes
                     Pick Your Pouch{' '}
                     <span className="md:block"> And Accessories</span>
                   </p>
@@ -225,10 +246,17 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
+<<<<<<< Updated upstream
                   <h4 className="md:text-2xl text-lg font-MontserratBold italic">
                     Step 4
                   </h4>
                   <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+=======
+                  <h4 className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratBold italic">
+                    Step 4
+                  </h4>
+                  <p className="2xl:text-[32px] xl:text-[28px] lg:text-[32px] text-lg font-MontserratSemiBold leading-10">
+>>>>>>> Stashed changes
                     Enjoy Your <span className="md:block"> Very Own Bag!</span>
                   </p>
                 </div>
