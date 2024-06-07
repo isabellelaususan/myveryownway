@@ -110,7 +110,7 @@ function FeaturedCollection({
         />
       </section>
 
-      <div className="sticky top-0 -z-10">
+      <div className="sticky top-0 -z-10 -mt-[140px]">
         <Image
           srcSet="/icons/yellowRound.svg"
           alt="yelloRound"
@@ -128,7 +128,7 @@ function FeaturedCollection({
       <section className="lg:pt-28 lg:pb-32 py-[50px] relative">
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
           <div className="md:mb-28 mb-20 relative">
-            <h1 className="lg:text-5xl md:text-[40px] text-[22px] text-center font-MontserratBold">
+            <h1 className="lg:text-[53px] md:text-[40px] text-[22px] text-center font-MontserratBold leading-[60px]">
               HOW TO PICK <br /> YOUR VERY OWN
             </h1>
             <Image
@@ -136,7 +136,7 @@ function FeaturedCollection({
               alt="veryHeadLine"
               className="block m-auto md:!w-24 !w-16 lg:mt-4 md:mt-0 mt-2"
             />
-            <div className="absolute lg:top-24 md:top-28 top-20 lg:left-[59%] md:left-[63%] left-[65%]">
+            <div className="absolute lg:top-28 md:top-28 top-20 lg:left-[62%] md:left-[63%] left-[65%]">
               <Image
                 srcSet="/icons/veryPickHand.svg"
                 alt="veryPickHand"
@@ -179,10 +179,10 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
-                  <h4 className="md:text-2xl text-lg font-MontserratBold italic">
+                  <h4 className="md:text-[32px] text-lg font-MontserratBold italic">
                     Step 1
                   </h4>
-                  <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+                  <p className="md:text-[32px] text-lg font-MontserratSemiBold leading-10">
                     Pick Your <span className="md:block"> Bag Design</span>
                   </p>
                 </div>
@@ -194,10 +194,10 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
-                  <h4 className="md:text-2xl text-lg font-MontserratBold italic">
+                  <h4 className="md:text-[32px] text-lg font-MontserratBold italic">
                     Step 2
                   </h4>
-                  <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+                  <p className="md:text-[32px] text-lg font-MontserratSemiBold leading-10">
                     Pick Your <span className="md:block"> Strap(s)</span>
                   </p>
                 </div>
@@ -209,10 +209,10 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col sm:items-center items-start justify-center gap-5">
-                  <h4 className="md:text-2xl text-lg font-MontserratBold italic flex-shrink-0">
+                  <h4 className="md:text-[32px] text-lg font-MontserratBold italic flex-shrink-0">
                     Step 3
                   </h4>
-                  <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+                  <p className="md:text-[32px] text-lg font-MontserratSemiBold leading-10">
                     Pick Your Pouch{' '}
                     <span className="md:block"> And Accessories</span>
                   </p>
@@ -225,10 +225,10 @@ function FeaturedCollection({
                   className="object-contain h-[240px]"
                 />
                 <div className="flex md:flex-col items-center justify-center gap-5">
-                  <h4 className="md:text-2xl text-lg font-MontserratBold italic">
+                  <h4 className="md:text-[32px] text-lg font-MontserratBold italic">
                     Step 4
                   </h4>
-                  <p className="md:text-2xl text-lg font-MontserratSemiBold leading-6">
+                  <p className="md:text-[32px] text-lg font-MontserratSemiBold leading-10">
                     Enjoy Your <span className="md:block"> Very Own Bag!</span>
                   </p>
                 </div>
@@ -237,8 +237,8 @@ function FeaturedCollection({
           </div>
           <div className="relative md:mt-20 mt-7">
             <Image
-              srcSet="/icons/pinkLine.svg"
-              alt="pinkLine"
+              srcSet="/icons/blueLine.svg"
+              alt="blueLine"
               width={241}
               className="absolute lg:left-36 -left-14 lg:top-4 -top-40 2xl:w-[241px] w-[200px] md:block hidden"
             />

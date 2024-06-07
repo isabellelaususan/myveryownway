@@ -4,7 +4,7 @@ import * as React from 'react';
 import {cn} from '~/utils';
 
 const buttonVariants = cva(
-  'whitespace-nowrap font-MontserratBold rounded-full uppercase px-10 py-2.5 lg:text-[32px] md:text-2xl text-base shadow-custom cursor-pointer focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'whitespace-nowrap font-MontserratBold rounded-full uppercase px-10 py-4 lg:text-[32px] md:text-2xl text-base shadow-custom cursor-pointer focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
