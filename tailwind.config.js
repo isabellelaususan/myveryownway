@@ -9,7 +9,7 @@ export default {
       cornField: '#F9F2BF',
       softPeach: '#F4EDED',
       persimmon: '#FF6346',
-      orange: '#FF531B',
+      orange: '#FFA000',
       scarlet: '#E52600',
       koromikol: '#FFBA68',
       supernova: '#FFCB00',
