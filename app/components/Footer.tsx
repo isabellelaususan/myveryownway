@@ -24,7 +24,7 @@ export function Footer({
           <Image
             srcSet="/icons/black-heart.svg"
             alt="blackHeart"
-            className="absolute lg:top-16 top-0 2xl:right-72 lg:right-44 -right-[26rem] 2xl:w-[150px] w-[130px]"
+            className="absolute lg:top-16 top-0 2xl:right-64 lg:right-44 -right-[26rem] 2xl:w-[142px] w-[130px]"
             width={150}
           />
           <h2 className="text-3xl font-bold mb-8 font-MontserratExtraBold">
@@ -56,7 +56,7 @@ export function Footer({
           <Image
             srcSet="/icons/half-round.svg"
             alt="half-round"
-            width={140}
+            width={189}
             className="absolute left-96 -top-[2px] lg:block hidden"
           />
           <ul className="text-2xl lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 gap-x-44 font-MontserratBold">
