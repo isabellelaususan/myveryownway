@@ -116,7 +116,7 @@ export const collection = [
         className: 'row-span-1 col-span-1 2xl:h-[388.82px] h-[346.82px]',
       },
       {
-        img: '/Shop/collection/moveFour.png',
+        img: '/Shop/collection/moveEleven.png',
         className: 'row-span-1 col-span-1 2xl:h-[555.55px] h-[489px]',
       },
       {
@@ -145,7 +145,7 @@ export const collection = [
           'row-span-1 col-span-2 2xl:h-[670px] h-[567.11px] 2xl:mt-[-9rem] mt-[-6rem]',
       },
       {
-        img: '/Shop/collection/moveEleven.png',
+        img: '/Shop/collection/moveFour.png',
         className: 'row-span-1 col-span-1 2xl:h-[526px] h-[470px]',
       },
       {
@@ -154,26 +154,23 @@ export const collection = [
           'row-span-1 col-span-1 2xl:h-[806px] h-[719.75px] 2xl:mt-[-17.5rem] mt-[-15.5rem]',
       },
       {
+        img: '/Shop/collection/moveFifteen.png',
+        className: 'row-span-1 col-span-1',
+      },
+
+      {
         img: '/Shop/collection/moveThirteen.png',
         className: 'row-span-2 col-span-1',
       },
       {
         img: '/Shop/collection/moveFourteen.png',
-        className: 'row-span-1 col-span-2',
-      },
-
-      {
-        img: '/Shop/collection/moveFifteen.png',
-        className: 'row-span-1 col-span-1',
+        className: 'row-span-2 col-span-2',
       },
       {
         img: '/Shop/collection/moveSixteen.png',
         className: 'row-span-1 col-span-1',
       },
-      {
-        img: '/Shop/collection/moveSeventeen.png',
-        className: 'row-span-1 col-span-2',
-      },
+
       {
         img: '/Shop/collection/moveEightteen.png',
         className: 'row-span-1 col-span-3 2xl:h-[859px] h-[756.7px]',
@@ -238,8 +235,8 @@ export default function Collections() {
               {collection.map((tab, index) => (
                 <button
                   key={index}
-                  className={`hover:bg-amber rounded-full px-4 py-1 w-fit cursor-pointer ${
-                    activeTab === index ? 'bg-amber' : ''
+                  className={`hover:bg-white rounded-full px-4 py-1 w-fit cursor-pointer ${
+                    activeTab === index ? 'bg-white' : ''
                   }`}
                   onClick={() => setActiveTab(index)}
                 >
