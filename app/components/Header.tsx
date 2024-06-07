@@ -64,7 +64,7 @@ export function HeaderMenu({
 
   return (
     <nav
-      className="flex text-2xl 2xl:gap-[73px] gap-[23px] lg:px-14 font-Montserrat"
+      className="flex text-2xl 2xl:gap-[53px] gap-[23px] lg:px-14 font-Montserrat"
       role="navigation"
     >
       {viewport === 'mobile' && (
@@ -84,7 +84,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className={`font-500 rounded-full lg:text-xl text-lg lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
+            className={`font-500 rounded-full lg:text-[26px] text-lg lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
               tailwindClasses[index % tailwindClasses.length]
             }`}
             end
