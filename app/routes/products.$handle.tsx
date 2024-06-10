@@ -1,29 +1,30 @@
-import {Suspense} from 'react';
-import {defer, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {
   Await,
   Link,
   useLoaderData,
-  type MetaFunction,
   type FetcherWithComponents,
+  type MetaFunction,
 } from '@remix-run/react';
-import type {
-  ProductFragment,
-  ProductVariantsQuery,
-  ProductVariantFragment,
-} from 'storefrontapi.generated';
 import {
+  CartForm,
   Image,
   Money,
   VariantSelector,
-  type VariantOption,
   getSelectedProductOptions,
-  CartForm,
+  type VariantOption,
 } from '@shopify/hydrogen';
 import type {
   CartLineInput,
   SelectedOption,
 } from '@shopify/hydrogen/storefront-api-types';
+import {defer, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {Suspense} from 'react';
+import type {
+  ProductFragment,
+  ProductVariantFragment,
+  ProductVariantsQuery,
+} from 'storefrontapi.generated';
+import Button from '~/components/Button';
 import {getVariantUrl} from '~/lib/variants';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
@@ -104,14 +105,28 @@ export default function Product() {
   const {product, variants} = useLoaderData<typeof loader>();
   const {selectedVariant} = product;
   return (
-    <div className="product">
-      <ProductImage image={selectedVariant?.image} />
-      <ProductMain
-        selectedVariant={selectedVariant}
-        product={product}
-        variants={variants}
+    <section className="py-24 relative overflow-hidden">
+      <Image
+        srcSet="/icons/orangeStar.svg"
+        width={176}
+        className="absolute -left-20 top-40"
       />
-    </div>
+      <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+        <div className="product flex gap-32">
+          <ProductImage image={selectedVariant?.image} />
+          <ProductMain
+            selectedVariant={selectedVariant}
+            product={product}
+            variants={variants}
+          />
+        </div>
+      </div>
+      <Image
+        srcSet="/icons/music.svg"
+        width={176}
+        className="absolute -right-14 top-2/4"
+      />
+    </section>
   );
 }
 
@@ -120,13 +135,19 @@ function ProductImage({image}: {image: ProductVariantFragment['image']}) {
     return <div className="product-image" />;
   }
   return (
-    <div className="product-image">
+    <div className="product-image relative w-[42%]">
       <Image
         alt={image.altText || 'Product Image'}
         aspectRatio="1/1"
         data={image}
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
+        className="border-[3px] border-black rounded-[42px]"
+      />
+      <Image
+        srcSet="/icons/yellowStar.svg"
+        width={109}
+        className="absolute left-1/4 top- -z-10 !w-[209px]"
       />
     </div>
   );
@@ -143,9 +164,11 @@ function ProductMain({
 }) {
   const {title, descriptionHtml} = product;
   return (
-    <div className="product-main">
-      <h1>{title}</h1>
-      <ProductPrice selectedVariant={selectedVariant} />
+    <div className="product-main w-[58%]">
+      <div className="flex justify-between">
+        <h1 className="font-MontserratBold text-[41px]">{title}</h1>
+        <ProductPrice selectedVariant={selectedVariant} />
+      </div>
       <br />
       <Suspense
         fallback={
@@ -171,12 +194,33 @@ function ProductMain({
       </Suspense>
       <br />
       <br />
-      <p>
-        <strong>Description</strong>
+      <p className="font-MontserratBold text-2xl border-b-[3px] border-black pb-4">
+        Description
       </p>
       <br />
-      <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
+      <div
+        dangerouslySetInnerHTML={{__html: descriptionHtml}}
+        className="text-[18px] font-MontserratMedium leading-9"
+      />
       <br />
+      <AddToCartButton
+        disabled={!selectedVariant || !selectedVariant.availableForSale}
+        onClick={() => {
+          window.location.href = window.location.href + '#cart-aside';
+        }}
+        lines={
+          selectedVariant
+            ? [
+                {
+                  merchandiseId: selectedVariant.id,
+                  quantity: 1,
+                },
+              ]
+            : []
+        }
+      >
+        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
+      </AddToCartButton>
     </div>
   );
 }
@@ -187,7 +231,7 @@ function ProductPrice({
   selectedVariant: ProductFragment['selectedVariant'];
 }) {
   return (
-    <div className="product-price">
+    <div className="flex justify-center items-center bg-lightGreen text-white w-fit px-6 py-1.5 text-[31px] rounded-full font-MontserratBold">
       {selectedVariant?.compareAtPrice ? (
         <>
           <p>Sale</p>
@@ -225,54 +269,40 @@ function ProductForm({
         {({option}) => <ProductOptions key={option.name} option={option} />}
       </VariantSelector>
       <br />
-      <AddToCartButton
-        disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          window.location.href = window.location.href + '#cart-aside';
-        }}
-        lines={
-          selectedVariant
-            ? [
-                {
-                  merchandiseId: selectedVariant.id,
-                  quantity: 1,
-                },
-              ]
-            : []
-        }
-      >
-        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
-      </AddToCartButton>
     </div>
   );
 }
 
 function ProductOptions({option}: {option: VariantOption}) {
   return (
-    <div className="product-options" key={option.name}>
-      <h5>{option.name}</h5>
-      <div className="product-options-grid">
-        {option.values.map(({value, isAvailable, isActive, to}) => {
-          return (
-            <Link
-              className="product-options-item"
-              key={option.name + value}
-              prefetch="intent"
-              preventScrollReset
-              replace
-              to={to}
-              style={{
-                border: isActive ? '1px solid black' : '1px solid transparent',
-                opacity: isAvailable ? 1 : 0.3,
-              }}
-            >
-              {value}
-            </Link>
-          );
-        })}
+    <>
+      <div className="product-options" key={option.name}>
+        <h5 className="font-MontserratBold text-[33px] mb-14">{option.name}</h5>
+        <div className="product-options-grid justify-center">
+          {option.values.map(({value, isAvailable, isActive, to}) => {
+            return (
+              <Link
+                className=" w-12 h-12 rounded-full border-black border-2"
+                key={option.name + value}
+                prefetch="intent"
+                preventScrollReset
+                replace
+                to={to}
+                style={{
+                  background: value,
+                  border: isActive
+                    ? '1px solid black'
+                    : '1px solid transparent',
+                  opacity: isAvailable ? 1 : 0.3,
+                }}
+              >
+                {/* {value} */}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-      <br />
-    </div>
+    </>
   );
 }
 
@@ -298,13 +328,15 @@ function AddToCartButton({
             type="hidden"
             value={JSON.stringify(analytics)}
           />
-          <button
+          <Button
+            variant="add"
             type="submit"
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
+            className="text-2xl mt-16"
           >
             {children}
-          </button>
+          </Button>
         </>
       )}
     </CartForm>
