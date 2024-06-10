@@ -15,7 +15,7 @@ export function Header({header, isLoggedIn, cart}: HeaderProps) {
       <NavLink
         prefetch="intent"
         to="/"
-        className="py-7 px-16 border-black border-r-[3px]"
+        className="lg:py-7 lg:px-7 border-black lg:border-r-[3px]"
         end
       >
         <Image
@@ -103,7 +103,7 @@ function HeaderCtas({
 }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
   return (
     <nav
-      className="flex gap-8 py-[34px] px-16 border-black border-l-[3px]"
+      className="flex lg:gap-8 gap-4 lg:py-[34px] py-8 lg:px-7 border-black lg:border-l-[3px]"
       role="navigation"
     >
       <HeaderMenuMobileToggle />
