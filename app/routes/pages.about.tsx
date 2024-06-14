@@ -128,7 +128,7 @@ export default function About() {
             srcSet="/icons/pinkGreenAbout.svg"
             alt="pinkGreenAbout"
             width={260}
-            className="block m-auto 2xl:w-[260px] w-[140px]"
+            className="block m-auto xl:w-[260px] w-[140px]"
           />
         </div>
         <Image

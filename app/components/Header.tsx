@@ -20,17 +20,16 @@ const tailwindClasses = [
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
   return (
-    <header className="flex justify-between items-center border-black border-b-[3px] lg:font-MontserratBold font-MontserratRegular lg:px-0 px-10">
+    <header className="flex justify-between items-center border-black border-b-[3px] lg:font-MontserratBold font-MontserratRegular lg:px-0 md:px-10 px-[30px]">
       <NavLink
         prefetch="intent"
         to="/"
-        className="lg:py-7 lg:px-7 border-black lg:border-r-[3px]"
-
+        className="lg:py-7 2xl:px-16 lg:px-7 border-black lg:border-r-[3px]"
         end
       >
         <Image
           srcSet="/icons/round-logo.svg"
-          className="lg:w-12 w-6"
+          className="lg:w-12 md:w-6 w-[32px]"
           width={48}
         />
       </NavLink>
@@ -65,14 +64,12 @@ export function HeaderMenu({
 
   return (
     <nav
-      className="flex text-2xl 2xl:gap-[53px] gap-[23px] lg:px-14 font-Montserrat"
+      className={`flex md:flex-row flex-col md:text-2xl text-3xl 2xl:gap-[53px] gap-[23px] lg:px-14 font-MontserratBold ${
+        viewport === 'mobile' ? '' : 'header-desktop-menu'
+      }`}
       role="navigation"
     >
-      {viewport === 'mobile' && (
-        <NavLink end onClick={closeAside} prefetch="intent" to="/">
-          Home
-        </NavLink>
-      )}
+      {viewport === 'mobile' && <></>}
       {menu?.items.map((item, index) => {
         if (!item.url) return null;
 
@@ -85,7 +82,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className={`font-500 rounded-full lg:text-[26px] text-lg lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
+            className={`font-500 rounded-full 2xl:text-[26px] lg:text-[22px] md:text-lg text-3xl lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
               tailwindClasses[index % tailwindClasses.length]
             }`}
             end
@@ -108,31 +105,38 @@ function HeaderCtas({
 }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
   return (
     <nav
-
-      className="flex lg:gap-8 gap-4 lg:py-[34px] py-8 lg:px-7 border-black lg:border-l-[3px]"
-
+      className="flex md:justify-normal justify-between items-center ml-4 lg:gap-8 gap-4 lg:py-[34px] md:py-8 py-3 2xl:px-16 lg:px-7 border-black lg:border-l-[3px] md:w-auto w-[-webkit-fill-available]"
       role="navigation"
     >
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account">
-        <Image srcSet="/icons/user.svg" width={36} className="lg:w-9 w-6" />
-        {/* <Suspense fallback="Sign in">
+      <div className="flex gap-4">
+        <NavLink prefetch="intent" to="/account">
+          <Image
+            srcSet="/icons/user.svg"
+            width={36}
+            className="lg:w-9 md:w-6 w-5"
+          />
+          {/* <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
             {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
           </Await>
         </Suspense> */}
-      </NavLink>
-      {/* <SearchToggle /> */}
+        </NavLink>
+        {/* <SearchToggle /> */}
 
-      <CartToggle cart={cart} />
+        <CartToggle cart={cart} />
+      </div>
     </nav>
   );
 }
 
 function HeaderMenuMobileToggle() {
   return (
-    <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+    <a
+      className="header-menu-mobile-toggle relative z-20"
+      href="#mobile-menu-aside"
+    >
+      <Image srcSet="/icons/barIcon.svg" alt="barIcon" width={18} />
     </a>
   );
 }
@@ -155,6 +159,6 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
     //     }}
     //   </Await>
     // </Suspense>
-    <Image srcSet="/icons/cart.svg" width={36} className="lg:w-9 w-6" />
+    <Image srcSet="/icons/cart.svg" width={36} className="lg:w-9 md:w-6 w-5" />
   );
 }
