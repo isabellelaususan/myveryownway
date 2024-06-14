@@ -9,60 +9,65 @@ export function Footer({
   shop,
 }: FooterQuery & {shop: HeaderQuery['shop']}) {
   return (
-    <footer className="border-t-[3px] lg:overflow-auto overflow-clip">
+    <footer className="md:border-t-[3px] border-t-2 lg:overflow-auto overflow-clip">
       {/* {menu && shop?.primaryDomain?.url && (
         <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
       )} */}
-      <div className="lg:flex block lg:px-0 lg:py-0 py-14 px-[106px]">
-        <div className="lg:border-r-[3px] border-r-0 w-[52%] lg:pt-56 2xl:pl-60 lg:pl-44 lg:pb-20 pb-10 relative">
+      <div className="lg:flex block lg:px-0 lg:py-0">
+        <div className="lg:border-r-[3px] border-r-0 md:border-b-0 border-b-2 sm:w-[52%] w-full lg:pt-56 2xl:pl-60 lg:pl-44 lg:pb-20 px-16 py-9 relative">
           <Image
             srcSet="/icons/black-zigzag.svg"
             alt="blackZigzag"
-            className="absolute lg:left-0 -left-32 lg:top-auto top-0 bottom-40 2xl:w-[130px] w-[100px]"
+            className="absolute lg:left-0 md:-left-32 left-0 lg:top-auto md:top-0 top-11 bottom-40 2xl:w-[130px] md:w-[100px] w-10"
             width={130}
           />
           <Image
             srcSet="/icons/black-heart.svg"
             alt="blackHeart"
-            className="absolute lg:top-16 top-0 2xl:right-64 lg:right-44 -right-[26rem] 2xl:w-[142px] w-[130px]"
+            className="absolute lg:top-16 md:top-0 top-2.5 2xl:right-64 lg:right-44 md:-right-[26rem] right-12 2xl:w-[142px] md:w-[130px] w-11"
             width={150}
           />
-          <h2 className="text-3xl font-bold mb-8 font-MontserratExtraBold">
+          <h2 className="sm:text-3xl text-xs font-bold sm:mb-8 mb-3 font-MontserratExtraBold">
             CONTACT US
           </h2>
           <div className="flex flex-col">
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
-              className="text-2xl mb-3 hover:no-underline font-MontserratRegular cursor-pointer"
+              className="sm:text-2xl text-xs sm:mb-3 mb-1 hover:no-underline font-MontserratRegular cursor-pointer"
             >
               myveryownway.official@gmail.com
             </NavLink>
             <NavLink
               to="tel:(+66) 90-969-3000"
-              className="text-2xl hover:no-underline font-MontserratRegular cursor-pointer"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratRegular cursor-pointer"
             >
               <span className="font-bold font-MontserratBold">Tel.</span> (+66)
               90-969-3000
             </NavLink>
           </div>
         </div>
-        <div className="w-[48%] lg:pt-56 2xl:pl-80 lg:pl-48 relative">
+        <div className="sm:w-[48%] w-full lg:pt-56 2xl:pl-80 lg:pl-48 px-16 py-9 relative">
           <Image
             srcSet="/icons/curvround.svg"
             alt="curvRound"
             width={140}
-            className="absolute 2xl:left-20 lg:left-12 -left-40 bottom-0 lg:top-48 2xl:w-[140px] w-[110px]"
+            className="absolute 2xl:left-20 lg:left-12 md:-left-40 left-2.5 md:bottom-0 bottom-9 lg:top-48 2xl:w-[140px] md:w-[110px] w-[35px]"
           />
           <Image
             srcSet="/icons/half-round.svg"
             alt="half-round"
             width={189}
-            className="absolute left-96 -top-[2px] lg:block hidden"
+            className="absolute md:left-96 -top-[2px] left-auto md:right-auto right-8 md:w-[189px] w-[55px]"
           />
-          <ul className="text-2xl lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 gap-x-44 font-MontserratBold">
+          <ul className="sm:text-2xl text-xs lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold">
             {socialMedia.map((menu, index: number) => (
               <div key={menu.label} className="flex items-center gap-3">
-                <img src={menu.icon} alt="icon" width={40} />
+                <img
+                  src={menu.icon}
+                  alt="icon"
+                  width={40}
+                  className="md:w-10 w-7"
+                />
                 <NavLink
                   to={menu.path}
                   key={index}
@@ -76,7 +81,7 @@ export function Footer({
           </ul>
         </div>
       </div>
-      <div className="bg-black w-full h-16"></div>
+      <div className="bg-black w-full sm:h-16 h-4"></div>
     </footer>
   );
 }

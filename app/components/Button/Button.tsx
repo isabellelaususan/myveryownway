@@ -4,12 +4,13 @@ import * as React from 'react';
 import {cn} from '~/utils';
 
 const buttonVariants = cva(
-  'whitespace-nowrap font-MontserratBold rounded-full uppercase px-10 py-4 lg:text-[32px] md:text-2xl text-base shadow-custom cursor-pointer focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'whitespace-nowrap font-MontserratBold rounded-full uppercase px-10 sm:py-4 py-1 lg:text-[32px] md:text-2xl text-sm shadow-custom cursor-pointer focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        shop: 'bg-fullGreen hover:bg-shop lg:px-10 px-7',
-        mixMatch: 'bg-orange hover:bg-connect lg:px-20 md:px-14 px-5',
+        shop: 'bg-fullGreen hover:bg-shop lg:px-10 px-7 sm:shadow-[8px_10px_0px_0px_#0e0d0d] !shadow-[4px_6px_0px_0px_#0e0d0d]',
+        mixMatch:
+          'bg-orange hover:bg-connect lg:px-20 md:px-14 sm:shadow-[8px_10px_0px_0px_#0e0d0d] !shadow-[4px_6px_0px_0px_#0e0d0d]',
         connect: 'bg-cerulean hover:bg-connect lg:px-16 px-9',
         tag: 'bg-pink hover:bg-tag lg:px-20 px-11',
         buy: 'bg-orange text-white hover:bg-black shadow-none',
