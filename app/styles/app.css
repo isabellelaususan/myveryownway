@@ -78,6 +78,7 @@ aside header .close {
   text-decoration: none;
   transition: all 200ms;
   font-size: 28px;
+  margin-top: -25px;
 }
 
 aside header .close:hover {
@@ -91,7 +92,7 @@ aside header h2 {
 
 aside main {
   margin: 1rem;
-  margin-left: 78px;
+  margin-left: 50px;
 }
 
 aside p {

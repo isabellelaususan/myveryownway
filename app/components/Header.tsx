@@ -64,7 +64,7 @@ export function HeaderMenu({
 
   return (
     <nav
-      className={`flex md:flex-row flex-col md:text-2xl text-3xl 2xl:gap-[53px] gap-[23px] lg:px-14 font-MontserratBold ${
+      className={`flex md:flex-row flex-col items-start md:text-2xl text-3xl 2xl:gap-[53px] gap-[23px] lg:px-14 font-MontserratBold ${
         viewport === 'mobile' ? '' : 'header-desktop-menu'
       }`}
       role="navigation"
@@ -82,7 +82,7 @@ export function HeaderMenu({
             : item.url;
         return (
           <NavLink
-            className={`font-500 rounded-full 2xl:text-[26px] lg:text-[22px] md:text-lg text-3xl lg:px-7 py-1 2xl:px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
+            className={`font-500 rounded-full 2xl:text-[26px] lg:text-[22px] md:text-lg text-3xl lg:px-7 py-1 px-7 cursor-pointer hover:text-white hover:no-underline flex-shrink-0 ${
               tailwindClasses[index % tailwindClasses.length]
             }`}
             end

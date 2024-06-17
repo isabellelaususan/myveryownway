@@ -1,13 +1,13 @@
-import {NavLink, useLoaderData, type MetaFunction} from '@remix-run/react';
-import {Image} from '@shopify/hydrogen';
-import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import { NavLink, useLoaderData, type MetaFunction } from '@remix-run/react';
+import { Image } from '@shopify/hydrogen';
+import { defer, type LoaderFunctionArgs } from '@shopify/remix-oxygen';
 import type {
   FeaturedCollectionFragment,
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
 import Button from '~/components/Button';
 import Slider from '~/components/Slider';
-import {myVeryLogo} from '~/components/Slider/constants';
+import { myVeryLogo } from '~/components/Slider/constants';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -75,7 +75,7 @@ function FeaturedCollection({
                   srcSet="/icons/skyLogo.svg"
                   alt="sky-logo"
                   width={71}
-                  className="absolute lg:w-[71px] w-[60px] lg:top-32 top-24 lg:-left-8 left-[60px]"
+                  className="absolute lg:w-[71px] sm:w-[60px] w-9 lg:top-32 md:top-24 top-12 lg:-left-8 sm:left-[60px] left-2.5"
                 />
                 <Image
                   srcSet="/Shop/hero-section.png"
@@ -126,6 +126,26 @@ function FeaturedCollection({
 
       {/* very own  */}
       <section className="lg:pt-28 lg:pb-32 py-16 relative">
+        <div className="sm:hidden block">
+          <Image
+            srcSet="/icons/greenWave.svg"
+            alt="greenWave"
+            width="65"
+            className="absolute top-[22%]"
+          />
+          <Image
+            srcSet="/icons/yellowHalf.svg"
+            alt="yellowHalf"
+            width="75"
+            className="absolute top-[35%] right-0"
+          />{' '}
+          <Image
+            srcSet="/icons/pinkPipe.svg"
+            alt="pinkPipe"
+            width="52"
+            className="absolute top-2/3"
+          />
+        </div>
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
           <div className="md:mb-28 mb-20 relative">
             <h1 className="lg:text-[53px] md:text-[40px] text-[22px] text-center font-MontserratBold sm:leading-[60px] leading-6">
