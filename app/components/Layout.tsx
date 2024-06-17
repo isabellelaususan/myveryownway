@@ -104,7 +104,7 @@ function MobileMenuAside({
   return (
     menu &&
     shop?.primaryDomain?.url && (
-      <Aside id="mobile-menu-aside">
+      <Aside id="mobile-menu-aside" heading>
         <HeaderMenu
           menu={menu}
           viewport="mobile"

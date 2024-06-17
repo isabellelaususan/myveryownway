@@ -61,12 +61,15 @@ export function Footer({
           />
           <ul className="sm:text-2xl text-xs lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold">
             {socialMedia.map((menu, index: number) => (
-              <div key={menu.label} className="flex items-center gap-3">
+              <div
+                key={menu.label}
+                className="flex items-center sm:gap-3 gap-2.5"
+              >
                 <img
                   src={menu.icon}
                   alt="icon"
                   width={40}
-                  className="md:w-10 w-7"
+                  className="md:w-10 w-6"
                 />
                 <NavLink
                   to={menu.path}
