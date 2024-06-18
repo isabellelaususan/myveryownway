@@ -123,8 +123,8 @@ export default function Policies() {
                 className="zxl:w-[38px] w-[32px]"
               />
               <p className="font-MontserratBold 2xl:text-[32px] text-2xl 2xl:leading-[2.75rem] leading-[2rem]">
-                <span className="block">Seek N' Keep Club</span>Siam Square Soi
-                2
+                <span className="block">Seek N&apos;' Keep Club</span>Siam
+                Square Soi 2
               </p>
             </div>
             <div className="mt-20 flex flex-col gap-3">
