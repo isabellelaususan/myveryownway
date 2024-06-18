@@ -295,34 +295,34 @@ export default function About() {
               srcSet={BagOne}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[200px]"
+              className="lg:w-[396px] sm:w-[200px] w-24"
             />
             <Image
               srcSet={BagTwo}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[200px]"
+              className="lg:w-[396px] sm:w-[200px] w-24"
             />
             <Image
               srcSet={BagThree}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[200px]"
+              className="lg:w-[396px] sm:w-[200px] w-24"
             />
 
             <Image
               srcSet="/icons/redFlower.svg"
               alt="redFlower"
-              className="absolute 2xl:right-44 lg:right-44 lg:top-24 top-16 -z-10 2xl:w-[241px] lg:w-[160px] w-[96px]"
+              className="absolute 2xl:right-44 lg:right-44 lg:top-24 top-16 -z-10 2xl:w-[241px] lg:w-[160px] w-[96px] sm:block hidden"
               width={241}
             />
           </div>
 
           <div className="lg:mt-36 mt-10">
-            <p className="font-MontserratRegular lg:text-[28px] text-[22px] text-center">
+            <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-sm text-center">
               We invite you to embark on a journey of self-expression and
-              discovery. <br /> Whether you're picking out a statement piece for
-              a special occasion or a daily <br />
+              discovery. <br /> Whether you&apos;re picking out a statement
+              piece for a special occasion or a daily <br />
               companion that reflects your style, “My Very Own Way” is here to
               bring out your inner artist.
               <span className="font-MontserratBold italic">
@@ -336,19 +336,19 @@ export default function About() {
             <Image
               srcSet="/icons/star.svg"
               alt="star"
-              className="absolute 2xl:-left-32 lg:-left-16 top-0 2xl:w-[139px] lg:w-[100px] w-[66px]"
+              className="absolute 2xl:-left-32 lg:-left-16 sm:top-0 -top-7 2xl:w-[139px] lg:w-[100px] sm:w-[66px] w-9"
               width={139}
             />
             <Image
               srcSet="/Shop/about/allbag.png"
               alt="allBag"
               width={974}
-              className="block m-auto lg:my-40 my-16 2xl:w-[974px] lg:w-[747px] w-[456px]"
+              className="block m-auto lg:my-40 my-16 2xl:w-[974px] lg:w-[747px] sm:w-[456px] w-[314px]"
             />
             <Image
               srcSet="/icons/yellowWave.svg"
               alt="yellowWave"
-              className="absolute right-0 bottom-0 lg:w-[130px] w-[62px]"
+              className="absolute right-0 sm:bottom-0 lg:w-[130px] sm:w-[62px] w-9 -bottom-6"
               width={130}
             />
           </div>
@@ -364,19 +364,19 @@ export default function About() {
             className="absolute -left-16 bottom-96 2xl:w-[224px] w-[180px] lg:block hidden"
             width={224}
           />
-          <p className="font-MontserratRegular lg:text-[28px] text-[22px] text-center">
-            Experience the joy of picking out and carrying a bag that's uniquely
-            yours. <br />{' '}
+          <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-sm text-center">
+            Experience the joy of picking out and carrying a bag that&apos;s
+            uniquely yours. <br />{' '}
             <span className="italic font-MontserratBold">
               Your bag. Your style. Your very own way.
             </span>
           </p>
 
-          <div className="flex justify-center gap-11 lg:pt-20 pt-10 lg:pb-20 pb-0">
-            <Button variant="shop">
+          <div className="flex justify-center sm:gap-11 gap-5 lg:pt-20 pt-10 lg:pb-20 pb-0">
+            <Button variant="shop" className="text-[10px]">
               <NavLink to="/">Shop Now</NavLink>
             </Button>
-            <Button variant="mixMatch">
+            <Button variant="mixMatch" className="px-7 text-[10px]">
               <NavLink to="/">MIX & MATCH NOW</NavLink>
             </Button>
           </div>
