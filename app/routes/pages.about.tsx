@@ -319,7 +319,7 @@ export default function About() {
           </div>
 
           <div className="lg:mt-36 mt-10">
-            <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-sm text-center">
+            <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-[14px] text-center">
               We invite you to embark on a journey of self-expression and
               discovery. <br /> Whether you&apos;re picking out a statement
               piece for a special occasion or a daily <br />
@@ -364,7 +364,7 @@ export default function About() {
             className="absolute -left-16 bottom-96 2xl:w-[224px] w-[180px] lg:block hidden"
             width={224}
           />
-          <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-sm text-center">
+          <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-[14px] text-center">
             Experience the joy of picking out and carrying a bag that&apos;s
             uniquely yours. <br />{' '}
             <span className="italic font-MontserratBold">
