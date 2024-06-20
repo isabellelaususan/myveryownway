@@ -1,13 +1,13 @@
-import { NavLink, useLoaderData, type MetaFunction } from '@remix-run/react';
-import { Image } from '@shopify/hydrogen';
-import { defer, type LoaderFunctionArgs } from '@shopify/remix-oxygen';
+import {NavLink, useLoaderData, type MetaFunction} from '@remix-run/react';
+import {Image} from '@shopify/hydrogen';
+import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import type {
   FeaturedCollectionFragment,
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
 import Button from '~/components/Button';
 import Slider from '~/components/Slider';
-import { myVeryLogo } from '~/components/Slider/constants';
+import {myVeryLogo} from '~/components/Slider/constants';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];

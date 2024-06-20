@@ -110,7 +110,7 @@ export default function Collection() {
         srcSet="/icons/redRoundShape.svg"
         alt="redRoundShape"
         width={328}
-        className="absolute bottom-52 -right-28 2xl:w-[328px] w-[238px]"
+        className="absolute bottom-52 -right-28 2xl:w-[328px] w-[238px] -z-10"
       />
     </section>
   );

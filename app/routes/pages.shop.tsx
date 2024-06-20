@@ -92,7 +92,7 @@ export default function Collection() {
         srcSet="/icons/pinkLine.svg"
         alt="pinkLine"
         width={241}
-        className="absolute bottom-40 2xl:left-40 left-28 rotate-[145deg] 2xl:w-[241px] w-[170px] -z-10"
+        className="absolute bottom-40 2xl:left-40 left-28 rotate-[7deg] 2xl:w-[241px] w-[170px] -z-10"
       />
       <Image
         srcSet="/icons/redRoundShape.svg"
