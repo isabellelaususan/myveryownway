@@ -97,7 +97,7 @@ export default function App() {
   const nonce = useNonce();
   const data = useLoaderData<typeof loader>();
   const location = useLocation();
-  const isCollectionsPage = location.pathname === '/collections';
+  const isCollectionsPage = location.pathname === '/pages/collections';
 
   return (
     <html lang="en">
