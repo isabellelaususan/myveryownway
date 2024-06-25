@@ -1,4 +1,4 @@
-import {Link, useLoaderData} from '@remix-run/react';
+import {Link, useLoaderData, useNavigate} from '@remix-run/react';
 import {Image, getPaginationVariables} from '@shopify/hydrogen';
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useState} from 'react';
@@ -19,6 +19,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
 export const collection = [
   {
     title: 'Flower Bouquet',
+    link: 'flower-bouquet',
     content: [
       {
         img: '/Shop/collection/flowerOne.png',
@@ -102,6 +103,7 @@ export const collection = [
   },
   {
     title: 'On The Move',
+    link: 'on-the-move',
     content: [
       {
         img: '/Shop/collection/moveOne.png',
@@ -187,6 +189,8 @@ export default function Collections() {
   const {collections} = useLoaderData<typeof loader>();
   const [activeTab, setActiveTab] = useState(0);
 
+  const navigate = useNavigate();
+
   return (
     <div className="collections">
       {/* <Pagination connection={collections}>
@@ -238,7 +242,10 @@ export default function Collections() {
                   className={`hover:bg-white rounded-full px-4 py-1 w-fit cursor-pointer ${
                     activeTab === index ? 'bg-white' : ''
                   }`}
-                  onClick={() => setActiveTab(index)}
+                  onClick={() => {
+                    setActiveTab(index);
+                    navigate(`?${tab.link}`);
+                  }}
                 >
                   {tab?.title}
                 </button>

@@ -1,8 +1,9 @@
+import {Link} from '@remix-run/react';
 import {CartForm, Image, Money} from '@shopify/hydrogen';
 import type {CartLineUpdateInput} from '@shopify/hydrogen/storefront-api-types';
-import {Link} from '@remix-run/react';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
+import Button from './Button';
 
 type CartLine = CartApiQueryFragment['lines']['nodes'][0];
 
@@ -86,7 +87,7 @@ function CartLineItem({
         />
       )}
 
-      <div>
+      <div className="font-MontserratSemiBold w-full">
         <Link
           prefetch="intent"
           to={lineItemUrl}
@@ -123,7 +124,9 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   return (
     <div>
       <a href={checkoutUrl} target="_self">
-        <p>Continue to Checkout &rarr;</p>
+        <Button variant="shop" className="w-full !text-xl">
+          Continue to Checkout
+        </Button>
       </a>
       <br />
     </div>
@@ -140,14 +143,14 @@ export function CartSummary({
   layout: CartMainProps['layout'];
 }) {
   const className =
-    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
+    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside p-5';
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4>Totals</h4>
-      <dl className="cart-subtotal">
-        <dt>Subtotal</dt>
-        <dd>
+      <h4 className="text-xl font-MontserratSemiBold mb-2">Totals</h4>
+      <dl className="cart-subtotal flex justify-between mb-2">
+        <dt className="text-xl font-MontserratSemiBold mb-2">Subtotal</dt>
+        <dd className="text-xl font-MontserratSemiBold">
           {cost?.subtotalAmount?.amount ? (
             <Money data={cost?.subtotalAmount} />
           ) : (
@@ -179,29 +182,29 @@ function CartLineQuantity({line}: {line: CartLine}) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="cart-line-quantity">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
-      <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
-        <button
-          aria-label="Decrease quantity"
-          disabled={quantity <= 1}
-          name="decrease-quantity"
-          value={prevQuantity}
-        >
-          <span>&#8722; </span>
-        </button>
-      </CartLineUpdateButton>
-      &nbsp;
-      <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
-        <button
-          aria-label="Increase quantity"
-          name="increase-quantity"
-          value={nextQuantity}
-        >
-          <span>&#43;</span>
-        </button>
-      </CartLineUpdateButton>
-      &nbsp;
+    <div className="flex justify-between">
+      <div className="cart-line-quantity gap-2.5 text-xl">
+        <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
+          <button
+            aria-label="Decrease quantity"
+            disabled={quantity <= 1}
+            name="decrease-quantity"
+            value={prevQuantity}
+          >
+            <span className="text-xl">&#8722; </span>
+          </button>
+        </CartLineUpdateButton>
+        <small>Qty: {quantity}</small>
+        <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
+          <button
+            aria-label="Increase quantity"
+            name="increase-quantity"
+            value={nextQuantity}
+          >
+            <span className="text-xl">&#43;</span>
+          </button>
+        </CartLineUpdateButton>
+      </div>
       <CartLineRemoveButton lineIds={[lineId]} />
     </div>
   );
@@ -291,10 +294,15 @@ function CartDiscounts({
 
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
-        <div>
+        <div className="flex justify-between mb-5">
           <input type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
-          <button type="submit">Apply</button>
+          <button
+            type="submit"
+            className="bg-lightPink text-black text-[20px] rounded-full py-1 px-7 font-MontserratSemiBold"
+          >
+            Apply
+          </button>
         </div>
       </UpdateDiscountForm>
     </div>

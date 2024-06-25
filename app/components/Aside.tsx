@@ -28,7 +28,7 @@ export function Aside({
       />
       <aside>
         <header>
-          <h3>{heading}</h3>
+          <h3 className="font-MontserratSemiBold text-xl">{heading}</h3>
           <CloseAside />
         </header>
         <main>{children}</main>
