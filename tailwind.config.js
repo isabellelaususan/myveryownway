@@ -53,6 +53,7 @@ export default {
       mixMatch:
         'linear-gradient(260deg, #00b8ea 0%, #93c300 48%, #fbce08 100%)',
       collect: 'linear-gradient(180deg, #93c300 0%, #f4eded 50%, #00b5e7)',
+      onMove: 'linear-gradient(180deg, #FAD1FF 0%, #F6FFE9 50%, #FBCE08)',
     },
     keyframes: {
       marquee: {

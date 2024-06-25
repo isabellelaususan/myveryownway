@@ -66,31 +66,35 @@ export default function About() {
       </section>
 
       {/* Our story */}
-      <section className="py-20 pt-8 relative overflow-hidden">
+      <section className="md:py-20 py-14 pt-8 relative overflow-hidden">
         <Image
           srcSet="/icons/purpleChakar.svg"
           alt="purpleChakar"
           width={223}
-          className="absolute top-0 lg:-right-20 -right-14 2xl:w-[223px] lg:w-[173px] w-[119px]"
+          className="absolute top-0 lg:-right-20 md:-right-14 -right-6 2xl:w-[223px] lg:w-[173px] md:w-[119px] w-[50px]"
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
-          <div className="flex 2xl:gap-40 lg:gap-32 gap-10 2xl:pr-0 lg:pr-24">
-            <div className="w-2/5">
-              <img src={ourStory} alt="ourStory" className="w-full" />
+          <div className="flex md:flex-row flex-col 2xl:gap-40 lg:gap-32 gap-10 2xl:pr-0 lg:pr-24">
+            <div className="md:w-2/5 w-full md:order-1 order-2">
+              <img
+                src={ourStory}
+                alt="ourStory"
+                className="w-full md:px-0 px-20"
+              />
             </div>
-            <div className="w-3/5">
-              <div className="flex items-center lg:gap-12 gap-6 lg:mb-16 mb-5">
+            <div className="md:w-3/5 w-full md:order-2 order-1">
+              <div className="flex items-center md:justify-start justify-center lg:gap-12 gap-6 lg:mb-16 md:mb-5 mb-[30px]">
                 <Image
                   srcSet="/icons/skyLogo.svg"
                   alt="sky-logo"
                   width={116}
-                  className="lg:w-[116px] w-[70px]"
+                  className="lg:w-[116px] md:w-[70px] w-12"
                 />
-                <h2 className="lg:text-[80px] text-[40px] font-MontserratSemiBold">
+                <h2 className="lg:text-[80px] md:text-[40px] text-[34px] font-MontserratSemiBold">
                   Our Story
                 </h2>
               </div>
-              <p className="lg:text-[26px] text-[18px] font-MontserratRegular">
+              <p className="lg:text-[26px] md:text-[18px] text-[14px] md:text-left text-center font-MontserratRegular">
                 “My Very Own Way” emerged from a passion for fashion and a
                 desire to break away from the ordinary. Inspired by the notion
                 that{' '}
@@ -101,7 +105,7 @@ export default function About() {
                 , we set out to create a brand that offered unparalleled
                 personalization.
               </p>
-              <p className="lg:text-[26px] text-[18px] font-MontserratRegular lg:mt-14 mt-6">
+              <p className="lg:text-[26px] md:text-[18px] text-[14px] md:text-left text-center font-MontserratRegular lg:mt-14 mt-6">
                 What started as a dream quickly became a reality as we combined
                 various bag designs with a unique concept.
               </p>
@@ -109,11 +113,11 @@ export default function About() {
                 srcSet="/icons/smile.svg"
                 alt="smile"
                 width={100}
-                className="ml-auto 2xl:mr-0 lg:mr-20 mr-8"
+                className="ml-auto 2xl:mr-0 lg:mr-20 mr-8 md:w-auto w-[47px]"
               />
             </div>
           </div>
-          <p className="font-MontserratRegular lg:text-[26px] text-[20px] text-center lg:px-20 lg:pt-24 pt-11 lg:pb-24 pb-6">
+          <p className="font-MontserratRegular lg:text-[26px] md:text-[20px] text-[14px] text-center lg:px-20 lg:pt-24 pt-11 lg:pb-24 pb-6">
             Our mission is to redefine the way you view accessories. <br /> We
             strive to create a space where your imagination runs free, <br />
             where{' '}
@@ -135,7 +139,7 @@ export default function About() {
           srcSet="/icons/creamZigzag.svg"
           alt="creamZigzag"
           width={241}
-          className="absolute -left-20 bottom-96 2xl:w-[241px] w-[200px] -z-10"
+          className="absolute md:-left-20 -left-5 md:bottom-96 md:top-auto top-56 2xl:w-[241px] md:w-[200px] w-[54px] -z-10"
         />
       </section>
 
