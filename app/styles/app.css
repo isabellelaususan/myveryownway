@@ -59,6 +59,18 @@ aside {
   transition: transform 200ms ease-in-out;
 }
 
+#cart-aside aside {
+  background: #f4eded;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  max-width: 380px;
+  min-width: 380px;
+  position: fixed;
+  right: calc(-1 * 380px);
+  top: 0;
+  transition: transform 200ms ease-in-out;
+}
+
 aside header {
   align-items: center;
   /* border-bottom: 1px solid var(--color-dark); */
@@ -94,6 +106,10 @@ aside main {
   margin: 1rem;
   margin-left: 50px;
 }
+#cart-aside aside main {
+  margin: 1rem;
+  margin-left: 20px;
+}
 
 aside p {
   margin: 0 0 0.25rem;
@@ -108,7 +124,7 @@ aside li {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgb(0 0 0 / 50%);
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -264,9 +280,10 @@ aside li {
   background: white;
   border-top: 1px solid var(--color-dark);
   bottom: 0;
+  left: 0;
   padding-top: 0.75rem;
   position: absolute;
-  width: calc(var(--aside-width) - 40px);
+  width: calc(380px - 0px);
 }
 
 .cart-line-quantity {
