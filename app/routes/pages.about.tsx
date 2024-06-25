@@ -15,36 +15,36 @@ export default function About() {
   return (
     <>
       {/* Logo */}
-      <section className="lg:py-48 py-36 relative">
+      <section className="lg:py-48 md:py-36 py-20 relative">
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] md:px-10 sm:px-[30px] px-[20px] mx-auto">
           <div className="flex justify-center ">
             <Image
               srcSet="/icons/blueabout.svg"
               alt="logo"
               width={126}
-              className="absolute lg:top-24 top-12 lg:right-[38%] right-[20%] lg:w-[126px] w-[96px]"
+              className="absolute lg:top-24 md:top-12 top-11 lg:right-[38%] right-[20%] lg:w-[126px] md:w-[96px] w-[46px]"
             />
             <Image
               srcSet="/icons/redFullR.svg"
               alt="redFullR"
               width={163}
-              className="absolute top-56 2xl:right-[28%] lg:right-[22%] right-10 lg:w-[163px] w-[124px]"
+              className="absolute md:top-56 top-24 2xl:right-[28%] lg:right-[22%] right-10 lg:w-[163px] md:w-[124px] w-[60px]"
             />
             <Image
               srcSet="/Shop/about/logo.png"
               alt="logo"
               width={300}
-              className="lg:w-[300px] md:w-[229px]"
+              className="lg:w-[300px] md:w-[229px] w-[110px]"
             />
-            <div className="absolute top-36 2xl:left-[27%] lg:left-[19%] left-10">
+            <div className="absolute md:top-36 top-[62px] 2xl:left-[27%] lg:left-[19%] left-10">
               <div className="relative">
                 <Image
                   srcSet="/icons/greenabout.svg"
                   alt="greenabout"
                   width={234}
-                  className="lg:w-[234px] w-[178px]"
+                  className="lg:w-[234px] md:w-[178px] w-[86px]"
                 />
-                <h4 className="font-MontserratSemiBold lg:text-[66px] text-[50px] absolute top-4 left-4 rotate-[350deg]">
+                <h4 className="font-MontserratSemiBold lg:text-[66px] md:text-[50px] text-[24px] absolute md:top-4 top-2 md:left-4 left-2 rotate-[350deg]">
                   hello!
                 </h4>
               </div>
@@ -53,13 +53,13 @@ export default function About() {
               srcSet="/icons/pinkRound.svg"
               alt="orangeZig"
               width={100}
-              className="absolute bottom-28 2xl:left-[34%] lg:left-1/4 left-[12%] lg:w-[100px] w-[76px]"
+              className="absolute md:bottom-28 bottom-16 2xl:left-[34%] lg:left-1/4 md:left-[12%] left-16 lg:w-[100px] md:w-[76px] w-9"
             />
             <Image
               srcSet="/icons/orangeZig.svg"
               alt="orangeZig"
               width={194}
-              className="absolute lg:bottom-28 bottom-20 2xl:right-[38%] lg:right-[33%] right-1/4 -z-10 lg:w-[194px] w-[148px]"
+              className="absolute lg:bottom-28 md:bottom-20 bottom-12 2xl:right-[38%] lg:right-[33%] right-1/4 -z-10 lg:w-[194px] md:w-[148px] w-[71px]"
             />
           </div>
         </div>
