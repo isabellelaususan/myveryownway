@@ -247,7 +247,7 @@ export function CartEmpty({
   return (
     <div hidden={hidden}>
       <br />
-      <p>
+      <p className="font-MontserratSemiBold">
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
       </p>
@@ -260,7 +260,9 @@ export function CartEmpty({
           }
         }}
       >
-        Continue shopping →
+        <Button variant="shop" className="w-full !text-xl">
+          Continue shopping
+        </Button>
       </Link>
     </div>
   );
