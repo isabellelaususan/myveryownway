@@ -162,24 +162,24 @@ export default function About() {
               srcSet={storyOne}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[220px]"
+              className="lg:w-[396px] md:w-[220px] w-[101px]"
             />
             <Image
               srcSet={storyTwo}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[220px]"
+              className="lg:w-[396px] md:w-[220px] w-[101px]"
             />
             <Image
               srcSet={storyThree}
               alt="ourStory"
               width={396}
-              className="lg:w-[396px] w-[220px]"
+              className="lg:w-[396px] md:w-[220px] w-[101px]"
             />
           </div>
 
           <div className="lg:mt-36 mt-10">
-            <p className="font-MontserratRegular lg:text-[28px] text-[22px] text-center">
+            <p className="font-MontserratRegular lg:text-[28px] md:text-[22px] text-[14px] text-center">
               <span className="font-MontserratBold"> “My Very Own Way”</span>{' '}
               bags give you the absolute{' '}
               <span className="font-MontserratBold italic">
@@ -191,7 +191,7 @@ export default function About() {
               </span>{' '}
               with different straps and accessories in your color of choice.
             </p>
-            <p className="font-MontserratRegular lg:text-[28px] text-[22px] text-center mt-10">
+            <p className="font-MontserratRegular lg:text-[28px] md:text-[22px] text-[14px] text-center mt-10">
               {' '}
               Every piece is removable and interchangeable <br />
               to enable{' '}
@@ -212,9 +212,9 @@ export default function About() {
             srcSet="/Shop/about/aboutAllbag.png"
             alt="aboutAllbag"
             width={974}
-            className="block m-auto lg:my-20 my-14"
+            className="block m-auto lg:my-20 my-14 md:w-auto w-[301px]"
           />
-          <p className="font-MontserratRegular lg:text-[28px] text-[22px] text-center">
+          <p className="font-MontserratRegular lg:text-[28px] md:text-[22px] text-[14px] text-center">
             At “My Very Own Way” we believe that every accessory should be a
             canvas <br />
             for self-expression. We are not just a brand;{' '}
