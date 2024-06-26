@@ -111,6 +111,7 @@ function HeaderCtas({
       role="navigation"
     >
       <HeaderMenuMobileToggle />
+<<<<<<< Updated upstream
       <NavLink prefetch="intent" to="/account">
         <Image srcSet="/icons/user.svg" width={36} className="lg:w-9 w-6" />
         {/* <Suspense fallback="Sign in">
@@ -120,6 +121,10 @@ function HeaderCtas({
         </Suspense> */}
       </NavLink>
       {/* <SearchToggle /> */}
+=======
+      <div className="flex gap-4">
+        {/* <SearchToggle /> */}
+>>>>>>> Stashed changes
 
       <CartToggle cart={cart} />
     </nav>
