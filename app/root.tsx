@@ -12,10 +12,10 @@ import {
 } from '@remix-run/react';
 import {useNonce} from '@shopify/hydrogen';
 import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {useEffect} from 'react';
 import {Layout} from '~/components/Layout';
 import favicon from './assets/favicon.svg';
 import appStyles from './styles/app.css?url';
-
 import './styles/tailwind.css';
 
 /**
@@ -97,8 +97,25 @@ export default function App() {
   const nonce = useNonce();
   const data = useLoaderData<typeof loader>();
   const location = useLocation();
-  const isCollectionsPage = location.pathname === '/pages/collections';
 
+  const routeClasses = {
+    '/pages/collections': 'bg-collect',
+    '/pages/collections?flower-bouquet': 'bg-collect',
+    '/pages/collections?on-the-move': 'bg-onMove',
+  };
+
+  const getBodyClass = () => {
+    const currentRoute = location.pathname + location.search;
+
+    if (currentRoute !== '') {
+      return routeClasses[currentRoute] || '';
+    }
+  };
+
+  useEffect(() => {
+    const bodyClass = getBodyClass();
+    document.body.className = bodyClass;
+  }, [location]);
   return (
     <html lang="en">
       <head>
@@ -107,7 +124,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className={isCollectionsPage ? 'bg-collect' : ''}>
+      <body>
         <Layout {...data}>
           <Outlet />
         </Layout>
