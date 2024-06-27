@@ -110,18 +110,6 @@ function HeaderCtas({
     >
       <HeaderMenuMobileToggle />
       <div className="flex gap-4">
-        <NavLink prefetch="intent" to="/account">
-          <Image
-            srcSet="/icons/user.svg"
-            width={36}
-            className="lg:w-9 md:w-6 w-5"
-          />
-          {/* <Suspense fallback="Sign in">
-          <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
-          </Await>
-        </Suspense> */}
-        </NavLink>
         {/* <SearchToggle /> */}
 
         <CartToggle cart={cart} />
