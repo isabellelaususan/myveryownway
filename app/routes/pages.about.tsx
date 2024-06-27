@@ -149,7 +149,7 @@ export default function About() {
       </section>
 
       {/* Three image */}
-      <section className="relative pb-20 overflow-hidden">
+      <section className="relative md:pb-20 pb-12 overflow-hidden">
         <Image
           srcSet="/icons/greenHeart.svg"
           alt="greenHeart"
@@ -236,46 +236,46 @@ export default function About() {
       </section>
 
       {/* community */}
-      <section className="relative lg:mt-20 lg:mb-64 mb-56">
+      <section className="relative lg:mt-20 lg:mb-64 md:mb-56 mb-36">
         <Image
           srcSet="/icons/greenLine.svg"
           alt="greenLine"
-          className="absolute -left-24 top-32 lg:block"
+          className="absolute md:-left-24 left-0 top-32 lg:block w-[50px]"
           width={241}
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
           <div className=" uppercase text-center">
-            <h2 className="font-MontserratSemiBold lg:text-[85px] text-[42px] lg:mr-[27rem] mr-56 flex justify-center lg:gap-9 gap-5">
+            <h2 className="font-MontserratSemiBold lg:text-[85px] md:text-[42px] text-[20px] lg:mr-[27rem] md:mr-56 mr-36 flex justify-center lg:gap-9 md:gap-5 gap-3">
               <Image
                 srcSet="/icons/blackArrow.svg"
                 alt="blackArrow"
                 width={124}
-                className="lg:w-[124px] w-[62px]"
+                className="lg:w-[124px] md:w-[62px] w-[30px]"
               />{' '}
               Join the
             </h2>
-            <h2 className="font-MontserratExtraBold italic lg:text-[85px] text-[42px]">
+            <h2 className="font-MontserratExtraBold italic lg:text-[85px] md:text-[42px] text-[20px]">
               “My Very Own Way”
             </h2>
-            <h2 className="font-MontserratSemiBold lg:text-[55px] text-[32px] lg:ml-96 ml-56">
+            <h2 className="font-MontserratSemiBold lg:text-[55px] md:text-[32px] text-[15px] lg:ml-96 md:ml-56 ml-28">
               Community!
               <Image
                 srcSet="/icons/blackLineR.svg"
                 alt="blackLineR"
                 width={128}
-                className="block ml-auto lg:mr-52 mr-20 lg:w-[128px] w-[63px]"
+                className="block ml-auto lg:mr-52 mr-8 lg:w-[128px] md:w-[63px] sm:w-[27px] w-8"
               />
             </h2>
           </div>
 
           <Button
             variant="connect"
-            className="rotate-[3.49deg] absolute lg:top-80 top-44 2xl:left-[33rem] lg:left-52 left-20"
+            className="rotate-[3.49deg] absolute lg:top-80 md:top-44 top-20 2xl:left-[33rem] lg:left-52 md:left-20 left-8"
           >
             {' '}
             <NavLink to="/">connect with us</NavLink>
           </Button>
-          <div className="rotate-[-3.48deg] absolute lg:top-[26rem] top-60 2xl:left-[48rem] lg:left-[30rem] left-64">
+          <div className="rotate-[-3.48deg] absolute lg:top-[26rem] md:top-60 top-24 2xl:left-[48rem] lg:left-[30rem] md:left-64 left-28">
             <div className="relative mt-9">
               <Button variant="tag">
                 <NavLink to="/">tag us</NavLink>
@@ -284,7 +284,7 @@ export default function About() {
                 srcSet="/icons/redHandLogo.svg"
                 alt="redHandLogo"
                 width={120}
-                className="absolute lg:-top-14 -top-4 lg:left-64 left-40 lg:w-[120px] w-[60px]"
+                className="absolute lg:-top-14 md:-top-4 sm:-top-6 -top-4 lg:left-64 md:left-40 left-[5.4rem] lg:w-[120px] md:w-[60px] w-10"
               />
             </div>
           </div>
@@ -377,10 +377,10 @@ export default function About() {
           </p>
 
           <div className="flex justify-center sm:gap-11 gap-5 lg:pt-20 pt-10 lg:pb-20 pb-0">
-            <Button variant="shop" className="text-[10px]">
+            <Button variant="shop" className="!text-[10px]">
               <NavLink to="/">Shop Now</NavLink>
             </Button>
-            <Button variant="mixMatch" className="px-7 text-[10px]">
+            <Button variant="mixMatch" className="px-7 !text-[10px]">
               <NavLink to="/">MIX & MATCH NOW</NavLink>
             </Button>
           </div>
