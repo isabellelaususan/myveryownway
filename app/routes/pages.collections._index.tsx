@@ -118,79 +118,90 @@ export const collection = [
     content: [
       {
         img: '/Shop/collection/moveOne.png',
-        className: 'row-span-1 col-span-2 2xl:h-[388.82px] h-[346.82px]',
+        className:
+          'row-span-1 col-span-2 2xl:h-[388.82px] md:h-[346.82px] order-1',
       },
       {
         img: '/Shop/collection/moveTwo.png',
-        className: 'row-span-1 col-span-1 2xl:h-[388.82px] h-[346.82px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[388.82px] md:h-[346.82px] order-2',
       },
       {
         img: '/Shop/collection/moveThree.png',
-        className: 'row-span-1 col-span-1 2xl:h-[388.82px] h-[346.82px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[388.82px] md:h-[346.82px] order-3',
       },
       {
         img: '/Shop/collection/moveEleven.png',
-        className: 'row-span-1 col-span-1 2xl:h-[555.55px] h-[489px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[555.55px] md:h-[489px] md:order-4 order-12',
       },
       {
         img: '/Shop/collection/moveFive.png',
-        className: 'row-span-1 col-span-3 2xl:h-[555.55px] h-[489px]',
+        className:
+          'row-span-1 md:col-span-3 col-span-2 2xl:h-[555.55px] md:h-[489px] md:order-5 order-4',
       },
       {
         img: '/Shop/collection/moveSix.png',
-        className: 'row-span-2 col-span-2 2xl:h-[651px] h-[551.08px]',
+        className:
+          'row-span-2 col-span-2 2xl:h-[651px] md:h-[551.08px] md:order-6 order-[14]',
       },
       {
         img: '/Shop/collection/moveSeven.png',
-        className: 'row-span-1 col-span-1 2xl:h-[520px] h-[395.77px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[520px] md:h-[395.77px] md:order-7 order-5',
       },
       {
         img: '/Shop/collection/moveEight.png',
-        className: 'row-span-1 col-span-1 2xl:h-[520px] h-[395.77px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[520px] md:h-[395.77px] md:order-8 order-6',
       },
       {
         img: '/Shop/collection/moveTen.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234px] md:h-[204.06px] md:order-9 order-7',
       },
       {
         img: '/Shop/collection/moveNine.png',
         className:
-          'row-span-1 col-span-2 2xl:h-[670px] h-[567.11px] 2xl:mt-[-9rem] mt-[-6rem]',
+          'row-span-1 col-span-2 2xl:h-[670px] md:h-[567.11px] 2xl:mt-[-9rem] md:mt-[-6rem] order-10',
       },
       {
         img: '/Shop/collection/moveFour.png',
-        className: 'row-span-1 col-span-1 2xl:h-[526px] h-[470px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[526px] md:h-[470px] md:order-11 order-9',
       },
       {
         img: '/Shop/collection/moveTwelve.png',
         className:
-          'row-span-1 col-span-1 2xl:h-[806px] h-[719.75px] 2xl:mt-[-17.5rem] mt-[-15.5rem]',
+          'md:row-span-1 row-span-2 col-span-1 2xl:h-[806px] md:h-[719.75px] 2xl:mt-[-17.5rem] md:mt-[-15.5rem] md:order-12 order-8',
       },
       {
         img: '/Shop/collection/moveFifteen.png',
-        className: 'row-span-1 col-span-1',
+        className:
+          'md:row-span-1 row-span-2 col-span-1 md:order-[13] order-[17]',
       },
-
       {
         img: '/Shop/collection/moveThirteen.png',
-        className: 'row-span-2 col-span-1',
+        className: 'md:row-span-2 row-span-1 col-span-1 md:order-[14] order-11',
       },
       {
         img: '/Shop/collection/moveFourteen.png',
-        className: 'row-span-2 col-span-2',
+        className: 'row-span-2 col-span-2 md:order-[15] order-[13]',
       },
       {
         img: '/Shop/collection/moveSixteen.png',
-        className: 'row-span-1 col-span-1',
+        className: 'row-span-1 col-span-1 md:order-[16] order-[15]',
       },
-
       {
         img: '/Shop/collection/moveEightteen.png',
-        className: 'row-span-1 col-span-3 2xl:h-[859px] h-[756.7px]',
+        className:
+          'row-span-1 md:col-span-3 col-span-2 2xl:h-[859px] md:h-[756.7px] md:order-[17] order-12',
       },
       {
         img: '/Shop/collection/moveNineteen.png',
-        className: 'row-span-1 col-span-1 2xl:h-[859px] h-[756.7px]',
+        className:
+          'md:row-span-1 row-span-3 col-span-1 2xl:h-[859px] md:h-[756.7px] md:order-[18] order-[16]',
       },
     ],
   },
@@ -250,7 +261,7 @@ export default function Collections() {
               {collection.map((tab, index) => (
                 <button
                   key={index}
-                  className={`hover:bg-white rounded-full px-4 md:py-1 py-0.5 w-fit cursor-pointer ${
+                  className={`hover:bg-white rounded-full md:px-4 px-2 md:py-1 py-0.5 w-fit cursor-pointer ${
                     activeTab === index ? 'bg-white' : ''
                   }`}
                   onClick={() => {
