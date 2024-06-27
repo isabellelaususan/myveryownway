@@ -23,81 +23,92 @@ export const collection = [
     content: [
       {
         img: '/Shop/collection/flowerOne.png',
-        className: 'row-span-1 col-span-2 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-2 2xl:h-[234.06px] md:h-[204.06px] md:order-1 order-4',
       },
       {
         img: '/Shop/collection/flowerTwo.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234.06px] md:h-[204.06px] md:order-2 order-3',
       },
       {
         img: '/Shop/collection/flowerThree.png',
-        className: 'row-span-2 col-span-1 2xl:h-[520.13px] h-[447.13px]',
+        className:
+          'row-span-2 col-span-1 2xl:h-[520.13px] md:h-[447.13px] md:order-3 order-1',
       },
       {
         img: '/Shop/collection/flowerFour.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234.06px] md:h-[204.06px] md:order-4 order-2',
       },
       {
         img: '/Shop/collection/flowerFive.png',
-        className: 'row-span-1 col-span-2 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-2 2xl:h-[234.06px] md:h-[204.06px] order-5',
       },
       {
         img: '/Shop/collection/flowerSix.png',
-        className: 'row-span-2 col-span-1 2xl:h-[806.3px] h-[613.3px]',
+        className:
+          'row-span-2 col-span-1 2xl:h-[806.3px] md:h-[613.3px] order-6',
       },
-
       {
         img: '/Shop/collection/flowerSeven.png',
-        className: 'row-span-1 col-span-1 2xl:h-[519.73px] h-[359.73px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[519.73px] md:h-[359.73px] order-7',
       },
       {
         img: '/Shop/collection/flowerEight.png',
-        className: 'row-span-2 col-span-2 2xl:h-[640.18px] h-[540.18px]',
+        className:
+          'row-span-2 col-span-2 2xl:h-[640.18px] md:h-[540.18px] md:order-8 order-12',
       },
-
       {
         img: '/Shop/collection/flowerNine.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234.06px] md:h-[204.06px] md:order-9 order-8',
       },
-
       {
         img: '/Shop/collection/flowerTen.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234.06px] md:h-[204.06px] md:order-10 order-9',
       },
-
       {
         img: '/Shop/collection/flowerEleven.png',
-        className: 'row-span-2 col-span-1 2xl:h-[520.13px] h-[450.13px]',
+        className:
+          'row-span-2 col-span-1 2xl:h-[520.13px] md:h-[450.13px] md:order-11 order-10',
       },
       {
         img: '/Shop/collection/flowerTwelve.png',
         className:
-          'row-span-2 col-span-2 2xl:h-[680.13px] h-[520px] 2xl:mt-[-10rem] mt-[-4.4rem]',
+          'row-span-2 col-span-2 2xl:h-[680.13px] md:h-[520px] 2xl:mt-[-10rem] md:mt-[-4.4rem] md:order-12 order-[13]',
       },
-
       {
         img: '/Shop/collection/flowerThirteen.png',
-        className: 'row-span-1 col-span-1 2xl:h-[234.06px] h-[204.06px]',
+        className:
+          'row-span-1 col-span-1 2xl:h-[234.06px] md:h-[204.06px] md:order-[13] order-11',
       },
       {
         img: '/Shop/collection/flowerFourteen.png',
-        className: 'row-span-3 col-span-3 2xl:h-[555.55px] h-[490.55px]',
+        className:
+          'md:row-span-3 md:col-span-3 row-span-2 col-span-2 2xl:h-[555.55px] md:h-[490.55px] order-[14]',
       },
       {
         img: '/Shop/collection/flowerFifteen.png',
-        className: 'row-span-3 col-span-1',
+        className: 'row-span-3 col-span-1 md:block hidden md:order-[15]',
       },
       {
         img: '/Shop/collection/flowerSixteen.png',
-        className: 'row-span-2 col-span-1 2xl:h-[388.82px] h-[296.82px]',
+        className:
+          'md:row-span-2 md:col-span-1 row-span-1 col-span-1 2xl:h-[388.82px] md:h-[296.82px] order-[16]',
       },
       {
         img: '/Shop/collection/flowerSeventeen.png',
-        className: 'row-span-2 col-span-1 2xl:h-[388.82px] h-[296.82px]',
+        className:
+          'md:row-span-2 md:col-span-1 row-span-1 col-span-1 2xl:h-[388.82px] md:h-[296.82px] order-[17]',
       },
       {
         img: '/Shop/collection/flowerEighteen.png',
-        className: 'row-span-2 col-span-2 2xl:h-[388.82px] h-[296.82px]',
+        className:
+          'row-span-2 col-span-2 2xl:h-[388.82px] md:h-[296.82px] md:order-[18] order-[15]',
       },
     ],
   },
@@ -206,13 +217,13 @@ export default function Collections() {
           </div>
         )}
       </Pagination> */}
-      <section className="py-36 relative">
+      <section className="md:py-36 py-16 relative">
         <div>
           <Image
             srcSet="/icons/skyBlueCurve.svg"
             alt="skyBlueCurve"
             width={249}
-            className="absolute -left-16 2xl:top-[24rem] 2xl:w-[249px] w-[160px]"
+            className="absolute -left-16 2xl:top-[24rem] 2xl:w-[249px] w-[160px] -z-10 hidden"
           />
           <Image
             srcSet="/icons/greenHeart.svg"
@@ -224,7 +235,7 @@ export default function Collections() {
             srcSet="/icons/pinkHalfRound.svg"
             alt="pinkHalfRound"
             width={130}
-            className="absolute right-0 2xl:top-48 top-48 2xl:w-[130px] w-[70px]"
+            className="absolute right-0 2xl:top-48 top-48 2xl:w-[130px] w-[70px] -z-10"
           />
           <Image
             srcSet="/icons/orangeHalfZig.svg"
@@ -234,12 +245,12 @@ export default function Collections() {
           />
         </div>
         <div className="2xl:max-w-[1539px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
-          <div className="flex 2xl:gap-20 gap-16">
-            <div className="flex flex-col self-start gap-3 w-[22%] font-MontserratBold 2xl:text-[32px] text-2xl sticky top-[50px]">
+          <div className="md:flex 2xl:gap-20 gap-16">
+            <div className="flex flex-col self-start gap-3 md:w-[22%] w-full font-MontserratBold 2xl:text-[32px] md:text-2xl text-base md:sticky top-[50px] pb-8">
               {collection.map((tab, index) => (
                 <button
                   key={index}
-                  className={`hover:bg-white rounded-full px-4 py-1 w-fit cursor-pointer ${
+                  className={`hover:bg-white rounded-full px-4 md:py-1 py-0.5 w-fit cursor-pointer ${
                     activeTab === index ? 'bg-white' : ''
                   }`}
                   onClick={() => {
@@ -251,8 +262,8 @@ export default function Collections() {
                 </button>
               ))}
             </div>
-            <div className="w-[78%]">
-              <div className="grid grid-cols-4 gap-11">
+            <div className="md:w-[78%] w-full">
+              <div className="grid md:grid-cols-4 grid-cols-2 md:gap-11 gap-6">
                 {collection[activeTab].content.map((content, index) => (
                   <div className={content.className} key={index}>
                     <Image
