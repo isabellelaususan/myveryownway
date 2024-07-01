@@ -377,10 +377,13 @@ export default function About() {
           </p>
 
           <div className="flex justify-center sm:gap-11 gap-5 lg:pt-20 pt-10 lg:pb-20 pb-0">
-            <Button variant="shop" className="!text-[10px]">
+            <Button variant="shop" className="md:!text-[32px] !text-[10px]">
               <NavLink to="/">Shop Now</NavLink>
             </Button>
-            <Button variant="mixMatch" className="px-7 !text-[10px]">
+            <Button
+              variant="mixMatch"
+              className="px-7 md:!text-[32px] !text-[10px]"
+            >
               <NavLink to="/">MIX & MATCH NOW</NavLink>
             </Button>
           </div>
