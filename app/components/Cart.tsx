@@ -149,7 +149,7 @@ export function CartSummary({
     <div aria-labelledby="cart-summary" className={className}>
       <h4 className="text-xl font-MontserratSemiBold mb-2">Totals</h4>
       <dl className="cart-subtotal flex justify-between mb-2">
-        <dt className="text-xl font-MontserratSemiBold mb-2">Subtotal</dt>
+        <dt className="text-xl font-MontserratSemiBold mb-2">Subtotal :</dt>
         <dd className="text-xl font-MontserratSemiBold">
           {cost?.subtotalAmount?.amount ? (
             <Money data={cost?.subtotalAmount} />
@@ -253,10 +253,10 @@ export function CartEmpty({
       </p>
       <br />
       <Link
-        to="/collections"
+        to="/pages/shop"
         onClick={() => {
           if (layout === 'aside') {
-            window.location.href = '/collections';
+            window.location.href = '/pages/shop';
           }
         }}
       >
@@ -282,12 +282,11 @@ function CartDiscounts({
     <div>
       {/* Have existing discount, display it with a remove option */}
       <dl hidden={!codes.length}>
-        <div>
+        <div className="font-MontserratSemiBold">
           <dt>Discount(s)</dt>
           <UpdateDiscountForm>
-            <div className="cart-discount">
+            <div className="cart-discount pb-2.5 gap-16">
               <code>{codes?.join(', ')}</code>
-              &nbsp;
               <button>Remove</button>
             </div>
           </UpdateDiscountForm>
@@ -297,7 +296,12 @@ function CartDiscounts({
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
         <div className="flex justify-between mb-5">
-          <input type="text" name="discountCode" placeholder="Discount code" />
+          <input
+            type="text"
+            name="discountCode"
+            placeholder="Discount code"
+            className="p-2.5 rounded-xl border focus-visible:outline-0"
+          />
           &nbsp;
           <button
             type="submit"
