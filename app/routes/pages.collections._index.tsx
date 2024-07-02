@@ -179,7 +179,12 @@ export const collection = [
       {
         img: '/Shop/collection/moveFifteen.png',
         className:
-          'md:row-span-1 row-span-2 col-span-1 md:order-[13] order-[17]',
+          'md:row-span-1 row-span-2 col-span-1 md:order-[13] order-[17] md:block hidden',
+      },
+      {
+        img: '/Shop/collection/moveFifteenMobile.png',
+        className:
+          'md:row-span-1 row-span-2 col-span-1 md:order-[13] order-[17] md:hidden block',
       },
       {
         img: '/Shop/collection/moveThirteen.png',
