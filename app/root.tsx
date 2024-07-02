@@ -99,8 +99,8 @@ export default function App() {
   const location = useLocation();
 
   const routeClasses = {
-    '/pages/collections': 'bg-collect',
-    '/pages/collections?flower-bouquet': 'bg-collect',
+    '/pages/collections': 'md:bg-local bg-collect bg-fixed',
+    '/pages/collections?flower-bouquet': 'md:bg-local bg-collect bg-fixed',
     '/pages/collections?on-the-move': 'bg-onMove',
   };
 

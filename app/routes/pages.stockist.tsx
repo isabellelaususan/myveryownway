@@ -146,7 +146,7 @@ export default function Stockist() {
                 srcSet="/icons/orangeZigzag.svg"
                 alt="orangeZigzag"
                 width={325}
-                className="absolute -left-16 bottom-16 2xl:w-[255px] w-[260px]"
+                className="absolute -left-32 bottom-16"
               />
             </div>
             {/* Right */}
