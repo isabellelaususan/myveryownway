@@ -67,7 +67,7 @@ export default function Collection() {
         width={232}
         className="absolute top-[30%] -left-24 2xl:w-[232px] w-[180px]"
       />
-      <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+      <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
         <div className="flex 2xl:gap-28">
           {/* <h1>{collection.title}</h1> */}
           {/* <p className="collection-description">{collection.description}</p> */}

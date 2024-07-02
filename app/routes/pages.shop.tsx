@@ -57,7 +57,7 @@ export default function Collection() {
         width={232}
         className="absolute top-[30%] -left-24 2xl:w-[232px] w-[180px]"
       />
-      <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+      <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
         <div className="flex">
           <div className="flex flex-col self-start gap-4 w-[22%] font-MontserratBold 2xl:text-[32px] text-2xl sticky top-[50px]">
             {shop.map((tab, index) => (

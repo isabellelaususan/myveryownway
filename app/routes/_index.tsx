@@ -48,7 +48,7 @@ function FeaturedCollection({
           width={272}
           className="absolute sm:-left-20 -left-8 lg:top-96 md:top-20 sm:top-16 top-0 2xl:w-[272px] md:w-[172px] w-16 z-10"
         />
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
           <div className="flex sm:flex-row flex-col">
             <div className="sm:order-1 order-2 lg:w-[39%] w-full text-left sm:pl-0 pl-9">
               <h1 className="2xl:text-[85px] lg:text-[75px] md:text-6xl text-5xl lg:leading-[6rem] md:leading-[4rem] leading-[3.5rem] font-MontserratSemiBold uppercase">
@@ -146,7 +146,7 @@ function FeaturedCollection({
             className="absolute top-2/3"
           />
         </div>
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
           <div className="md:mb-28 mb-20 relative">
             <h1 className="lg:text-[53px] md:text-[40px] text-[22px] text-center font-MontserratBold sm:leading-[60px] leading-6">
               HOW TO PICK <br /> YOUR VERY OWN

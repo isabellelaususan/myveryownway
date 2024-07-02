@@ -231,31 +231,31 @@ export default function Collections() {
       <section className="md:py-36 py-16 relative">
         <div>
           <Image
-            srcSet="/icons/skyBlueCurve.svg"
-            alt="skyBlueCurve"
-            width={249}
-            className="absolute -left-16 2xl:top-[24rem] 2xl:w-[249px] w-[160px] -z-10 hidden"
+            srcSet="/icons/purpleStar.svg"
+            alt="purpleStar"
+            width={201}
+            className="absolute md:-right-24 -right-1 md:top-96 top-28 md:w-[201px] w-10 -z-10"
           />
           <Image
-            srcSet="/icons/greenHeart.svg"
-            alt="greenHeart"
-            width={204}
-            className="absolute -z-10 2xl:top-[22%] top-[24%] left-[22%] 2xl:w-[204px] w-[130px]"
+            srcSet="/icons/greenLineRound.svg"
+            alt="greenLineRound"
+            width={273}
+            className="absolute left-[24%] md:top-[18%] top-36 -z-10 md:w-[273px] w-[51px]"
           />
           <Image
-            srcSet="/icons/pinkHalfRound.svg"
-            alt="pinkHalfRound"
-            width={130}
-            className="absolute right-0 2xl:top-48 top-48 2xl:w-[130px] w-[70px] -z-10"
+            srcSet="/icons/pinkCurvePipe.svg"
+            alt="pinkCurvePipe"
+            width={225}
+            className="absolute md:top-[34%] top-72 md:w-[225px] w-[92px] -z-10"
           />
           <Image
-            srcSet="/icons/orangeHalfZig.svg"
-            alt="orangeHalfZig"
-            width={204}
-            className="absolute -z-10 top-[28%] right-0 2xl:w-[204px] w-[120px]"
+            srcSet="/icons/yellowBox.svg"
+            alt="yellowBox"
+            width={158}
+            className="absolute md:right-20 right-0 -z-10 md:top-[35%] top-96 md:w-[158px] w-[52px]"
           />
         </div>
-        <div className="2xl:max-w-[1539px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1539px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-10 mx-auto">
           <div className="md:flex 2xl:gap-20 gap-16">
             <div className="flex flex-col self-start gap-3 md:w-[22%] w-full font-MontserratBold 2xl:text-[32px] md:text-2xl text-base md:sticky top-[50px] pb-8">
               {collection.map((tab, index) => (

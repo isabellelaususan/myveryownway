@@ -16,7 +16,7 @@ export default function About() {
     <>
       {/* Logo */}
       <section className="lg:py-48 md:py-36 py-20 relative">
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] md:px-10 sm:px-[30px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] md:px-10 sm:px-[30px] px-5 mx-auto">
           <div className="flex justify-center ">
             <Image
               srcSet="/icons/blueabout.svg"
@@ -73,7 +73,7 @@ export default function About() {
           width={223}
           className="absolute top-0 lg:-right-20 md:-right-14 -right-6 2xl:w-[223px] lg:w-[173px] md:w-[119px] w-[50px]"
         />
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-10 px-5 mx-auto">
           <div className="flex md:flex-row flex-col 2xl:gap-40 lg:gap-32 gap-10 2xl:pr-0 lg:pr-24">
             <div className="md:w-2/5 w-full md:order-1 order-2">
               <img
@@ -154,9 +154,9 @@ export default function About() {
           srcSet="/icons/greenHeart.svg"
           alt="greenHeart"
           width={204}
-          className="absolute -right-8 2xl:top-80 top-[26rem] 2xl:w-[204px] w-[140px] lg:block hidden"
+          className="absolute md:-right-8 -right-5 2xl:top-80 md:top-[26rem] top-8 2xl:w-[204px] md:w-[140px] w-11"
         />
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-10 px-5 mx-auto">
           <div className="flex lg:gap-8 gap-3 justify-center">
             <Image
               srcSet={storyOne}
@@ -205,7 +205,7 @@ export default function About() {
             srcSet="/icons/darkPinkRound.svg"
             alt="darkPinkRound"
             width={246}
-            className="absolute -left-20 top-[45%] 2xl:w-[246px] w-[200px] lg:block hidden"
+            className="absolute md:-left-20 -left-7 md:top-[45%] top-36 2xl:w-[246px] md:w-[200px] w-14"
           />
 
           <Image
@@ -231,7 +231,7 @@ export default function About() {
           srcSet="/icons/skyBlueCurve.svg"
           alt="skyBlueCurve"
           width={249}
-          className="absolute -right-8 2xl:bottom-40 bottom-64 2xl:w-[249px] w-[160px] lg:block hidden"
+          className="absolute md:-right-8 -right-4 2xl:bottom-40 md:bottom-64 bottom-[28rem] 2xl:w-[249px] md:w-[160px] w-14"
         />
       </section>
 
@@ -240,10 +240,10 @@ export default function About() {
         <Image
           srcSet="/icons/greenLine.svg"
           alt="greenLine"
-          className="absolute md:-left-24 left-0 top-32 lg:block w-[50px]"
+          className="absolute md:-left-24 -left-5 md:top-32 top-[-25rem] lg:block md:w-[241px] w-[50px]"
           width={241}
         />
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-10 px-5 mx-auto">
           <div className=" uppercase text-center">
             <h2 className="font-MontserratSemiBold lg:text-[85px] md:text-[42px] text-[20px] lg:mr-[27rem] md:mr-56 mr-36 flex justify-center lg:gap-9 md:gap-5 gap-3">
               <Image
@@ -292,8 +292,8 @@ export default function About() {
       </section>
 
       {/* Three image */}
-      <section className="relative pb-20 overflow-hidden">
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[40px] px-[20px] mx-auto">
+      <section className="relative pb-20">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-10 px-5 mx-auto">
           <div className="flex lg:gap-8 gap-3 justify-center">
             <Image
               srcSet={BagOne}
@@ -359,13 +359,13 @@ export default function About() {
           <Image
             srcSet="/icons/yellowPipe.svg"
             alt="yellowPipe"
-            className="absolute -right-20 bottom-[40rem] 2xl:w-[247px] w-[200px] lg:block hidden"
+            className="absolute md:-right-20 -right-5 md:bottom-[40rem] md:top-auto -top-64 2xl:w-[247px] md:w-[200px] w-12"
             width={247}
           />
           <Image
             srcSet="/icons/blueHexagon.svg"
             alt="blueHexagon"
-            className="absolute -left-16 bottom-96 2xl:w-[224px] w-[180px] lg:block hidden"
+            className="absolute md:-left-16 -left-6 md:bottom-96 md:top-auto -top-56 2xl:w-[224px] md:w-[180px] w-12"
             width={224}
           />
           <p className="font-MontserratRegular lg:text-[28px] sm:text-[22px] text-[14px] text-center">
@@ -377,13 +377,10 @@ export default function About() {
           </p>
 
           <div className="flex justify-center sm:gap-11 gap-5 lg:pt-20 pt-10 lg:pb-20 pb-0">
-            <Button variant="shop" className="md:!text-[32px] !text-[10px]">
+            <Button variant="shop">
               <NavLink to="/">Shop Now</NavLink>
             </Button>
-            <Button
-              variant="mixMatch"
-              className="px-7 md:!text-[32px] !text-[10px]"
-            >
+            <Button variant="mixMatch">
               <NavLink to="/">MIX & MATCH NOW</NavLink>
             </Button>
           </div>
