@@ -33,6 +33,8 @@ export default {
       lightPink: '#F794FF',
       amber: '#ffbf00',
       lightGreen: '#00AC56',
+      aqua: '#4EDAD9',
+      brown: '#BB9881',
     },
     fontFamily: {
       MontserratBlack: ['MontserratAlternatesBlack'],
