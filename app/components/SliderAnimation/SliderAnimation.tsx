@@ -2,22 +2,22 @@ import {Image} from '@shopify/hydrogen';
 import {useState} from 'react';
 
 const images = {
-  strap: [
+  Mini: [
     '/Shop/mixMatch/strap.png',
     '/Shop/mixMatch/strap.png',
     '/Shop/mixMatch/strap.png',
   ],
-  pouch: [
+  Round: [
     '/Shop/mixMatch/pouch.png',
     '/Shop/mixMatch/pouch.png',
     '/Shop/mixMatch/pouch.png',
   ],
-  bag: [
+  Tulip: [
     '/Shop/mixMatch/bag.png',
     '/Shop/mixMatch/bag.png',
     '/Shop/mixMatch/bag.png',
   ],
-  accessories: [
+  Zigzag: [
     '/Shop/mixMatch/accessories.png',
     '/Shop/mixMatch/accessories.png',
     '/Shop/mixMatch/accessories.png',
@@ -62,13 +62,13 @@ const Slider = ({type}: SliderProps) => {
       </div>
       <div className="overflow-visible">
         <button
-          className="flex items-center justify-center absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 bg-orange w-11 h-11 rounded-full"
+          className="flex items-center justify-center absolute top-1/2 left-2 transform -translate-y-1/2 bg-brown w-11 h-11 rounded-full"
           onClick={goToPrevious}
         >
           <Image srcSet="/icons/prevArrow.svg" width={13} />
         </button>
         <button
-          className="flex items-center justify-center absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 bg-orange w-11 h-11 rounded-full"
+          className="flex items-center justify-center absolute top-1/2 right-2 transform -translate-y-1/2 bg-aqua w-11 h-11 rounded-full"
           onClick={goToNext}
         >
           <Image srcSet="/icons/nextArrow.svg" width={13} />

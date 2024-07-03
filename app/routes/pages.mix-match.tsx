@@ -5,7 +5,7 @@ import MixMatch from '~/components/MixMatch';
 export default function () {
   return (
     <>
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-36 overflow-hidden">
         <Image
           srcSet="/icons/pinkHalfRound.svg"
           alt="pinkHalfRound"
@@ -13,13 +13,13 @@ export default function () {
           className="absolute right-0 2xl:top-64 top-48 2xl:w-[134px] w-[104px]"
         />
         <Image
-          srcSet="/icons/greenHalfRound.svg"
+          srcSet="/icons/orangeHalfRound.svg"
           alt="pinkHalfRound"
           width={344}
           className="absolute left-0 2xl:top-[30rem] top-48 2xl:w-[130px] w-[110px]"
         />
-        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
-          <div className="relative border-[5px] border-black rounded-[105px] py-9 w-[66%] block m-auto">
+        <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
+          <div className="relative w-[73%] block m-auto">
             <Image
               srcSet="/icons/yellowScroll.svg"
               alt="yellowScroll"
@@ -32,7 +32,7 @@ export default function () {
               width={168}
               className="absolute bottom-80 -left-28"
             />
-            <h2 className="font-MontserratSemiBold text-center text-[85px]">
+            <h2 className="font-MontserratSemiBold text-center text-[85px] pb-[75px]">
               <span className="italic">MIX</span> &{' '}
               <span className="font-MontserratExtraBold relative">
                 MATCH
@@ -44,26 +44,53 @@ export default function () {
                 />
               </span>
             </h2>
-
-            <div className="flex">
-              <MixMatch type="strap" />
-              <div className="flex flex-col justify-center gap-10 mt-28">
-                <span className="bg-fullGreen w-6 h-6"></span>
-                <span className="bg-fullGreen w-6 h-6"></span>
+            <div className="border-[3px] border-black rounded-[80px] py-9 2xl:px-[86px] px-[43px]">
+              <div className="flex pb-8 ">
+                <div className="border-[3px] border-black rounded-[53px]">
+                  <h2 className="font-MontserratBold text-4xl text-center leading-[4rem]">
+                    Strap
+                  </h2>
+                  <MixMatch type="Mini" />
+                </div>
+                <div className="flex flex-col justify-center gap-10 mt-28 mx-9">
+                  <span className="bg-fullGreen w-6 h-6"></span>
+                  <span className="bg-fullGreen w-6 h-6"></span>
+                </div>
+                <div className="border-[3px] border-black rounded-[53px]">
+                  <h2 className="font-MontserratBold text-4xl text-center leading-[4rem]">
+                    Pouch
+                  </h2>
+                  <MixMatch type="Round" />
+                </div>
               </div>
-              <MixMatch type="pouch" />
-            </div>
-            <div className="flex">
-              <MixMatch type="bag" />
-              <div className="flex flex-col justify-center gap-10 mt-28">
-                <span className="bg-fullGreen w-6 h-6"></span>
-                <span className="bg-fullGreen w-6 h-6"></span>
+              <div className="flex">
+                <div className="border-[3px] border-black rounded-[53px]">
+                  <h2 className="font-MontserratBold text-4xl text-center leading-[4rem]">
+                    Bag
+                  </h2>
+                  <MixMatch type="Tulip" />
+                </div>
+                <div className="flex flex-col justify-center gap-10 mt-28 mx-9">
+                  <span className="bg-fullGreen w-6 h-6"></span>
+                  <span className="bg-fullGreen w-6 h-6"></span>
+                </div>
+                <div className="border-[3px] border-black rounded-[53px]">
+                  <h2 className="font-MontserratBold text-4xl text-center leading-[4rem]">
+                    Accessories
+                  </h2>
+                  <MixMatch type="Zigzag" />
+                </div>
               </div>
-              <MixMatch type="accessories" />
             </div>
           </div>
-          <div className="flex gap-8 justify-center mt-24">
-            <Button variant="addBlack" className="">
+          <div className="flex gap-8 justify-center mt-[75px]">
+            <Button
+              variant="addBlack"
+              className=""
+              onClick={() => {
+                window.location.href = window.location.href + '#cart-aside';
+              }}
+            >
               ADD TO CART
             </Button>
             <Button variant="buy" className="">
@@ -71,6 +98,12 @@ export default function () {
             </Button>
           </div>
         </div>
+        <Image
+          srcSet="/icons/pinkCurvePipeM.svg"
+          alt="skyBlueBox"
+          width={200}
+          className="absolute 2xl:left-52 left-24 2xl:bottom-44 bottom-40"
+        />
         <Image
           srcSet="/icons/skyBlueBox.svg"
           alt="skyBlueBox"

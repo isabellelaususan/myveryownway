@@ -14,11 +14,11 @@ const buttonVariants = cva(
         connect:
           'bg-cerulean hover:bg-connect lg:px-16 md:px-9 px-4 lg:text-[32px] md:text-2xl text-[11px] sm:!shadow-[8px_10px_0px_0px_#0e0d0d] !shadow-[3px_4px_0px_0px_#0e0d0d]',
         tag: 'bg-pink hover:bg-tag lg:px-20 md:px-11 px-6 lg:text-[32px] md:text-2xl text-xs sm:!shadow-[8px_10px_0px_0px_#0e0d0d] !shadow-[3px_4px_0px_0px_#0e0d0d]',
-        buy: 'bg-orange text-white hover:bg-black shadow-none',
+        buy: 'bg-lightGreen text-white hover:bg-black shadow-none',
         cart: 'bg-transparent hover:bg-black hover:text-white border-8 border-black shadow-none',
         add: 'bg-transparent hover:bg-orange text-orange hover:text-white border-2 border-orange shadow-none py-4',
         addBlack:
-          'bg-transparent hover:bg-orange text-black hover:text-white border-4 border-black hover:border-orange shadow-none',
+          'bg-transparent hover:bg-lightGreen text-lightGreen hover:text-white border-4 border-lightGreen hover:border-lightGreen shadow-none',
       },
     },
   },

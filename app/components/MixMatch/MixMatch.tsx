@@ -4,15 +4,24 @@ import Slider from '../SliderAnimation/SliderAnimation';
 import type {MixMatchProps} from './types';
 
 const optionsData = {
-  strap: ['Strap 1', 'Strap 2', 'Strap 3'],
-  pouch: ['Pouch 1', 'Pouch 2', 'Pouch 3'],
-  bag: ['Bag 1', 'Bag 2', 'Bag 3'],
-  accessories: ['Accessories 1', 'Accessories 2', 'Accessories 3'],
+  Mini: [
+    'Mini',
+    'Short',
+    'Adjustable',
+    'Nylon',
+    'Curly',
+    'Long Curly',
+    'Classy',
+    'Pearl',
+  ],
+  Round: ['Pouch', 'Boxie'],
+  Tulip: ['Tulip', 'Boxie'],
+  Zigzag: ['Zigzag', 'Boxie'],
 } as {
-  strap: string[];
-  pouch: string[];
-  bag: string[];
-  accessories: string[];
+  Mini: string[];
+  Round: string[];
+  Tulip: string[];
+  Zigzag: string[];
 };
 
 const MixMatch = ({type}: MixMatchProps) => {
@@ -55,15 +64,15 @@ const MixMatch = ({type}: MixMatchProps) => {
     };
   }, []);
 
-  const options = optionsData[type] || [];
+  const options = optionsData[type as keyof typeof optionsData] || [];
 
   return (
-    <div className="w-2/4" ref={dropdownRef}>
-      <div className="min-w-60 relative top-0 mt-10 mb-[17px] flex justify-center">
+    <div className="p-7 pt-0" ref={dropdownRef}>
+      <div className="min-w-60 relative top-0 flex justify-center">
         <div
           role="button"
           tabIndex={0}
-          className="select bg-black text-white flex justify-center items-center rounded-full px-7 py-2 transition-all duration-300 text-2xl w-auto gap-6 font-MontserratBold capitalize cursor-pointer"
+          className="select bg-black text-white flex justify-center items-center rounded-2xl px-7 py-2 mb-5 transition-all duration-300 text-2xl w-full gap-28 font-MontserratBold capitalize cursor-pointer"
           onClick={handleSelectClick}
           onKeyDown={(e) => handleKeyDown(e as any, '')}
         >
@@ -79,7 +88,7 @@ const MixMatch = ({type}: MixMatchProps) => {
           </div>
         </div>
         <ul
-          className={`absolute top-16 left-2/4 px-2 py-1 w-[-webkit-fill-available] opacity-0 hidden bg-black text-white rounded-md transform -translate-x-1/2 transition duration-200 z-10 font-MontserratRegular ${
+          className={`absolute w-full top-16 left-2/4 text-2xl opacity-0 hidden bg-black text-white rounded-[19px] transform -translate-x-1/2 transition duration-200 z-10 font-MontserratRegular ${
             isMenuOpen ? '!block !opacity-100' : ''
           }`}
         >
@@ -92,7 +101,7 @@ const MixMatch = ({type}: MixMatchProps) => {
               tabIndex={index}
               onClick={() => handleOptionClick(option)}
               onKeyDown={(e) => handleKeyDown(e, option)}
-              className="hover:bg-[#2a2d35] my-1 py-3 px-2 rounded-md cursor-pointer"
+              className="hover:bg-lightGreen py-2 px-10 rounded-[19px] cursor-pointer"
             >
               {option}
             </li>

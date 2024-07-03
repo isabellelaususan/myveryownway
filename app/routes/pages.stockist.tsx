@@ -8,7 +8,7 @@ export default function Stockist() {
         <div className="w-full mx-auto ">
           <div className="flex">
             {/* Left */}
-            <div className="border-r-[3px] pl-64 pt-32 pb-40 pr-[177px] w-[45%]">
+            <div className="border-r-[3px] pl-64 pt-32 pb-40 pr-[177px] 2xl:w-[45%] w-1/2">
               <Image
                 srcSet="/icons/blueCurve.svg"
                 alt="blueCurve"
@@ -150,7 +150,7 @@ export default function Stockist() {
               />
             </div>
             {/* Right */}
-            <div className="w-[55%]">
+            <div className="2xl:w-[55%] w-1/2">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.2927707844965!2d100.64989280525154!3d13.700709844790516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d615f87ce9771%3A0xab5eb4556e282871!2sMy%20Very%20Own%20Way%20(Showroom)!5e0!3m2!1sen!2sin!4v1719820647069!5m2!1sen!2sin"
                 className="w-full h-full"
