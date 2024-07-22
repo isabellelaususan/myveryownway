@@ -14,7 +14,7 @@ export function Footer({
         <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
       )} */}
       <div className="lg:flex block lg:px-0 lg:py-0">
-        <div className="lg:border-r-[3px] border-r-0 md:border-b-0 border-b-2 sm:w-[52%] w-full lg:pt-56 2xl:pl-60 lg:pl-44 lg:pb-20 px-16 py-9 relative">
+        <div className="lg:border-r-[3px] border-r-0 md:border-b-0 border-b-2 sm:w-[52%] w-full lg:pt-[76px] 2xl:pl-60 lg:pl-44 lg:pb-20 px-16 py-9 relative">
           <Image
             srcSet="/icons/black-zigzag.svg"
             alt="blackZigzag"
@@ -24,42 +24,14 @@ export function Footer({
           <Image
             srcSet="/icons/black-heart.svg"
             alt="blackHeart"
-            className="absolute lg:top-16 md:top-0 top-2.5 2xl:right-64 lg:right-44 md:-right-[26rem] right-12 2xl:w-[142px] md:w-[130px] w-11"
+            className="absolute lg:top-9 md:top-0 top-2.5 2xl:right-44 lg:right-12 md:-right-[26rem] right-12 2xl:w-[142px] md:w-[130px] w-11"
             width={150}
           />
-          <h2 className="sm:text-3xl text-xs font-bold sm:mb-8 mb-3 font-MontserratExtraBold">
-            CONTACT US
+          <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[34px] mb-3 font-MontserratBold leading-normal">
+            STAY IN TOUCH
           </h2>
-          <div className="flex flex-col">
-            <NavLink
-              to="mailto:myveryownway.official@gmail.com"
-              className="sm:text-2xl text-xs sm:mb-3 mb-1 hover:no-underline font-MontserratRegular cursor-pointer"
-            >
-              myveryownway.official@gmail.com
-            </NavLink>
-            <NavLink
-              to="tel:(+66) 90-969-3000"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratRegular cursor-pointer"
-            >
-              <span className="font-bold font-MontserratBold">Tel.</span> (+66)
-              90-969-3000
-            </NavLink>
-          </div>
-        </div>
-        <div className="sm:w-[48%] w-full lg:pt-56 2xl:pl-80 lg:pl-48 px-16 py-9 relative">
-          <Image
-            srcSet="/icons/curvround.svg"
-            alt="curvRound"
-            width={140}
-            className="absolute 2xl:left-20 lg:left-12 md:-left-40 left-2.5 md:bottom-0 bottom-9 lg:top-48 2xl:w-[140px] md:w-[110px] w-[35px]"
-          />
-          <Image
-            srcSet="/icons/half-round.svg"
-            alt="half-round"
-            width={189}
-            className="absolute md:left-96 -top-[2px] left-auto md:right-auto right-8 md:w-[189px] w-[55px]"
-          />
-          <ul className="sm:text-2xl text-xs lg:px-14 grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold">
+
+          <ul className="sm:text-2xl text-xs grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold w-3/4">
             {socialMedia.map((menu, index: number) => (
               <div
                 key={menu.label}
@@ -82,6 +54,67 @@ export function Footer({
               </div>
             ))}
           </ul>
+        </div>
+        <div className="sm:w-[48%] w-full lg:pt-[76px] 2xl:pl-64 lg:pl-48 px-16 py-9 relative">
+          <Image
+            srcSet="/icons/curvround.svg"
+            alt="curvRound"
+            width={140}
+            className="absolute 2xl:left-[49px] lg:left-12 md:-left-40 left-2.5 md:bottom-0 bottom-9 lg:top-48 2xl:w-[140px] md:w-[110px] w-[35px]"
+          />
+          <Image
+            srcSet="/icons/half-round.svg"
+            alt="half-round"
+            width={189}
+            className="absolute 2xl:right-52 md:right-20 -top-[2px] left-auto right-8 2xl:w-[189px] md:w-[139px] w-[55px]"
+          />
+          <Image
+            srcSet="/icons/blackStar.svg"
+            alt="blackStar"
+            width={140}
+            className="absolute top-[175px] right-0 md:w-[140px] w-[55px]"
+          />
+          <div className="flex flex-col">
+            <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[25px] mb-3 font-MontserratBold leading-normal">
+              STAY IN TOUCH
+            </h2>
+            <NavLink
+              to="mailto:myveryownway.official@gmail.com"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              FAQs
+            </NavLink>
+            <NavLink
+              to="tel:(+66) 90-969-3000"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              Terms of Service
+            </NavLink>
+            <NavLink
+              to="mailto:myveryownway.official@gmail.com"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              Shipping & Delivery
+            </NavLink>
+            <NavLink
+              to="tel:(+66) 90-969-3000"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              Contact Us
+            </NavLink>
+            <NavLink
+              to="mailto:myveryownway.official@gmail.com"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              Return Policy
+            </NavLink>
+            <NavLink
+              to="tel:(+66) 90-969-3000"
+              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+            >
+              Privacy Policy
+            </NavLink>
+          </div>
         </div>
       </div>
       <div className="bg-black w-full sm:h-16 h-4"></div>
