@@ -31,7 +31,7 @@ export function Footer({
             STAY IN TOUCH
           </h2>
 
-          <ul className="sm:text-2xl text-xs grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold w-3/4">
+          <ul className="sm:text-2xl text-xs grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold md:w-3/4">
             {socialMedia.map((menu, index: number) => (
               <div
                 key={menu.label}
@@ -74,43 +74,43 @@ export function Footer({
             width={140}
             className="absolute top-[175px] right-0 md:w-[140px] w-[55px]"
           />
-          <div className="flex flex-col">
-            <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[25px] mb-3 font-MontserratBold leading-normal">
-              STAY IN TOUCH
-            </h2>
+          <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[25px] mb-3 font-MontserratBold leading-normal">
+            SUPPORT
+          </h2>
+          <div className="md:flex flex-col grid grid-cols-2">
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               FAQs
             </NavLink>
             <NavLink
               to="tel:(+66) 90-969-3000"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               Terms of Service
             </NavLink>
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               Shipping & Delivery
             </NavLink>
             <NavLink
               to="tel:(+66) 90-969-3000"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               Contact Us
             </NavLink>
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               Return Policy
             </NavLink>
             <NavLink
               to="tel:(+66) 90-969-3000"
-              className="sm:text-2xl text-xs hover:no-underline font-MontserratBold cursor-pointer leading-9"
+              className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"
             >
               Privacy Policy
             </NavLink>
