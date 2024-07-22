@@ -2,25 +2,25 @@ import {Image} from '@shopify/hydrogen';
 import {useState} from 'react';
 
 const images = {
-  Mini: [
+  Straps: [
     '/Shop/mixMatch/strap.png',
     '/Shop/mixMatch/strap.png',
     '/Shop/mixMatch/strap.png',
   ],
-  Round: [
+  Accessories: [
+    '/Shop/mixMatch/accessories.png',
+    '/Shop/mixMatch/accessories.png',
+    '/Shop/mixMatch/accessories.png',
+  ],
+  Bag: [
     '/Shop/mixMatch/pouch.png',
     '/Shop/mixMatch/pouch.png',
     '/Shop/mixMatch/pouch.png',
   ],
-  Tulip: [
+  Pouches: [
     '/Shop/mixMatch/bag.png',
     '/Shop/mixMatch/bag.png',
     '/Shop/mixMatch/bag.png',
-  ],
-  Zigzag: [
-    '/Shop/mixMatch/accessories.png',
-    '/Shop/mixMatch/accessories.png',
-    '/Shop/mixMatch/accessories.png',
   ],
 };
 
