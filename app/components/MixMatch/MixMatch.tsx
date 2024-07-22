@@ -4,7 +4,7 @@ import Slider from '../SliderAnimation/SliderAnimation';
 import type {MixMatchProps} from './types';
 
 const optionsData = {
-  Mini: [
+  Straps: [
     'Mini',
     'Short',
     'Adjustable',
@@ -14,14 +14,26 @@ const optionsData = {
     'Classy',
     'Pearl',
   ],
-  Round: ['Pouch', 'Boxie'],
-  Tulip: ['Tulip', 'Boxie'],
-  Zigzag: ['Zigzag', 'Boxie'],
+  Accessories: [
+    'Accessories',
+    'Flower',
+    'Star',
+    'Heart',
+    'Curvy',
+    'Zigzag',
+    'Music Note',
+    'Butterfly',
+    'Moon',
+    'Clover',
+    'Alphabet',
+  ],
+  Bag: ['Pouch', 'Boxie'],
+  Pouches: ['Tulip', 'Boxie'],
 } as {
-  Mini: string[];
-  Round: string[];
-  Tulip: string[];
-  Zigzag: string[];
+  Straps: string[];
+  Pouches: string[];
+  Bag: string[];
+  Accessories: string[];
 };
 
 const MixMatch = ({type}: MixMatchProps) => {
@@ -72,7 +84,7 @@ const MixMatch = ({type}: MixMatchProps) => {
         <div
           role="button"
           tabIndex={0}
-          className="select bg-black text-white flex justify-center items-center rounded-2xl px-7 py-2 mb-5 transition-all duration-300 text-2xl w-full gap-28 font-MontserratBold capitalize cursor-pointer"
+          className="select bg-black text-white flex justify-between items-center rounded-full px-7 py-2 mb-5 transition-all duration-300 text-[32px] w-full font-MontserratBold capitalize cursor-pointer"
           onClick={handleSelectClick}
           onKeyDown={(e) => handleKeyDown(e as any, '')}
         >
@@ -80,8 +92,8 @@ const MixMatch = ({type}: MixMatchProps) => {
           <div className="w-9 h-9 bg-softPeach flex justify-center items-center rounded-full pointer-events-none">
             <Image
               srcSet="/icons/downArrow.svg"
-              className={`transition-all duration-300 pointer-events-none ${
-                isMenuOpen ? 'rotate-180' : ''
+              className={`transition-all duration-300 pointer-events-none rotate-90 ${
+                isMenuOpen ? '!rotate-0' : ''
               }`}
               width={20}
             />
