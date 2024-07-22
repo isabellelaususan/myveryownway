@@ -20,7 +20,7 @@ const tailwindClasses = [
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
   return (
-    <header className="flex justify-between items-center border-black border-b-[3px] lg:font-MontserratBold font-MontserratRegular lg:px-0 md:px-10 px-[30px]">
+    <header className="flex justify-between items-center border-black md:border-b-[3px] border-b-2 lg:font-MontserratBold font-MontserratRegular lg:px-0 md:px-10 px-[30px]">
       <NavLink
         prefetch="intent"
         to="/"
