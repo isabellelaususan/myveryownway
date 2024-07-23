@@ -149,7 +149,7 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
     // </Suspense>
 
     <div className="flex md:gap-10 gap-5">
-      <Link to="/pages/login">
+      <Link to="/account/login">
         <Image
           srcSet="/icons/user.svg"
           alt="cart"

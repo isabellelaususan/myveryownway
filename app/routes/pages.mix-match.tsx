@@ -27,7 +27,7 @@ export default function () {
               className="absolute md:bottom-40 bottom-[30px] md:-right-20 -right-5 md:w-[98px] w-[30px]"
             />
             {/* Random */}
-            <div className="absolute 2xl:right-[-21rem] md:-right-60 right-0 md:bottom-[23rem] bottom-0 hidden">
+            <div className="absolute 2xl:right-[-21rem] md:-right-60 right-0 md:bottom-[23rem] bottom-0 md:block hidden">
               <Image
                 srcSet="/icons/random.svg"
                 alt="random"
