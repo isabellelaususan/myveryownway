@@ -13,6 +13,11 @@ body {
   overflow-x: hidden;
 }
 
+input[type='radio'] {
+  height: 34px;
+  width: 34px;
+}
+
 @font-face {
   font-family: 'MontserratAlternatesBlack';
   src: url(/public/fonts/MontserratAlternates-Black.ttf);
