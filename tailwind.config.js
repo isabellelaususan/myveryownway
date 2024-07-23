@@ -35,6 +35,10 @@ export default {
       lightGreen: '#00AC56',
       aqua: '#4EDAD9',
       brown: '#BB9881',
+      secondary: '#080B13',
+      darkSilver: '#6B6B6B',
+      gray: '#B2B2B2',
+      placeholder: '#080b1333',
     },
     fontFamily: {
       MontserratBlack: ['MontserratAlternatesBlack'],

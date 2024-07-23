@@ -1,4 +1,4 @@
-import {NavLink} from '@remix-run/react';
+import {Link, NavLink} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import type {HeaderQuery} from 'storefrontapi.generated';
 import {useRootLoaderData} from '~/lib/root-data';
@@ -147,6 +147,22 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
     //     }}
     //   </Await>
     // </Suspense>
-    <Image srcSet="/icons/cart.svg" width={36} className="lg:w-9 md:w-6 w-5" />
+
+    <div className="flex md:gap-10 gap-5">
+      <Link to="/pages/login">
+        <Image
+          srcSet="/icons/user.svg"
+          alt="cart"
+          width={36}
+          className="lg:w-9 md:w-6 w-5"
+        />
+      </Link>
+      <Image
+        srcSet="/icons/cart.svg"
+        alt="cart"
+        width={36}
+        className="lg:w-9 md:w-6 w-5"
+      />
+    </div>
   );
 }
