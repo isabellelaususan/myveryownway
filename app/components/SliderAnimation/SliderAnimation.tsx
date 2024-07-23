@@ -46,7 +46,7 @@ const Slider = ({type}: SliderProps) => {
   };
 
   return (
-    <div className="relative w-[300px] max-w-xl mx-auto overflow-hidden">
+    <div className="relative md:w-[300px] w-[75px] max-w-xl mx-auto overflow-hidden">
       <div
         className="flex transition-transform duration-500"
         style={{transform: `translateX(-${currentIndex * 100}%)`}}
@@ -55,23 +55,31 @@ const Slider = ({type}: SliderProps) => {
           images[type].map((image) => (
             <div
               key={image}
-              className="min-w-full h-[305px] bg-center bg-contain"
+              className="md:min-w-full min-w-[75px] md:h-[305px] h-[75px] bg-center bg-contain"
               style={{backgroundImage: `url(${image})`}}
             />
           ))}
       </div>
       <div className="overflow-visible">
         <button
-          className="flex items-center justify-center absolute top-1/2 left-2 transform -translate-y-1/2 bg-aqua hover:bg-brown w-11 h-11 rounded-full"
+          className="flex items-center justify-center absolute top-1/2 left-2 transform -translate-y-1/2 bg-aqua hover:bg-brown md:w-11 w-3.5 md:h-11 h-3.5 rounded-full"
           onClick={goToPrevious}
         >
-          <Image srcSet="/icons/prevArrow.svg" width={13} />
+          <Image
+            srcSet="/icons/prevArrow.svg"
+            width={13}
+            className="md:w-[13px] w-1.5"
+          />
         </button>
         <button
-          className="flex items-center justify-center absolute top-1/2 right-2 transform -translate-y-1/2 bg-aqua hover:bg-brown w-11 h-11 rounded-full"
+          className="flex items-center justify-center absolute top-1/2 right-2 transform -translate-y-1/2 bg-aqua hover:bg-brown md:w-11 w-3.5 md:h-11 h-3.5 rounded-full"
           onClick={goToNext}
         >
-          <Image srcSet="/icons/nextArrow.svg" width={13} />
+          <Image
+            srcSet="/icons/nextArrow.svg"
+            width={13}
+            className="md:w-[13px] w-1.5"
+          />
         </button>
       </div>
     </div>

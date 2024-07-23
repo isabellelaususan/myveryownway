@@ -325,29 +325,6 @@ export type RecommendedProductsQuery = {
     >;
   };
 };
-
-export type CustomerCreateMutationVariables = StorefrontAPI.Exact<{
-  input: StorefrontAPI.CustomerCreateInput;
-  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
-  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
-}>;
-
-export type CustomerCreateMutation = {
-  customerCreate?: StorefrontAPI.Maybe<{
-    customer?: StorefrontAPI.Maybe<Pick<StorefrontAPI.Customer, 'id'>>;
-    customerUserErrors: Array<
-      Pick<StorefrontAPI.CustomerUserError, 'code' | 'field' | 'message'>
-    >;
-  }>;
-};
-
-export type RegisterLoginMutationVariables = StorefrontAPI.Exact<{
-  input: StorefrontAPI.CustomerAccessTokenCreateInput;
-  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
-  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
-}>;
-
-export type RegisterLoginMutation = {
   customerAccessTokenCreate?: StorefrontAPI.Maybe<{
     customerUserErrors: Array<
       Pick<StorefrontAPI.CustomerUserError, 'code' | 'field' | 'message'>
@@ -1213,16 +1190,6 @@ interface GeneratedQueryTypes {
   };
 }
 
-interface GeneratedMutationTypes {
-  '#graphql\n  mutation customerCreate(\n    $input: CustomerCreateInput!,\n    $country: CountryCode,\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    customerCreate(input: $input) {\n      customer {\n        id\n      }\n      customerUserErrors {\n        code\n        field\n        message\n      }\n    }\n  }\n': {
-    return: CustomerCreateMutation;
-    variables: CustomerCreateMutationVariables;
-  };
-  '#graphql\n  mutation registerLogin(\n    $input: CustomerAccessTokenCreateInput!,\n    $country: CountryCode,\n    $language: LanguageCode\n  ) @inContext(country: $country, language: $language) {\n    customerAccessTokenCreate(input: $input) {\n      customerUserErrors {\n        code\n        field\n        message\n      }\n      customerAccessToken {\n        accessToken\n        expiresAt\n      }\n    }\n  }\n': {
-    return: RegisterLoginMutation;
-    variables: RegisterLoginMutationVariables;
-  };
-}
 
 declare module '@shopify/hydrogen' {
   interface StorefrontQueries extends GeneratedQueryTypes {}
