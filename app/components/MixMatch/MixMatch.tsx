@@ -79,20 +79,20 @@ const MixMatch = ({type}: MixMatchProps) => {
   const options = optionsData[type as keyof typeof optionsData] || [];
 
   return (
-    <div className="p-7 pt-0" ref={dropdownRef}>
-      <div className="min-w-60 relative top-0 flex justify-center">
+    <div className="md:p-7 p-2 !pt-0" ref={dropdownRef}>
+      <div className="md:min-w-60 min-w-20 relative top-0 flex justify-center">
         <div
           role="button"
           tabIndex={0}
-          className="select bg-black text-white flex justify-between items-center rounded-full px-7 py-2 mb-5 transition-all duration-300 text-[32px] w-full font-MontserratBold capitalize cursor-pointer"
+          className="select bg-black text-white flex justify-between items-center rounded-full md:px-7 px-2 md:py-2 py-1 md:mb-5 mb-1 transition-all duration-300 md:text-[32px] text-[9px] w-full font-MontserratBold capitalize cursor-pointer"
           onClick={handleSelectClick}
           onKeyDown={(e) => handleKeyDown(e as any, '')}
         >
           {selectedOption || type}
-          <div className="w-9 h-9 bg-softPeach flex justify-center items-center rounded-full pointer-events-none">
+          <div className="md:w-9 w-2.5 md:h-9 h-2.5 bg-softPeach flex justify-center items-center rounded-full pointer-events-none">
             <Image
               srcSet="/icons/downArrow.svg"
-              className={`transition-all duration-300 pointer-events-none rotate-90 ${
+              className={`transition-all duration-300 pointer-events-none rotate-90 md:w-5 w-1 ${
                 isMenuOpen ? '!rotate-0' : ''
               }`}
               width={20}
