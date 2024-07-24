@@ -8,7 +8,7 @@ export default function Stockist() {
         <div className="w-full mx-auto ">
           <div className="flex md:flex-row flex-col">
             {/* Left */}
-            <div className="md:border-r-[3px] border-t-2 md:pl-64 pl-[31px] md:pt-32 pt-[27px] md:pb-40 pb-[27px] md:pr-[177px] pr-[31px] 2xl:w-[45%] md:w-1/2 w-full md:order-1 order-2">
+            <div className="md:border-r-[3px] md:border-0 border-t-2 md:pl-64 pl-[31px] md:pt-32 pt-[27px] md:pb-40 pb-[27px] md:pr-[177px] pr-[31px] 2xl:w-[45%] md:w-1/2 w-full md:order-1 order-2">
               <Image
                 srcSet="/icons/blueCurve.svg"
                 alt="blueCurve"
@@ -20,7 +20,7 @@ export default function Stockist() {
               </h2>
               <div className="md:block grid grid-cols-2 gap-[27px] mt-[21px]">
                 {/* 1 */}
-                <div className="md:mt-20">
+                <div className="md:mt-[72px]">
                   <div className="flex items-start md:gap-8 gap-2">
                     <Image
                       srcSet="/icons/location.svg"
@@ -61,7 +61,7 @@ export default function Stockist() {
                   </div>
                 </div>
                 {/* 2 */}
-                <div className="md:mt-20">
+                <div className="md:mt-10">
                   <div className="flex md:gap-8 gap-2 items-start">
                     <Image
                       srcSet="/icons/location.svg"
@@ -104,7 +104,7 @@ export default function Stockist() {
                   </div>
                 </div>
                 {/* 3 */}
-                <div className="md:mt-20">
+                <div className="md:mt-10">
                   <div className="flex items-start md:gap-8 gap-2">
                     <Image
                       srcSet="/icons/location.svg"
@@ -145,7 +145,7 @@ export default function Stockist() {
                   </div>
                 </div>
                 {/* 4 */}
-                <div className="md:mt-20">
+                <div className="md:mt-10">
                   <div className="flex items-start md:gap-8 gap-2">
                     <Image
                       srcSet="/icons/location.svg"
