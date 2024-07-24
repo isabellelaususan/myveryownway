@@ -88,7 +88,7 @@ export default function Login() {
         WELCOME BACK
       </h1>
       <p className="font-MontserratBold text-2xl text-center px-[350px] mt-5 mb-[33px]">
-        Log in to your account so you can track your orders and check out
+        Log in to your account so you can track your orders <br /> and check out
         faster!
       </p>
       <Form method="PUT" className="w-[640px] block m-[0_auto]">
@@ -101,7 +101,7 @@ export default function Login() {
             placeholder="Email"
             aria-label="Email"
             minLength={2}
-            className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular"
+            className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
           />
           <div className="relative">
             <input
@@ -112,7 +112,7 @@ export default function Login() {
               placeholder="Password"
               aria-label="Password"
               minLength={2}
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular w-full"
+              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular w-full placeholder:text-placeholder"
             />
             <Link
               to="/account/recover"

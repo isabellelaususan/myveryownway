@@ -77,7 +77,7 @@ export function Footer({
           <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[25px] mb-3 font-MontserratBold leading-normal">
             SUPPORT
           </h2>
-          <div className="md:flex flex-col grid grid-cols-2">
+          <div className="md:flex flex-col grid grid-cols-2 gap-2">
             <NavLink
               to="mailto:myveryownway.official@gmail.com"
               className="sm:text-2xl text-[10px] hover:no-underline font-MontserratBold cursor-pointer md:leading-9"

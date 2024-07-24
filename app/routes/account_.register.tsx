@@ -128,7 +128,7 @@ export default function Register() {
         <h1 className="font-MontserratBold text-[96px] text-center">
           CREATE ACCOUNT
         </h1>
-        <p className="font-MontserratBold text-2xl text-center mt-5 mb-[33px]">
+        <p className="font-MontserratBold text-2xl text-center mt-2 mb-[33px]">
           Only a few steps to sign up and it will make your life a lot easier!
         </p>
         <Form method="POST" className="w-[640px] block m-[0_auto]">
@@ -138,7 +138,7 @@ export default function Register() {
               name="firstName"
               type="text"
               autoComplete="given-name"
-              placeholder="First name"
+              placeholder="First Name"
               aria-label="First name"
               minLength={2}
               className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
@@ -148,7 +148,7 @@ export default function Register() {
               name="lastName"
               type="text"
               autoComplete="family-name"
-              placeholder="Last name"
+              placeholder="Last Name"
               aria-label="Last name"
               minLength={2}
               className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
@@ -159,7 +159,7 @@ export default function Register() {
               type="email"
               autoComplete="email"
               required
-              placeholder="Email address"
+              placeholder="Email"
               aria-label="Email address"
               // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
@@ -187,6 +187,34 @@ export default function Register() {
               required
               className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
             />
+            <label
+              htmlFor="birthDate"
+              className="font-MontserratRegular text-placeholder text-[32px] mb-0 mx-6"
+            >
+              Birthday
+            </label>
+            <input
+              id="birthDate"
+              name="birthDate"
+              type="date"
+              autoComplete="off"
+              aria-label="Birth Date"
+              // defaultValue={customer.lastName ?? ''}
+              minLength={2}
+              className="border-black border rounded-[30px] px-[23px] py-3.5 mt-0 mx-6 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+            />
+            <div className="flex items-start gap-4">
+              <input
+                id="radio"
+                name="password"
+                type="radio"
+                autoComplete="off"
+                aria-label="radio"
+              />
+              <p className="text-darkSilver font-MontserratBold text-xl">
+                Subscribe to our newsletter for new launches, exclusives & more!
+              </p>
+            </div>
           </fieldset>
           {error ? (
             <p>
@@ -197,7 +225,11 @@ export default function Register() {
           ) : (
             <br />
           )}
-          <Button type="submit" variant="sign" className="mt-5">
+          <Button
+            type="submit"
+            variant="sign"
+            className="mt-5 !font-MontserratSemiBold"
+          >
             {' '}
             SIGN UP
           </Button>

@@ -75,7 +75,7 @@ export default function Collection() {
             {shop.map((tab, index) => (
               <button
                 key={index}
-                className={`hover:bg-fullGreen rounded-full md:px-[30px] px-[22px] md:py-2.5 py-1 cursor-pointer w-fit ${
+                className={`rounded-full md:px-[30px] px-[22px] md:py-2.5 py-1 cursor-pointer w-fit uppercase ${
                   // activeTab === index ? 'bg-fullGreen' : ''
                   tailwindClasses[index % tailwindClasses.length]
                 }`}
@@ -160,7 +160,7 @@ function ProductItem({
       )}
       <div className="md:py-7 md:px-8 px-2.5 py-2.5 flex items-end justify-between gap-3 border-t-2 border-black bg-softPeach  md:rounded-b-[45px] rounded-b-[16px]">
         <div>
-          <h4 className="flex flex-wrap font-MontserratBold md:text-2xl text-sm md:pb-4 pb-1.5">
+          <h4 className="flex flex-wrap font-MontserratBold md:text-2xl text-sm md:pb-4 pb-1.5 uppercase">
             {product.title}
           </h4>
           <small>

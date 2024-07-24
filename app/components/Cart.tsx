@@ -133,7 +133,7 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   return (
     <div className="mt-[55px] px-[74px]">
       <a href={checkoutUrl} target="_self">
-        <Button variant="login" className="w-full !text-xl">
+        <Button variant="login" className="w-full !text-[32px]">
           Checkout
         </Button>
       </a>
