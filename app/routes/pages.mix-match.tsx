@@ -16,7 +16,7 @@ export default function () {
           srcSet="/icons/orangeHalfRound.svg"
           alt="pinkHalfRound"
           width={344}
-          className="absolute md:left-0 -left-0.5 2xl:top-[30rem] md:top-48 top-12 2xl:w-[130px] md:w-[110px] w-[44px]"
+          className="absolute md:left-0 -left-0.5 2xl:top-[30rem] md:top-48 top-12 2xl:w-[150px] md:w-[110px] w-[44px]"
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
           <div className="relative md:w-[73%] w-[262px] block m-auto">
@@ -34,7 +34,7 @@ export default function () {
                 width={197}
                 className="2xl:w-[197px] w-[132px]"
               />
-              <h4 className="uppercase 2xl:text-[19px] text-xs font-MontserratBold absolute 2xl:top-12 top-8 2xl:left-7 left-[21px] rotate-[10deg]">
+              <h4 className="uppercase 2xl:text-[19px] text-xs font-MontserratBold absolute 2xl:top-14 top-8 2xl:left-7 left-[21px] rotate-[10deg]">
                 randomize!
               </h4>
             </div>
@@ -49,7 +49,7 @@ export default function () {
               srcSet="/icons/blueHand.svg"
               alt="blueHand"
               width={168}
-              className="absolute md:bottom-80 bottom-[90px] md:-left-28 -left-8 md:w-[168px] w-14"
+              className="absolute md:bottom-80 bottom-[90px] md:-left-44 -left-8 md:w-[168px] w-14"
             />
             <h2 className="relative font-MontserratSemiBold text-center md:text-[93px] text-[31px] md:pb-[95px] pb-9">
               <Image
@@ -120,7 +120,7 @@ export default function () {
             >
               ADD TO CART
             </Button>
-            <Button variant="buy" className="">
+            <Button variant="addBlack" className="">
               BUY NOW
             </Button>
           </div>

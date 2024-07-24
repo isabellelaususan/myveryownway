@@ -12,10 +12,10 @@ const optionsData = {
     'Curly',
     'Long Curly',
     'Classy',
+    'Chain',
     'Pearl',
   ],
   Accessories: [
-    'Accessories',
     'Flower',
     'Star',
     'Heart',
@@ -115,7 +115,7 @@ const MixMatch = ({type}: MixMatchProps) => {
           </div>
         </div>
         <ul
-          className={`absolute w-full md:top-16 top-4 left-2/4 text-2xl opacity-0 hidden bg-black text-white md:rounded-[19px] rounded-lg transform -translate-x-1/2 transition duration-200 z-10 font-MontserratRegular ${
+          className={`absolute w-full md:top-16 top-4 left-2/4 text-2xl opacity-0 hidden bg-black text-white md:rounded-[30px] rounded-lg transform -translate-x-1/2 transition duration-200 z-10 font-MontserratRegular ${
             isMenuOpen ? '!block !opacity-100' : ''
           }`}
         >
@@ -128,7 +128,7 @@ const MixMatch = ({type}: MixMatchProps) => {
               tabIndex={index}
               onClick={() => handleOptionClick(option)}
               onKeyDown={(e) => handleKeyDown(e, option)}
-              className="hover:bg-lightGreen md:py-2 py-0.5 md:px-10 px-3 md:rounded-[19px] rounded-lg cursor-pointer md:text-2xl text-[10px] leading-normal"
+              className="hover:bg-lightGreen md:py-2 py-0.5 md:px-10 px-3 md:rounded-[30px] rounded-lg cursor-pointer md:text-2xl text-[10px] leading-normal"
             >
               {option}
             </li>
