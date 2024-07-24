@@ -135,7 +135,7 @@ export default function () {
           srcSet="/icons/skyBlueBox.svg"
           alt="skyBlueBox"
           width={200}
-          className="absolute 2xl:right-52 md:right-24 right-0 2xl:bottom-44 md:bottom-40 bottom-10 md:w-[200px] w-[65px]"
+          className="absolute 2xl:right-52 md:right-24 right-0 2xl:bottom-44 md:bottom-40 bottom-10 md:w-[200px] w-12"
         />
       </section>
     </>
