@@ -39,6 +39,7 @@ export default {
       darkSilver: '#6B6B6B',
       gray: '#B2B2B2',
       placeholder: '#080b1333',
+      remove: '#707070',
     },
     fontFamily: {
       MontserratBlack: ['MontserratAlternatesBlack'],

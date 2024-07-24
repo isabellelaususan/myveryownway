@@ -31,7 +31,7 @@ function CartDetails({layout, cart}: CartMainProps) {
   const cartHasItems = !!cart && cart.totalQuantity > 0;
 
   return (
-    <div className="cart-details">
+    <div className="cart-details w-[789px] block m-[0_auto]">
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
@@ -54,7 +54,7 @@ function CartLines({
 
   return (
     <div aria-labelledby="cart-lines">
-      <ul>
+      <ul className="flex flex-col gap-[55px]">
         {lines.nodes.map((line) => (
           <CartLineItem key={line.id} line={line} layout={layout} />
         ))}
@@ -73,17 +73,19 @@ function CartLineItem({
   const {id, merchandise} = line;
   const {product, title, image, selectedOptions} = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
+  const {id: lineId, quantity} = line;
 
   return (
-    <li key={id} className="cart-line">
+    <li key={id} className="flex">
       {image && (
         <Image
           alt={title}
           aspectRatio="1/1"
           data={image}
-          height={100}
+          height={266}
           loading="lazy"
-          width={100}
+          width={240}
+          className="!mr-[26px] rounded-[40px] border-black border-[3px]"
         />
       )}
 
@@ -98,21 +100,28 @@ function CartLineItem({
             }
           }}
         >
-          <p>
+          <p className="text-[35px]">
             <strong>{product.title}</strong>
           </p>
         </Link>
-        <CartLinePrice line={line} as="span" />
-        <ul>
-          {selectedOptions.map((option) => (
-            <li key={option.name}>
-              <small>
-                {option.name}: {option.value}
-              </small>
-            </li>
-          ))}
-        </ul>
-        <CartLineQuantity line={line} />
+
+        <div className="flex justify-between pb-[57px] pt-10">
+          <ul>
+            {selectedOptions.map((option) => (
+              <li key={option.name} className="font-MontserratSemiBold">
+                <small className="flex gap-6 text-[22px]">
+                  <span className="font-MontserratBold">{option.name}:</span>{' '}
+                  {option.value}
+                </small>
+              </li>
+            ))}
+          </ul>
+          <CartLineQuantity line={line} />
+        </div>
+        <div className="flex justify-between">
+          <CartLinePrice line={line} as="span" />
+          <CartLineRemoveButton lineIds={[lineId]} />
+        </div>
       </div>
     </li>
   );
@@ -122,10 +131,10 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   if (!checkoutUrl) return null;
 
   return (
-    <div>
+    <div className="mt-[55px] px-[74px]">
       <a href={checkoutUrl} target="_self">
-        <Button variant="shop" className="w-full !text-xl">
-          Continue to Checkout
+        <Button variant="login" className="w-full !text-xl">
+          Checkout
         </Button>
       </a>
       <br />
@@ -147,8 +156,8 @@ export function CartSummary({
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
-      <h4 className="text-xl font-MontserratSemiBold mb-2">Totals</h4>
-      <dl className="cart-subtotal flex justify-between mb-2">
+      {/* <h4 className="text-xl font-MontserratSemiBold mb-2">Totals</h4> */}
+      {/* <dl className="cart-subtotal flex justify-between mb-2">
         <dt className="text-xl font-MontserratSemiBold mb-2">Subtotal :</dt>
         <dd className="text-xl font-MontserratSemiBold">
           {cost?.subtotalAmount?.amount ? (
@@ -157,7 +166,7 @@ export function CartSummary({
             '-'
           )}
         </dd>
-      </dl>
+      </dl> */}
       {children}
     </div>
   );
@@ -170,7 +179,12 @@ function CartLineRemoveButton({lineIds}: {lineIds: string[]}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button type="submit">Remove</button>
+      <button
+        type="submit"
+        className="text-[22px] text-remove font-MontserratMedium"
+      >
+        Remove
+      </button>
     </CartForm>
   );
 }
@@ -182,8 +196,9 @@ function CartLineQuantity({line}: {line: CartLine}) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="flex justify-between">
-      <div className="cart-line-quantity gap-2.5 text-xl">
+    <div className="flex justify-between items-center">
+      <span className="text-[22px] pr-6">Quantity:</span>
+      <div className="cart-line-quantity gap-3.5 text-xl">
         <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
           <button
             aria-label="Decrease quantity"
@@ -194,7 +209,7 @@ function CartLineQuantity({line}: {line: CartLine}) {
             <span className="text-xl">&#8722; </span>
           </button>
         </CartLineUpdateButton>
-        <small>Qty: {quantity}</small>
+        <small className="text-[22px]">{quantity}</small>
         <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
           <button
             aria-label="Increase quantity"
@@ -205,7 +220,6 @@ function CartLineQuantity({line}: {line: CartLine}) {
           </button>
         </CartLineUpdateButton>
       </div>
-      <CartLineRemoveButton lineIds={[lineId]} />
     </div>
   );
 }
@@ -231,7 +245,8 @@ function CartLinePrice({
   }
 
   return (
-    <div>
+    <div className="text-[22px] font-MontserratSemiBold flex gap-6">
+      <span className="font-MontserratBold">Price:</span>{' '}
       <Money withoutTrailingZeros {...passthroughProps} data={moneyV2} />
     </div>
   );
@@ -244,12 +259,14 @@ export function CartEmpty({
   hidden: boolean;
   layout?: CartMainProps['layout'];
 }) {
+  console.log(hidden, 'hidden');
+
   return (
-    <div hidden={hidden}>
+    <div hidden={hidden} className="w-[789px] m-[0_auto]">
       <br />
-      <p className="font-MontserratSemiBold">
-        Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
-        started!
+      <p className="font-MontserratSemiBold text-center text-2xl pb-12">
+        Looks like you haven&rsquo;t added anything yet, <br /> let&rsquo;s get
+        you started!
       </p>
       <br />
       <Link
@@ -260,7 +277,7 @@ export function CartEmpty({
           }
         }}
       >
-        <Button variant="shop" className="w-full !text-xl">
+        <Button variant="login" className="w-full !text-xl">
           Continue shopping
         </Button>
       </Link>
@@ -295,7 +312,7 @@ function CartDiscounts({
 
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
-        <div className="flex justify-between mb-5">
+        {/* <div className="flex justify-between mb-5">
           <input
             type="text"
             name="discountCode"
@@ -309,7 +326,8 @@ function CartDiscounts({
           >
             Apply
           </button>
-        </div>
+        </div> */}
+        <></>
       </UpdateDiscountForm>
     </div>
   );
