@@ -1,8 +1,8 @@
 import {Await, type MetaFunction} from '@remix-run/react';
-import {Suspense} from 'react';
 import type {CartQueryDataReturn} from '@shopify/hydrogen';
 import {CartForm} from '@shopify/hydrogen';
 import {json, type ActionFunctionArgs} from '@shopify/remix-oxygen';
+import {Suspense} from 'react';
 import {CartMain} from '~/components/Cart';
 import {useRootLoaderData} from '~/lib/root-data';
 
@@ -87,8 +87,22 @@ export default function Cart() {
   const cartPromise = rootData.cart;
 
   return (
-    <div className="cart">
-      <h1>Cart</h1>
+    <div className="relative pb-64">
+      <img
+        src="/login/cartGreen.svg"
+        alt="cartGreen"
+        width={183}
+        className="absolute -top-2.5 left-80"
+      />
+      <img
+        src="/login/cartCurve.svg"
+        alt="cartGreen"
+        width={120}
+        className="absolute top-24 right-0"
+      />
+      <h1 className="font-MontserratBold text-[96px] text-center uppercase pt-32 pb-28">
+        Shopping Cart
+      </h1>
       <Suspense fallback={<p>Loading cart ...</p>}>
         <Await
           resolve={cartPromise}
@@ -99,6 +113,18 @@ export default function Cart() {
           }}
         </Await>
       </Suspense>
+      <img
+        src="/login/cartPinkPipe.svg"
+        alt="cartGreen"
+        width={130}
+        className="absolute bottom-96 left-0"
+      />
+      <img
+        src="/login/cartStar.svg"
+        alt="cartGreen"
+        width={185}
+        className="absolute bottom-20 2xl:right-80 right-56 2xl:w-[185px] w-[130px]"
+      />
     </div>
   );
 }
