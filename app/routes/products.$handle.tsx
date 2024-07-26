@@ -112,7 +112,7 @@ export default function Product() {
         className="absolute -left-20 top-40"
       />
       <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
-        <div className="product flex gap-32">
+        <div className="flex gap-32">
           <ProductImage image={selectedVariant?.image} />
           <ProductMain
             selectedVariant={selectedVariant}
