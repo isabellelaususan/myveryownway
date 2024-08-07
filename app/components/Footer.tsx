@@ -2,7 +2,6 @@ import {NavLink} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import type {FooterQuery, HeaderQuery} from 'storefrontapi.generated';
 import {useRootLoaderData} from '~/lib/root-data';
-import {socialMedia} from './Footer/constants';
 
 export function Footer({
   menu,
@@ -10,9 +9,6 @@ export function Footer({
 }: FooterQuery & {shop: HeaderQuery['shop']}) {
   return (
     <footer className="md:border-t-[3px] border-t-2 lg:overflow-auto overflow-clip">
-      {/* {menu && shop?.primaryDomain?.url && (
-        <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
-      )} */}
       <div className="lg:flex block lg:px-0 lg:py-0">
         <div className="lg:border-r-[3px] border-r-0 md:border-b-0 border-b-2 sm:w-[52%] w-full lg:pt-[76px] 2xl:pl-60 lg:pl-44 lg:pb-20 px-16 py-9 relative">
           <Image
@@ -30,29 +26,13 @@ export function Footer({
           <h2 className="sm:text-[32px] text-xs font-bold sm:mb-[34px] mb-3 font-MontserratBold leading-normal">
             STAY IN TOUCH
           </h2>
-
           <ul className="sm:text-2xl text-xs grid grid-cols-2 lg:gap-7 gap-y-4 md:gap-x-44 gap-x-8 font-MontserratBold md:w-3/4">
-            {socialMedia.map((menu, index: number) => (
-              <div
-                key={menu.label}
-                className="flex items-center sm:gap-3 gap-2.5"
-              >
-                <img
-                  src={menu.icon}
-                  alt="icon"
-                  width={40}
-                  className="md:w-10 w-6"
-                />
-                <NavLink
-                  to={menu.path}
-                  key={index}
-                  className="hover:no-underline cursor-pointer"
-                  target="_blank"
-                >
-                  {menu.label}
-                </NavLink>
-              </div>
-            ))}
+            {menu && shop?.primaryDomain?.url && (
+              <FooterMenu
+                menu={menu}
+                primaryDomainUrl={shop.primaryDomain.url}
+              />
+            )}
           </ul>
         </div>
         <div className="sm:w-[48%] w-full lg:pt-[76px] 2xl:pl-64 lg:pl-48 px-16 py-9 relative">
@@ -132,7 +112,7 @@ function FooterMenu({
   const {publicStoreDomain} = useRootLoaderData();
 
   return (
-    <nav className="footer-menu" role="navigation">
+    <>
       {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
@@ -143,30 +123,36 @@ function FooterMenu({
             ? new URL(item.url).pathname
             : item.url;
         const isExternal = !url.startsWith('/');
-        return isExternal ? (
-          <a
-            href={url}
+        return (
+          <li
+            role="navigation"
+            className="flex items-center sm:gap-3 gap-2.5"
             key={item.id}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="text-black"
           >
-            {item.title}
-          </a>
-        ) : (
-          <NavLink
-            end
-            key={item.id}
-            prefetch="intent"
-            // style={activeLinkStyle}
-            className="text-black"
-            to={url}
-          >
-            {item.title}
-          </NavLink>
+            <img
+              src={`/icons/${item?.title}.svg`}
+              alt="icon"
+              width={40}
+              className="md:w-10 w-6"
+            />
+            {isExternal ? (
+              <a
+                href={url}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-black"
+              >
+                {item.title}
+              </a>
+            ) : (
+              <NavLink end prefetch="intent" className="text-black" to={url}>
+                {item.title}
+              </NavLink>
+            )}
+          </li>
         );
       })}
-    </nav>
+    </>
   );
 }
 

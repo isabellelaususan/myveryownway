@@ -19,6 +19,7 @@ const tailwindClasses = [
 
 export function Header({header, isLoggedIn, cart}: HeaderProps) {
   const {shop, menu} = header;
+
   return (
     <header className="flex justify-between items-center border-black md:border-b-[3px] border-b-2 lg:font-MontserratBold font-MontserratRegular lg:px-0 md:px-10 px-[30px]">
       <NavLink
@@ -28,7 +29,7 @@ export function Header({header, isLoggedIn, cart}: HeaderProps) {
         end
       >
         <Image
-          srcSet="/icons/round-logo.svg"
+          srcSet={shop?.brand?.logo?.image?.url}
           className="lg:w-12 md:w-6 w-[32px]"
           width={48}
         />
@@ -157,12 +158,14 @@ function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
           className="lg:w-9 md:w-6 w-5"
         />
       </Link>
-      <Image
-        srcSet="/icons/cart.svg"
-        alt="cart"
-        width={36}
-        className="lg:w-9 md:w-6 w-5"
-      />
+      <Link to="/cart">
+        <Image
+          srcSet="/icons/cart.svg"
+          alt="cart"
+          width={36}
+          className="lg:w-9 md:w-6 w-5"
+        />
+      </Link>
     </div>
   );
 }
