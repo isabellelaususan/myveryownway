@@ -124,11 +124,9 @@ export default function Policy() {
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
           <div className="flex 2xl:gap-40 gap-32 2xl:pr-0 pr-24">
             <div className="w-2/5">
-              <Card
-                children={
-                  <img src={ourStory} alt="ourStory" className="w-full" />
-                }
-              />
+              <Card>
+                <img src={ourStory} alt="ourStory" className="w-full" />
+              </Card>
             </div>
             <div className="w-3/5">
               <div className="flex items-center gap-12 mb-16">
@@ -201,24 +199,15 @@ export default function Policy() {
         />
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
           <div className="flex gap-8 justify-center">
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={
-                <img src={storyOne} alt="ourStory" className="w-full" />
-              }
-            />
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={
-                <img src={storyTwo} alt="ourStory" className="w-full" />
-              }
-            />
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={
-                <img src={storyThree} alt="ourStory" className="w-full" />
-              }
-            />
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={storyOne} alt="ourStory" className="w-full" />
+            </Card>
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={storyTwo} alt="ourStory" className="w-full" />
+            </Card>
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={storyThree} alt="ourStory" className="w-full" />
+            </Card>
           </div>
 
           <div className="mt-36">
@@ -337,20 +326,15 @@ export default function Policy() {
       <section className="relative pb-20 overflow-hidden">
         <div className="2xl:max-w-[1410px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto">
           <div className="flex gap-8 relative">
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={<img src={BagOne} alt="ourStory" className="w-full" />}
-            />
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={<img src={BagTwo} alt="ourStory" className="w-full" />}
-            />
-            <Card
-              className="border-[3px] border-black rounded-[29px]"
-              children={
-                <img src={BagThree} alt="ourStory" className="w-full" />
-              }
-            />
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={BagOne} alt="ourStory" className="w-full" />
+            </Card>
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={BagTwo} alt="ourStory" className="w-full" />
+            </Card>
+            <Card className="border-[3px] border-black rounded-[29px]">
+              <img src={BagThree} alt="ourStory" className="w-full" />
+            </Card>
 
             <Image
               srcSet="/icons/redFlower.svg"

@@ -14,7 +14,7 @@ import {useNonce} from '@shopify/hydrogen';
 import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useEffect} from 'react';
 import {Layout} from '~/components/Layout';
-import favicon from './assets/favicon.svg';
+import favicon from './assets/favicon.ico';
 import appStyles from './styles/app.css?url';
 import './styles/tailwind.css';
 

@@ -205,9 +205,6 @@ function ProductMain({
       <br />
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          window.location.href = '/cart';
-        }}
         lines={
           selectedVariant
             ? [
@@ -321,24 +318,26 @@ function AddToCartButton({
 }) {
   return (
     <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
-      {(fetcher: FetcherWithComponents<any>) => (
-        <>
-          <input
-            name="analytics"
-            type="hidden"
-            value={JSON.stringify(analytics)}
-          />
-          <Button
-            variant="add"
-            type="submit"
-            onClick={onClick}
-            disabled={disabled ?? fetcher.state !== 'idle'}
-            className="text-2xl mt-16"
-          >
-            {children}
-          </Button>
-        </>
-      )}
+      {(fetcher: FetcherWithComponents<any>) => {
+        return (
+          <>
+            <input
+              name="analytics"
+              type="hidden"
+              value={JSON.stringify(analytics)}
+            />
+            <Button
+              variant="add"
+              type="submit"
+              onClick={onClick}
+              disabled={disabled ?? fetcher.state !== 'idle'}
+              className="text-2xl mt-16"
+            >
+              {children}
+            </Button>
+          </>
+        );
+      }}
     </CartForm>
   );
 }

@@ -1,5 +1,11 @@
 import {Link} from '@remix-run/react';
-import {CartForm, Image, Money} from '@shopify/hydrogen';
+import {
+  CartForm,
+  Image,
+  Money,
+  OptimisticInput,
+  useOptimisticData,
+} from '@shopify/hydrogen';
 import type {CartLineUpdateInput} from '@shopify/hydrogen/storefront-api-types';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
@@ -75,8 +81,17 @@ function CartLineItem({
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
   const {id: lineId, quantity} = line;
 
+  const optimistic = useOptimisticData<{
+    action?: 'removing';
+    quantity?: number;
+  }>(id);
+
   return (
-    <li key={id} className="flex">
+    <li
+      key={id}
+      className="flex"
+      style={{display: optimistic?.action === 'removing' ? 'none' : 'flex'}}
+    >
       {image && (
         <Image
           alt={title}
@@ -179,6 +194,7 @@ function CartLineRemoveButton({lineIds}: {lineIds: string[]}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
+      <OptimisticInput id={lineIds[0]} data={{action: 'removing'}} />
       <button
         type="submit"
         className="text-[22px] text-remove font-MontserratMedium"
