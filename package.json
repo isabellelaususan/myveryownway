@@ -31,7 +31,9 @@
     "isbot": "^3.8.0",
     "npm": "^10.8.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
@@ -54,6 +56,7 @@
     "@types/eslint": "^8.4.10",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
+    "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^9.1.0",

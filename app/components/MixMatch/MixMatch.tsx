@@ -47,7 +47,7 @@ const optionsData = {
   Accessories: string[];
 };
 
-const MixMatch = ({type}: MixMatchProps) => {
+const MixMatch = ({type, className, ...props}: MixMatchProps) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -90,12 +90,12 @@ const MixMatch = ({type}: MixMatchProps) => {
   const options = optionsData[type as keyof typeof optionsData] || [];
 
   return (
-    <div className="md:p-7 p-2 !pt-0" ref={dropdownRef}>
+    <div className="md:p-7 p-2 !pt-0" ref={dropdownRef} {...props}>
       <div className="md:min-w-60 min-w-20 relative top-0 flex justify-center">
         <div
           role="button"
           tabIndex={0}
-          className={`select bg-black text-white md:border-[3px] border-[1px] border-black flex justify-between items-center rounded-full md:px-7 px-2 md:py-1.5 py-0 md:mb-5 mb-1 transition-all duration-300 md:text-[32px] text-[9px] w-full md:font-MontserratBold font-MontserratSemiBold capitalize cursor-pointer ${
+          className={`select bg-black text-white md:border-[3px] border-[1px] border-black flex justify-between items-center rounded-full md:px-7 px-2 md:py-1.5 py-0 md:mb-5 mb-1 transition-all duration-300 md:text-[32px] text-[9px] w-full md:font-MontserratBold font-MontserratSemiBold capitalize cursor-pointer leading-none ${
             isMenuOpen ? '!bg-[#f4eded] !text-black' : ''
           }`}
           onClick={handleSelectClick}

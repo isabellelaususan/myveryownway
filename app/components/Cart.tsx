@@ -69,7 +69,7 @@ function CartLines({
   );
 }
 
-function CartLineItem({
+export function CartLineItem({
   layout,
   line,
 }: {
@@ -205,7 +205,7 @@ function CartLineRemoveButton({lineIds}: {lineIds: string[]}) {
   );
 }
 
-function CartLineQuantity({line}: {line: CartLine}) {
+export function CartLineQuantity({line}: {line: CartLine}) {
   if (!line || typeof line?.quantity === 'undefined') return null;
   const {id: lineId, quantity} = line;
   const prevQuantity = Number(Math.max(0, quantity - 1).toFixed(0));
@@ -275,8 +275,6 @@ export function CartEmpty({
   hidden: boolean;
   layout?: CartMainProps['layout'];
 }) {
-  console.log(hidden, 'hidden');
-
   return (
     <div hidden={hidden} className="w-[789px] m-[0_auto]">
       <br />
