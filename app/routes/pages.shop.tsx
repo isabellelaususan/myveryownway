@@ -1,4 +1,9 @@
-import {Link, useLoaderData, type MetaFunction} from '@remix-run/react';
+import {
+  Link,
+  useLoaderData,
+  useSearchParams,
+  type MetaFunction,
+} from '@remix-run/react';
 import {
   Image,
   Money,
@@ -6,7 +11,7 @@ import {
   getPaginationVariables,
 } from '@shopify/hydrogen';
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import type {ProductItemFragment} from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
 
@@ -17,37 +22,49 @@ export const meta: MetaFunction<typeof loader> = () => {
 export async function loader({request, context}: LoaderFunctionArgs) {
   const {storefront} = context;
   const paginationVariables = getPaginationVariables(request, {
-    pageBy: 8,
+    pageBy: 9,
   });
 
+  const url = new URL(request.url);
+  const tag = url.searchParams.get('tag');
+
   const {products} = await storefront.query(CATALOG_QUERY, {
-    variables: {...paginationVariables},
+    variables: {...paginationVariables, query: `tag:${tag}`},
   });
 
   return json({products});
 }
 
-const tailwindClasses = [
-  'hover:bg-darkYellow active:bg-lightPink',
-  'hover:bg-pink',
-  'hover:bg-[#93C300]',
-  'hover:bg-skyBlue',
-  'hover:bg-[#FF4AB4]',
-  'hover:bg-yellow',
-];
+const tailwindClasses = {
+  bags: 'hover:bg-darkYellow active:bg-darkYellow',
+  straps: 'hover:bg-pink',
+  pouches: 'hover:bg-[#93C300]',
+  accessories: 'hover:bg-skyBlue',
+  wallets: 'hover:bg-[#FF4AB4]',
+  clothing: 'hover:bg-yellow',
+};
+
+const activeClasses = {
+  bags: 'bg-darkYellow',
+  straps: 'bg-pink',
+  pouches: 'bg-[#93C300]',
+  accessories: 'bg-skyBlue',
+  wallets: 'bg-[#FF4AB4]',
+  clothing: 'bg-yellow',
+};
 
 export const shop = [
   {
-    title: 'BAGS',
+    title: 'Bags',
   },
   {
-    title: 'STRAPS',
+    title: 'Straps',
   },
   {
-    title: 'POUCHES',
+    title: 'Pouches',
   },
   {
-    title: 'ACCESSORIES',
+    title: 'Accessories',
   },
   {
     title: 'Wallets',
@@ -59,7 +76,13 @@ export const shop = [
 
 export default function Collection() {
   const {products} = useLoaderData<typeof loader>();
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState('bags');
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    setSearchParams({tag: 'bags'});
+  }, []);
 
   return (
     <section className="md:py-24 py-[55px] relative">
@@ -75,11 +98,17 @@ export default function Collection() {
             {shop.map((tab, index) => (
               <button
                 key={index}
-                className={`rounded-full md:px-[30px] px-[22px] md:py-2.5 py-1 cursor-pointer w-fit uppercase ${
-                  // activeTab === index ? 'bg-fullGreen' : ''
-                  tailwindClasses[index % tailwindClasses.length]
+                className={`${
+                  tailwindClasses[tab.title.toLowerCase()]
+                } rounded-full md:px-[30px] px-[22px] md:py-2.5 py-1 cursor-pointer w-fit uppercase ${
+                  activeTab === tab.title.toLowerCase()
+                    ? activeClasses[tab.title.toLowerCase()]
+                    : ''
                 }`}
-                onClick={() => setActiveTab(index)}
+                onClick={() => {
+                  setActiveTab(tab.title.toLowerCase());
+                  setSearchParams({tag: tab.title.toLowerCase()});
+                }}
               >
                 {tab?.title}
               </button>
@@ -87,15 +116,15 @@ export default function Collection() {
           </div>
           <Pagination connection={products}>
             {({nodes, isLoading, PreviousLink, NextLink}) => (
-              <>
+              <div>
                 <PreviousLink>
                   {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
                 </PreviousLink>
                 <ProductsGrid products={nodes} />
-                <NextLink>
+                <NextLink className="text-center flex justify-center cursor-pointer my-4">
                   {isLoading ? 'Loading...' : <span>Load more ↓</span>}
                 </NextLink>
-              </>
+              </div>
             )}
           </Pagination>
         </div>
@@ -230,8 +259,9 @@ const CATALOG_QUERY = `#graphql
     $last: Int
     $startCursor: String
     $endCursor: String
+    $query: String
   ) @inContext(country: $country, language: $language) {
-    products(first: $first, last: $last, before: $startCursor, after: $endCursor) {
+    products(first: $first, last: $last, before: $startCursor, after: $endCursor, query:$query) {
       nodes {
         ...ProductItem
       }
