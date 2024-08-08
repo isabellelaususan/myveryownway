@@ -112,7 +112,7 @@ export default function () {
           </div>
           <div className="flex md:gap-8 gap-4 justify-center md:mt-[75px] mt-6">
             <Button
-              variant="addBlack"
+              variant="addGreen"
               className=""
               onClick={() => {
                 window.location.href = window.location.href + '#cart-aside';
@@ -120,7 +120,7 @@ export default function () {
             >
               ADD TO CART
             </Button>
-            <Button variant="addBlack" className="">
+            <Button variant="addGreen" className="">
               BUY NOW
             </Button>
           </div>

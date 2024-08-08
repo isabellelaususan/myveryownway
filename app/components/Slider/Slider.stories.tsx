@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Slider from "./Slider";
-import { myVeryLogo } from "./constants";
+import type {Meta, StoryObj} from '@storybook/react';
+import Slider from './Slider';
+import {myVeryLogo} from './constants';
 
 const meta = {
-  title: "Components/Slider",
+  title: 'Components/Slider',
   component: Slider,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
 } satisfies Meta<typeof Slider>;
 
