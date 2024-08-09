@@ -18,6 +18,11 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  ssr: {
+    optimizeDeps: {
+      include: ['react-slick'],
+    },
+  },
   build: {
     // Allow a strict Content-Security-Policy
     // withtout inlining assets as base64:

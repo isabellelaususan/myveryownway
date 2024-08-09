@@ -18,6 +18,10 @@ input[type='radio'] {
   width: 34px;
 }
 
+.slick-next {
+  transform: rotate(180deg) !important;
+}
+
 @font-face {
   font-family: 'MontserratAlternatesBlack';
   src: url(/public/fonts/MontserratAlternates-Black.ttf);

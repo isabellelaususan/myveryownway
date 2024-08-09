@@ -19,13 +19,18 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {defer, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {Suspense, useState} from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import type {
   ProductFragment,
   ProductVariantFragment,
   ProductVariantsQuery,
 } from 'storefrontapi.generated';
+import Arrow from '~/assets/Icons/Arrow';
+import Favorite from '~/assets/Icons/Favorite';
 import Button from '~/components/Button';
-import MixMatch from '~/components/MixMatch';
+import ShopMixMatch from '~/components/ShopMixMatch';
 import {getVariantUrl} from '~/lib/variants';
 import Content from './Content';
 
@@ -107,67 +112,22 @@ export default function Product() {
   const {product, variants} = useLoaderData<typeof loader>();
   const {selectedVariant} = product;
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 2800,
-    cssEase: 'linear',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const items = [
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-    {
-      imgSrc: '/Shop/Iris_1.jpg',
-    },
-  ];
-
   return (
     <section className="py-24 relative overflow-hidden">
       <Image
         srcSet="/icons/orangeStar.svg"
         width={176}
         className="absolute -left-20 top-40"
+      />
+      <Image
+        srcSet="/icons/creamWaves.svg"
+        width={150}
+        className="absolute left-0 bottom-[34%]"
+      />
+      <Image
+        srcSet="/icons/greenCurve.svg"
+        width={70}
+        className="absolute right-0 bottom-56"
       />
       <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
         <div className="flex gap-32">
@@ -180,15 +140,8 @@ export default function Product() {
         </div>
 
         {/* Slider */}
-        <div className="my-10">
-          <h1 className="font-MontserratBold text-4xl">Slider</h1>
-          {/* <ShopSlider {...settings}>
-            {items.map((item, index) => (
-              <div className="bg-white p-[15px] !w-[302px] mr-5" key={index}>
-                <img src={item.imgSrc} alt="hello" width="272" height="160" />
-              </div>
-            ))}
-          </ShopSlider> */}
+        <div className="my-20">
+          <ShopSlider />
         </div>
 
         <div className="border-b-2 border-black pb-14 mb-16">
@@ -196,35 +149,50 @@ export default function Product() {
         </div>
         <div className="flex justify-between">
           <div className="flex items-center [&>div:nth-child(1)]:!p-0 gap-7">
-            <MixMatch type="Straps" className="" />
+            <ShopMixMatch type="Straps" className="" />
             <div>
               <h4 className="font-MontserratBold text-[28px] mb-5">
-                Curly <span className="block">THB 350</span>
+                Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button variant="addGreen" className="!text-xl !px-5 sm:!py-2.5">
-                ADD TO CART
+              <Button
+                variant="addGreen"
+                className="lg:!text-xl !px-5 md:!py-2.5"
+              >
+                <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
+                  ADD TO CART
+                </div>
               </Button>
             </div>
           </div>
           <div className="flex items-center">
-            <MixMatch type="Pouches" />
+            <ShopMixMatch type="Pouches" />
             <div>
               <h4 className="font-MontserratBold text-[28px] mb-5">
-                Curly <span className="block">THB 350</span>
+                Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button variant="addGreen" className="!text-xl !px-5 sm:!py-2.5">
-                ADD TO CART
+              <Button
+                variant="addGreen"
+                className="lg:!text-xl !px-5 md:!py-2.5"
+              >
+                <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
+                  ADD TO CART
+                </div>
               </Button>
             </div>
           </div>
           <div className="flex items-center">
-            <MixMatch type="Accessories" />
+            <ShopMixMatch type="Accessories" />
             <div>
               <h4 className="font-MontserratBold text-[28px] mb-5">
-                Curly <span className="block">THB 350</span>
+                Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button variant="addGreen" className="!text-xl !px-5 sm:!py-2.5">
-                ADD TO CART
+              <Button
+                variant="addGreen"
+                className="lg:!text-xl !px-5 md:!py-2.5"
+              >
+                <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
+                  ADD TO CART
+                </div>
               </Button>
             </div>
           </div>
@@ -236,6 +204,89 @@ export default function Product() {
         className="absolute -right-14 top-2/4"
       />
     </section>
+  );
+}
+
+function ShopSlider() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const shopSlider = [
+    {
+      imgSrc: '/Shop/Iris_1.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_2.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_3.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_4.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_5.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_6.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_7.png',
+    },
+    {
+      imgSrc: '/Shop/Iris_8.png',
+    },
+  ];
+
+  return (
+    <div className="slider-container">
+      <Slider {...settings}>
+        {shopSlider.map((img, i) => (
+          <div key={i} className="px-5">
+            <img
+              src={img.imgSrc}
+              alt="Iris"
+              width={387}
+              height={500}
+              className="w-[387px] h-[500px]"
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
 
@@ -251,17 +302,15 @@ function ProductImage({image}: {image: ProductVariantFragment['image']}) {
         data={image}
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
-        className="border-[3px] border-black rounded-[42px]"
       />
-      <div className="flex items-center justify-center gap-12 mt-7">
+      <p className="font-MontserratSemiBold text-xl mt-8">
+        *Please note that this item does not include the strap.
+      </p>
+      <div className="flex gap-12 mt-7">
         {/* CartLineQuantity Add */}
         {/* <CartLineQuantity /> */}
-        <Button variant="addGreen" className="">
-          ADD TO CART
-        </Button>
-        <Button variant="buyGreen" className="">
-          BUY NOW
-        </Button>
+        <Button variant="addGreen">ADD TO CART</Button>
+        <Button variant="buyGreen">BUY NOW</Button>
       </div>
     </div>
   );
@@ -435,7 +484,6 @@ function ProductForm({
       >
         {({option}) => <ProductOptions key={option.name} option={option} />}
       </VariantSelector>
-      <br />
     </div>
   );
 }
@@ -445,29 +493,37 @@ function ProductOptions({option}: {option: VariantOption}) {
     <>
       <div className="product-options" key={option.name}>
         <div className="flex items-start justify-between">
-          <h5 className="font-MontserratBold text-4xl mb-14">{option.name}:</h5>
-          <img src="/Shop/Favorite.svg" alt="Favorite" />
+          <h5 className="font-MontserratBold text-4xl mb-[38px]">
+            {option.name}:
+          </h5>
+          <Favorite className="cursor-pointer" />
         </div>
-        <div className="product-options-grid justify-center gap-5">
+        <div className="product-options-grid gap-5">
           {option.values.map(({value, isAvailable, isActive, to}) => {
             return (
-              <Link
-                className=" w-12 h-12 rounded-full border-black border-2"
-                key={option.name + value}
-                prefetch="intent"
-                preventScrollReset
-                replace
-                to={to}
-                style={{
-                  background: value,
-                  border: isActive
-                    ? '1px solid black'
-                    : '1px solid transparent',
-                  opacity: isAvailable ? 1 : 0.3,
-                }}
-              >
-                {/* {value} */}
-              </Link>
+              <>
+                <div className="hover:border-black hover:border border border-softPeach rounded-full relative">
+                  <Link
+                    className=" w-12 h-12 rounded-full block m-[4px] group"
+                    key={option.name + value}
+                    prefetch="intent"
+                    preventScrollReset
+                    replace
+                    to={to}
+                    style={{
+                      background: value,
+                      // border: isActive
+                      // ? '1px solid black'
+                      // : '1px solid transparent',
+                      opacity: isAvailable ? 1 : 0.3,
+                    }}
+                  >
+                    <p className="hidden group-hover:block font-MontserratRegular text-xs absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      {value}
+                    </p>
+                  </Link>
+                </div>
+              </>
             );
           })}
         </div>
