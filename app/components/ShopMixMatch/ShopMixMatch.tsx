@@ -139,7 +139,7 @@ const ShopMixMatch = ({type, className, ...props}: MixMatchProps) => {
               tabIndex={index}
               onClick={() => handleOptionClick(option)}
               onKeyDown={(e) => handleKeyDown(e, option)}
-              className={`hover:bg-lightGreen md:py-2 py-0.5 md:px-10 px-3 md:rounded-[30px] rounded-lg cursor-pointer md:text-2xl text-[10px] leading-normal ${
+              className={`md:py-2 py-0.5 md:px-10 px-3 md:rounded-[30px] rounded-lg cursor-pointer md:text-2xl text-[10px] leading-normal ${
                 tailwindClasses[index % tailwindClasses.length]
               }`}
             >

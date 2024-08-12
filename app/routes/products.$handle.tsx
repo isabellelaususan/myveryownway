@@ -30,6 +30,7 @@ import type {
 import Arrow from '~/assets/Icons/Arrow';
 import Favorite from '~/assets/Icons/Favorite';
 import Button from '~/components/Button';
+import ProductSlider from '~/components/ProductSlider';
 import ShopMixMatch from '~/components/ShopMixMatch';
 import {getVariantUrl} from '~/lib/variants';
 import Content from './Content';
@@ -154,14 +155,12 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button
-                variant="addGreen"
-                className="lg:!text-xl !px-5 md:!py-2.5"
-              >
+
+              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
-              </Button>
+              </button>
             </div>
           </div>
           <div className="flex items-center">
@@ -170,14 +169,11 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button
-                variant="addGreen"
-                className="lg:!text-xl !px-5 md:!py-2.5"
-              >
+              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
-              </Button>
+              </button>
             </div>
           </div>
           <div className="flex items-center">
@@ -186,14 +182,11 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <Button
-                variant="addGreen"
-                className="lg:!text-xl !px-5 md:!py-2.5"
-              >
+              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -281,7 +274,7 @@ function ShopSlider() {
               alt="Iris"
               width={387}
               height={500}
-              className="w-[387px] h-[500px]"
+              className="w-[387px] h-[470px]"
             />
           </div>
         ))}
@@ -296,20 +289,23 @@ function ProductImage({image}: {image: ProductVariantFragment['image']}) {
   }
   return (
     <div className="product-image relative w-[42%]">
-      <Image
+      {/* <Image
         alt={image.altText || 'Product Image'}
         aspectRatio="1/1"
         data={image}
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
-      />
+      /> */}
+      <ProductSlider />
       <p className="font-MontserratSemiBold text-xl mt-8">
         *Please note that this item does not include the strap.
       </p>
       <div className="flex gap-12 mt-7">
         {/* CartLineQuantity Add */}
         {/* <CartLineQuantity /> */}
-        <Button variant="addGreen">ADD TO CART</Button>
+        <button className="button lg:text-[28px] font-MontserratBold text-fullGreen hover:text-white border-4 border-fullGreen rounded-full flex items-center justify-center sm:!py-2 !py-1 sm:px-7 px-3">
+          ADD TO CART
+        </button>
         <Button variant="buyGreen">BUY NOW</Button>
       </div>
     </div>
