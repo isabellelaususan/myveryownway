@@ -100,7 +100,7 @@ export function CartLineItem({
           height={266}
           loading="lazy"
           width={240}
-          className="!mr-[26px] rounded-[40px] border-black border-[3px]"
+          className="!mr-[26px] rounded-[40px]"
         />
       )}
 
@@ -367,7 +367,7 @@ function UpdateDiscountForm({
   );
 }
 
-function CartLineUpdateButton({
+export function CartLineUpdateButton({
   children,
   lines,
 }: {

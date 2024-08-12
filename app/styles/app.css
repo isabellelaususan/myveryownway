@@ -503,9 +503,9 @@ aside li {
 }
 
 .product-main {
-  align-self: start;
-  position: sticky;
-  top: 6rem;
+  /* align-self: start; */
+  /* position: sticky; */
+  /* top: 6rem; */
 }
 
 .product-price-on-sale {
