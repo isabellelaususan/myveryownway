@@ -111,16 +111,10 @@ export default function () {
             </div>
           </div>
           <div className="flex md:gap-8 gap-4 justify-center md:mt-[75px] mt-6">
-            <Button
-              variant="addGreen"
-              className=""
-              onClick={() => {
-                window.location.href = window.location.href + '#cart-aside';
-              }}
-            >
+            <button className="button_pair lg:text-[28px] font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center md:px-10 px-4 md:py-2 py-1.5">
               ADD TO CART
-            </Button>
-            <Button variant="addGreen" className="">
+            </button>
+            <Button variant="buyGreen" className="">
               BUY NOW
             </Button>
           </div>
