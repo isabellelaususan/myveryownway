@@ -131,7 +131,7 @@ export default function Product() {
         className="absolute right-0 bottom-56"
       />
       <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
-        <div className="flex gap-32">
+        <div className="flex 2xl:gap-32 gap-16">
           <ProductImage image={selectedVariant?.image} />
           <ProductMain
             selectedVariant={selectedVariant}
@@ -156,7 +156,7 @@ export default function Product() {
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
 
-              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
@@ -169,7 +169,7 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
@@ -182,7 +182,7 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <button className="button_pair lg:text-xl font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
                   ADD TO CART
                 </div>
@@ -203,7 +203,7 @@ export default function Product() {
 function ShopSlider() {
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 800,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -274,7 +274,7 @@ function ShopSlider() {
               alt="Iris"
               width={387}
               height={500}
-              className="w-[387px] h-[470px]"
+              className="w-[387px] 2xl:h-[470px] h-[350px]"
             />
           </div>
         ))}
@@ -297,16 +297,20 @@ function ProductImage({image}: {image: ProductVariantFragment['image']}) {
         sizes="(min-width: 45em) 50vw, 100vw"
       /> */}
       <ProductSlider />
-      <p className="font-MontserratSemiBold text-xl mt-8">
+      <p className="font-MontserratSemiBold 2xl:text-xl text-[17px] mt-8">
         *Please note that this item does not include the strap.
       </p>
+      {/* CartLineQuantity Add */}
+      <div className="text-[33px] font-MontserratBold pr-6 mt-[30px]">
+        Quantity :
+      </div>
       <div className="flex gap-12 mt-7">
-        {/* CartLineQuantity Add */}
-        {/* <CartLineQuantity /> */}
-        <button className="button lg:text-[28px] font-MontserratBold text-fullGreen hover:text-white border-4 border-fullGreen rounded-full flex items-center justify-center sm:!py-2 !py-1 sm:px-7 px-3">
+        <button className="button 2xl:text-[28px] xl:text-[22px] text-lg font-MontserratBold text-fullGreen hover:text-white border-4 border-fullGreen rounded-full flex items-center justify-center sm:py-2 py-1 2xl:px-7 xl:px-5 px-3">
           ADD TO CART
         </button>
-        <Button variant="buyGreen">BUY NOW</Button>
+        <Button variant="buyGreen" className="2xl:!text-[28px] xl:!text-[22px]">
+          BUY NOW
+        </Button>
       </div>
     </div>
   );
@@ -363,7 +367,9 @@ function ProductMain({
   return (
     <div className="product-main w-[58%]">
       <div className="flex justify-between items-center">
-        <h1 className="font-MontserratBold text-[75px]">{title}</h1>
+        <h1 className="font-MontserratBold 2xl:text-[75px] text-[65px]">
+          {title}
+        </h1>
         <ProductPrice selectedVariant={selectedVariant} />
       </div>
       <br />
@@ -391,7 +397,7 @@ function ProductMain({
       </Suspense>
 
       <div className="mt-20">
-        <div className="flex gap-16">
+        <div className="flex 2xl:gap-16 gap-8">
           {ServiceData.map((service, i) => (
             <div
               key={service.title}
@@ -399,7 +405,7 @@ function ProductMain({
               onKeyDown={(event) => handleKeyDown(event, i)}
               role="button"
               tabIndex={0}
-              className={`text-2xl font-MontserratBold px-6 pt-1 rounded-full flex-shrink-0 ${
+              className={`2xl:text-2xl text-xl font-MontserratBold px-6 pt-1 rounded-full flex-shrink-0 ${
                 i === selectedIndex ? 'bg-yellow relative' : ''
               }   cursor-pointer flex items-center justify-between`}
             >
@@ -443,7 +449,7 @@ function ProductPrice({
   selectedVariant: ProductFragment['selectedVariant'];
 }) {
   return (
-    <div className="flex justify-center items-center bg-[#FF531B] text-white w-fit px-6 py-1.5 text-5xl rounded-[32px] font-MontserratBold leading-normal">
+    <div className="flex justify-center items-center bg-[#FF531B] text-white w-fit 2xl:py-3 py-0 px-6 2xl:text-5xl text-4xl rounded-[32px] font-MontserratBold leading-normal">
       {selectedVariant?.compareAtPrice ? (
         <>
           <p>Sale</p>
