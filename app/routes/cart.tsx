@@ -87,20 +87,20 @@ export default function Cart() {
   const cartPromise = rootData.cart;
 
   return (
-    <div className="relative pb-64">
+    <div className="relative md:pb-64 pb-9">
       <img
         src="/login/cartGreen.svg"
         alt="cartGreen"
         width={183}
-        className="absolute -top-2.5 left-80"
+        className="absolute -top-2.5 md:left-80 left-24 md:w-[183px] w-14"
       />
       <img
         src="/login/cartCurve.svg"
         alt="cartGreen"
         width={120}
-        className="absolute top-24 right-0"
+        className="absolute top-24 right-0 md:w-[120px] w-[52px]"
       />
-      <h1 className="font-MontserratBold text-[96px] text-center uppercase pt-32 pb-28">
+      <h1 className="font-MontserratBold lg:text-[96px] text-[32px] text-center uppercase md:pt-32 pt-14 md:pb-28 pb-9">
         Shopping Cart
       </h1>
       <Suspense fallback={<p>Loading cart ...</p>}>
@@ -117,13 +117,13 @@ export default function Cart() {
         src="/login/cartPinkPipe.svg"
         alt="cartGreen"
         width={130}
-        className="absolute bottom-96 left-0"
+        className="absolute md:bottom-96 left-0 md:w-[130px] w-[83px]"
       />
       <img
         src="/login/cartStar.svg"
         alt="cartGreen"
         width={185}
-        className="absolute bottom-20 2xl:right-80 right-56 2xl:w-[185px] w-[130px]"
+        className="absolute bottom-20 2xl:right-80 lg:right-56 right-28 2xl:w-[185px] lg:w-[130px] w-14 -z-10"
       />
     </div>
   );

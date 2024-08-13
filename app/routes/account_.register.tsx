@@ -108,31 +108,34 @@ export default function Register() {
   const data = useActionData<ActionResponse>();
   const error = data?.error || null;
   return (
-    <section className="relative pt-40 pb-52">
+    <section className="relative md:pt-40 pt-20 md:pb-52 pb-20">
       <Image
         srcSet="/login/loginOrange.svg"
         alt="loginOrange"
-        className="absolute -left-10"
+        className="absolute md:-left-10 -left-11 md:w-[294px] w-[89px] md:top-32 top-28"
         width={294}
         height={294}
       />
       <Image
         srcSet="/login/loginPink.svg"
         alt="loginPink"
-        className="absolute 2xl:right-72 right-20 top-72"
+        className="absolute 2xl:right-72 md:right-20 right-0 md:top-72 top-14 md:w-[181px] w-[68px] -z-10"
         width={181}
       />
 
       {/* SignUp */}
-      <div className="max-w-[1410px] w-full lg:px-[15px] sm:px-[30px] px-[20px] mx-auto ">
-        <h1 className="font-MontserratBold text-[96px] text-center">
+      <div className="max-w-[1410px] w-full lg:px-[15px] px-[30px] mx-auto ">
+        <h1 className="font-MontserratBold lg:text-[96px] text-[32px] text-center">
           CREATE ACCOUNT
         </h1>
-        <p className="font-MontserratBold text-2xl text-center mt-2 mb-[33px]">
+        <p className="font-MontserratBold lg:text-2xl text-[11px] text-center mt-2 mb-[33px]">
           Only a few steps to sign up and it will make your life a lot easier!
         </p>
-        <Form method="POST" className="w-[640px] block m-[0_auto]">
-          <fieldset className="flex flex-col gap-[26px]">
+        <Form
+          method="POST"
+          className="lg:w-[640px] w-full block m-[0_auto] lg:px-0"
+        >
+          <fieldset className="flex flex-col lg:gap-[26px] gap-2.5">
             <input
               id="firstName"
               name="firstName"
@@ -141,7 +144,7 @@ export default function Register() {
               placeholder="First Name"
               aria-label="First name"
               minLength={2}
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 lg:text-[32px] text-sm w-full font-MontserratRegular placeholder:text-placeholder"
             />
             <input
               id="lastName"
@@ -151,7 +154,7 @@ export default function Register() {
               placeholder="Last Name"
               aria-label="Last name"
               minLength={2}
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 lg:text-[32px] text-sm w-full font-MontserratRegular placeholder:text-placeholder"
             />
             <input
               id="email"
@@ -163,7 +166,7 @@ export default function Register() {
               aria-label="Email address"
               // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 lg:text-[32px] text-sm w-full font-MontserratRegular placeholder:text-placeholder"
             />
             <input
               id="password"
@@ -174,7 +177,7 @@ export default function Register() {
               aria-label="Password"
               minLength={8}
               required
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 lg:text-[32px] text-sm w-full font-MontserratRegular placeholder:text-placeholder"
             />
             <input
               id="passwordConfirm"
@@ -185,11 +188,11 @@ export default function Register() {
               aria-label="Re-enter password"
               minLength={8}
               required
-              className="border-black border rounded-[30px] px-[23px] py-3.5 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 lg:text-[32px] text-sm w-full font-MontserratRegular placeholder:text-placeholder"
             />
             <label
               htmlFor="birthDate"
-              className="font-MontserratRegular text-placeholder text-[32px] mb-0 mx-6"
+              className="font-MontserratRegular text-placeholder md:text-[32px] text-base mb-0 md:mx-6 mx-3"
             >
               Birthday
             </label>
@@ -201,7 +204,7 @@ export default function Register() {
               aria-label="Birth Date"
               // defaultValue={customer.lastName ?? ''}
               minLength={2}
-              className="border-black border rounded-[30px] px-[23px] py-3.5 mt-0 mx-6 text-[32px] font-MontserratRegular placeholder:text-placeholder"
+              className="border-black border lg:rounded-[30px] rounded-2xl px-[23px] py-3.5 mt-0 md:mx-6 mx-3 lg:text-[32px] text-sm font-MontserratRegular placeholder:text-placeholder"
             />
             <div className="flex items-start gap-4">
               <input
@@ -211,7 +214,7 @@ export default function Register() {
                 autoComplete="off"
                 aria-label="radio"
               />
-              <p className="text-darkSilver font-MontserratBold text-xl">
+              <p className="text-darkSilver font-MontserratBold lg:text-xl text-[11px]">
                 Subscribe to our newsletter for new launches, exclusives & more!
               </p>
             </div>
@@ -223,27 +226,21 @@ export default function Register() {
               </mark>
             </p>
           ) : (
-            <br />
+            ' '
           )}
           <Button
             type="submit"
             variant="sign"
-            className="mt-5 !font-MontserratSemiBold"
+            className="md:mt-5 mt-2.5 !font-MontserratSemiBold"
           >
             {' '}
             SIGN UP
           </Button>
-          <div className="flex justify-end gap-6 mt-5">
-            <Link
-              to="#"
-              className="text-2xl text-darkSilver font-MontserratBold"
-            >
+          <div className="flex justify-end lg:gap-6 gap-2 md:mt-5 mt-1.5 lg:text-2xl text-xs font-MontserratBold">
+            <Link to="#" className="text-darkSilver">
               Returning Customer?
             </Link>
-            <Link
-              to="/account/login"
-              className="text-2xl text-black font-MontserratBold"
-            >
+            <Link to="/account/login" className="text-black">
               Login
             </Link>
           </div>
@@ -256,13 +253,13 @@ export default function Register() {
       <Image
         srcSet="/login/loginGreenCut.svg"
         alt="loginGreenCut"
-        className="absolute 2xl:left-96 left-56 bottom-[74px]"
+        className="absolute 2xl:left-96 md:left-56 left-[25px] lg:bottom-[74px] bottom-10 md:w-[140px] w-[52px]"
         width={140}
       />
       <Image
         srcSet="/login/loginBlue.svg"
         alt="loginBlue"
-        className="absolute -right-10 bottom-[93px]"
+        className="absolute md:-right-10 -right-[25px] bottom-[93px] md:w-[157px] w-14"
         width={157}
         height={157}
       />
