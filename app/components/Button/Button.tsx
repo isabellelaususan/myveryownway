@@ -20,7 +20,7 @@ const buttonVariants = cva(
           'bg-transparent hover:bg-AddHover text-fullGreen hover:text-white md:border-[3px] border-2 sm:!py-3 !py-1 sm:px-4 px-3 lg:!text-[28px] border-fullGreen hover:border-transparent shadow-none',
         login:
           'bg-secondary text-white !shadow-none w-full lg:!rounded-[30px] !rounded-2xl font-MontserratRegular lg:!text-[32px] text-sm sm:!py-5 py-2.5',
-        sign: 'bg-gray hover:bg-black text-black hover:text-white border-black border-[1px] !shadow-none w-full !rounded-[30px] font-MontserratRegular text-[32px] !py-5',
+        sign: 'bg-gray hover:bg-black text-black hover:text-white border-black border-[1px] !shadow-none w-full lg:!rounded-[30px] !rounded-2xl font-MontserratRegular lg:!text-[32px] text-sm sm:!py-5 py-2.5',
         buyGreen:
           'bg-fullGreen hover:bg-buyHover text-white hover:text-white sm:!py-4 !py-1 sm:px-10 px-3 lg:!text-[28px]',
       },
