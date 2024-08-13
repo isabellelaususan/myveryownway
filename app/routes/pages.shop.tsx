@@ -121,7 +121,7 @@ export default function Collection() {
                   {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
                 </PreviousLink>
                 <ProductsGrid products={nodes} />
-                <NextLink className="text-center flex justify-center cursor-pointer my-4">
+                <NextLink className="text-center flex justify-center cursor-pointer my-4 font-MontserratSemiBold">
                   {isLoading ? 'Loading...' : <span>Load more ↓</span>}
                 </NextLink>
               </div>

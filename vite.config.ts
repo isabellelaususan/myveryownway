@@ -18,6 +18,10 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  // server: {
+  //   host: '192.168.29.152',
+  //   port: 3000,
+  // },
   ssr: {
     optimizeDeps: {
       include: ['react-slick'],

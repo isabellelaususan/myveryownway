@@ -50,7 +50,7 @@ input[type='radio'] {
 
 /*  */
 
-.button:hover {
+.sparkle:hover {
   background: linear-gradient(90deg, #00c560 0%, #fbce08 100%) padding-box,
     linear-gradient(90deg, #00c560 0%, #fbce08 100%) border-box;
   border: 4px solid transparent;
