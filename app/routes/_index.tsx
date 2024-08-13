@@ -186,7 +186,7 @@ function FeaturedCollection({
               srcSet="/icons/blueBox.svg"
               alt="blueBox"
               width={247}
-              className="absolute 2xl:-right-28 md:-right-20 -right-8 sm:top-20 -top-36 2xl:w-[247px] lg::w-[200px] md:w-[140px] w-[60px] z-10"
+              className="absolute right-0 sm:top-20 -top-36 2xl:w-[99px] lg::w-[80px] md:w-[70px] w-[30px] z-10"
             />
           </div>
 

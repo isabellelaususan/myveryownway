@@ -132,7 +132,10 @@ export default function Product() {
       />
       <div className="2xl:max-w-[1616px] max-w-screen-xl w-full lg:px-[15px] sm:px-[30px] px-5 mx-auto">
         <div className="flex 2xl:gap-32 gap-16">
-          <ProductImage image={selectedVariant?.image} />
+          <ProductImage
+            selectedVariant={selectedVariant}
+            image={selectedVariant?.image}
+          />
           <ProductMain
             selectedVariant={selectedVariant}
             product={product}
@@ -203,7 +206,7 @@ export default function Product() {
 function ShopSlider() {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 800,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -283,33 +286,111 @@ function ShopSlider() {
   );
 }
 
-function ProductImage({image}: {image: ProductVariantFragment['image']}) {
+function ProductImage({
+  image,
+  selectedVariant,
+}: {
+  image: ProductVariantFragment['image'];
+  selectedVariant: ProductFragment['selectedVariant'];
+}) {
+  const [isActive, setIsActive] = useState(false);
+  const [isActiveBuy, setIsActiveBuy] = useState(false);
   if (!image) {
     return <div className="product-image" />;
   }
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+  const handleClickBuy = () => {
+    setIsActiveBuy(!isActiveBuy);
+  };
   return (
     <div className="product-image relative w-[42%]">
-      {/* <Image
-        alt={image.altText || 'Product Image'}
-        aspectRatio="1/1"
-        data={image}
-        key={image.id}
-        sizes="(min-width: 45em) 50vw, 100vw"
-      /> */}
       <ProductSlider />
       <p className="font-MontserratSemiBold 2xl:text-xl text-[17px] mt-8">
         *Please note that this item does not include the strap.
       </p>
+
+      {/*  */}
+
       {/* CartLineQuantity Add */}
       <div className="text-[33px] font-MontserratBold pr-6 mt-[30px]">
         Quantity :
       </div>
-      <div className="flex gap-12 mt-7">
-        <button className="button 2xl:text-[28px] xl:text-[22px] text-lg font-MontserratBold text-fullGreen hover:text-white border-4 border-fullGreen rounded-full flex items-center justify-center sm:py-2 py-1 2xl:px-7 xl:px-5 px-3">
-          ADD TO CART
-        </button>
-        <Button variant="buyGreen" className="2xl:!text-[28px] xl:!text-[22px]">
+      <div className="flex 2xl:gap-12 gap-4 mt-7">
+        <AddToCartButton
+          className={`sparkle ${isActive ? 'active' : ''}`}
+          onClick={handleClick}
+          lines={
+            selectedVariant
+              ? [
+                  {
+                    merchandiseId: selectedVariant.id,
+                    quantity: 1,
+                  },
+                ]
+              : []
+          }
+        >
+          {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
+          <div className="star-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
+          <div className="star-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
+          <div className="star-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
+        </AddToCartButton>
+        <Button
+          variant="buyGreen"
+          className={`buy-btn 2xl:!text-[28px] xl:!text-[22px] relative ${
+            isActiveBuy ? 'active' : ''
+          }`}
+          onClick={handleClickBuy}
+        >
           BUY NOW
+          <div className="star-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
+          <div className="star-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
+          <div className="star-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+              <path
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                className="fil0"
+              ></path>
+            </svg>
+          </div>
         </Button>
       </div>
     </div>
@@ -419,12 +500,12 @@ function ProductMain({
       </div>
 
       {/* Add to cart */}
-      {/* <div className="flex items-center">
-        <AddToCartButton
+      <div className="flex items-center">
+        {/* <AddToCartButton
           disabled={!selectedVariant || !selectedVariant.availableForSale}
-          onClick={() => {
-            window.location.href = '/cart';
-          }}
+          // onClick={() => {
+          //   window.location.href = '/cart';
+          // }}
           lines={
             selectedVariant
               ? [
@@ -437,8 +518,8 @@ function ProductMain({
           }
         >
           {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
-        </AddToCartButton>
-      </div> */}
+        </AddToCartButton> */}
+      </div>
     </div>
   );
 }
@@ -540,12 +621,14 @@ function AddToCartButton({
   disabled,
   lines,
   onClick,
+  className,
 }: {
   analytics?: unknown;
   children: React.ReactNode;
   disabled?: boolean;
   lines: CartLineInput[];
   onClick?: () => void;
+  className: string;
 }) {
   return (
     <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
@@ -557,11 +640,11 @@ function AddToCartButton({
             value={JSON.stringify(analytics)}
           />
           <Button
-            variant="addGreen"
+            // variant="addGreen"
             type="submit"
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
-            className="text-2xl"
+            className={className}
           >
             {children}
           </Button>

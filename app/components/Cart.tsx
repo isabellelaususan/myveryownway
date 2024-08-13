@@ -100,7 +100,7 @@ export function CartLineItem({
           height={266}
           loading="lazy"
           width={240}
-          className="!mr-[26px] rounded-[40px]"
+          className="md:!mr-[26px] mr-2.5 md:rounded-[40px] md:border-[3px] border-2 border-black object-cover rounded-xl md:w-[240px] w-20 md:h-[266px] h-24"
         />
       )}
 
