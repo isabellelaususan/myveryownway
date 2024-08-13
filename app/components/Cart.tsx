@@ -37,7 +37,7 @@ function CartDetails({layout, cart}: CartMainProps) {
   const cartHasItems = !!cart && cart.totalQuantity > 0;
 
   return (
-    <div className="cart-details w-[789px] block m-[0_auto]">
+    <div className="cart-details md:w-[789px] w-full block m-[0_auto] md:px-0 px-8">
       <CartLines lines={cart?.lines} layout={layout} />
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
@@ -100,7 +100,7 @@ export function CartLineItem({
           height={266}
           loading="lazy"
           width={240}
-          className="!mr-[26px] rounded-[40px]"
+          className="md:!mr-[26px] mr-2.5 md:rounded-[40px] rounded-xl md:w-[240px] w-20 md:h-[266px] h-24"
         />
       )}
 
@@ -115,16 +115,16 @@ export function CartLineItem({
             }
           }}
         >
-          <p className="text-[35px]">
+          <p className="md:text-[35px] text-xs leading-normal">
             <strong>{product.title}</strong>
           </p>
         </Link>
 
-        <div className="flex justify-between pb-[57px] pt-10">
+        <div className="flex justify-between md:pb-[57px] pb-2.5 md:pt-10 pt-2 items-center">
           <ul>
             {selectedOptions.map((option) => (
               <li key={option.name} className="font-MontserratSemiBold">
-                <small className="flex gap-6 text-[22px]">
+                <small className="flex md:gap-6 gap-2 md:text-[22px] text-xs leading-normal font-MontserratMedium">
                   <span className="font-MontserratBold">{option.name}:</span>{' '}
                   {option.value}
                 </small>
@@ -133,7 +133,7 @@ export function CartLineItem({
           </ul>
           <CartLineQuantity line={line} />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-baseline">
           <CartLinePrice line={line} as="span" />
           <CartLineRemoveButton lineIds={[lineId]} />
         </div>
@@ -146,9 +146,9 @@ function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
   if (!checkoutUrl) return null;
 
   return (
-    <div className="mt-[55px] px-[74px]">
+    <div className="mt-[55px] md:px-[74px]">
       <a href={checkoutUrl} target="_self">
-        <Button variant="login" className="w-full !text-[32px]">
+        <Button variant="login" className="w-full">
           Checkout
         </Button>
       </a>
@@ -197,7 +197,7 @@ function CartLineRemoveButton({lineIds}: {lineIds: string[]}) {
       <OptimisticInput id={lineIds[0]} data={{action: 'removing'}} />
       <button
         type="submit"
-        className="text-[22px] text-remove font-MontserratMedium"
+        className="md:text-[22px] text-xs leading-normal text-remove font-MontserratMedium"
       >
         Remove
       </button>
@@ -213,8 +213,10 @@ export function CartLineQuantity({line}: {line: CartLine}) {
 
   return (
     <div className="flex justify-between items-center">
-      <span className="text-[22px] pr-6">Quantity:</span>
-      <div className="cart-line-quantity gap-3.5 text-xl">
+      <span className="md:text-[22px] text-xs leading-normal md:pr-6 pr-2">
+        Quantity:
+      </span>
+      <div className="cart-line-quantity gap-3.5 text-xl items-baseline">
         <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
           <button
             aria-label="Decrease quantity"
@@ -222,17 +224,19 @@ export function CartLineQuantity({line}: {line: CartLine}) {
             name="decrease-quantity"
             value={prevQuantity}
           >
-            <span className="text-xl">&#8722; </span>
+            <span className="md:text-xl text-xs leading-normal">&#8722; </span>
           </button>
         </CartLineUpdateButton>
-        <small className="text-[22px]">{quantity}</small>
+        <small className="md:text-[22px] text-xs leading-normal">
+          {quantity}
+        </small>
         <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
           <button
             aria-label="Increase quantity"
             name="increase-quantity"
             value={nextQuantity}
           >
-            <span className="text-xl">&#43;</span>
+            <span className="md:text-xl text-xs leading-normal">&#43;</span>
           </button>
         </CartLineUpdateButton>
       </div>
@@ -261,7 +265,7 @@ function CartLinePrice({
   }
 
   return (
-    <div className="text-[22px] font-MontserratSemiBold flex gap-6">
+    <div className="md:text-[22px] text-xs leading-normal font-MontserratSemiBold flex md:gap-6 gap-2">
       <span className="font-MontserratBold">Price:</span>{' '}
       <Money withoutTrailingZeros {...passthroughProps} data={moneyV2} />
     </div>
