@@ -1,8 +1,17 @@
 import {Image} from '@shopify/hydrogen';
+import {useState} from 'react';
 import Button from '~/components/Button';
 import MixMatch from '~/components/MixMatch';
 
 export default function () {
+  const [isActive, setIsActive] = useState(false);
+  const [isActiveBuy, setIsActiveBuy] = useState(false);
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+  const handleClickBuy = () => {
+    setIsActiveBuy(!isActiveBuy);
+  };
   return (
     <>
       <section className="relative md:pt-[65px] pt-[30px] md:pb-48 pb-11 overflow-hidden">
@@ -111,11 +120,58 @@ export default function () {
             </div>
           </div>
           <div className="flex md:gap-8 gap-4 justify-center md:mt-[75px] mt-6">
-            <button className="button_pair lg:text-[28px] font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center md:px-10 px-4 md:py-2 py-1.5">
+            <button
+              className={`sparkle relative px-7 bg-softPeach text-[28px] text-fullGreen border-4 border-fullGreen rounded-full cursor-pointer font-MontserratBold uppercase h-16 sm:!py-0 ${
+                isActive ? 'active' : ''
+              }`}
+              onClick={handleClick}
+            >
               ADD TO CART
+              <div className="star-1 absolute -z-10 bottom-[20%] left-[20%] w-[25px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 784.11 815.53"
+                >
+                  <path
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    className="fill-fullGreen"
+                  ></path>
+                </svg>
+              </div>
+              <div className="star-2 absolute -z-10 bottom-[45%] left-[45%] w-[15px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 784.11 815.53"
+                >
+                  <path
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    className="fill-[#8ee227]"
+                  ></path>
+                </svg>
+              </div>
+              <div className="star-3 absolute -z-10 bottom-[40%] right-[30%] w-[15px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 784.11 815.53"
+                >
+                  <path
+                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                    className="fill-[#8ee227]"
+                  ></path>
+                </svg>
+              </div>
             </button>
-            <Button variant="buyGreen" className="">
+            <Button
+              variant="buyGreen"
+              className={`buy-btn 2xl:!text-[28px] xl:!text-[22px] relative ${
+                isActiveBuy ? 'active' : ''
+              }`}
+              onClick={handleClickBuy}
+            >
               BUY NOW
+              <img src="/Shop/buy_ZigZag.svg" alt="" className="star-1" />
+              <img src="/Shop/buy_yellow.svg" alt="" className="star-2" />
+              <img src="/Shop/buy_music.svg" alt="" className="star-3" />
             </Button>
           </div>
         </div>

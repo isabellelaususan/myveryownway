@@ -29,6 +29,7 @@ import type {
 } from 'storefrontapi.generated';
 import Arrow from '~/assets/Icons/Arrow';
 import Favorite from '~/assets/Icons/Favorite';
+import Star from '~/assets/Icons/Star';
 import Button from '~/components/Button';
 import ProductSlider from '~/components/ProductSlider';
 import ShopMixMatch from '~/components/ShopMixMatch';
@@ -113,8 +114,24 @@ export default function Product() {
   const {product, variants} = useLoaderData<typeof loader>();
   const {selectedVariant} = product;
 
+  const [isActive, setIsActive] = useState(false);
+  const [isActiveSec, setIsActiveSec] = useState(false);
+  const [isActiveThird, setIsActiveThird] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
+  const handleClickSec = () => {
+    setIsActiveSec(!isActiveSec);
+  };
+
+  const handleClickThird = () => {
+    setIsActiveThird(!isActiveThird);
+  };
+
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative">
       <Image
         srcSet="/icons/orangeStar.svg"
         width={176}
@@ -158,12 +175,31 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-
-              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <AddToCartButton
+                className={`buy-pair relative px-5 bg-softPeach !text-xl text-fullGreen border-[3px] border-fullGreen hover:border-[3px] hover:border-transparent rounded-full cursor-pointer font-MontserratAlternatesBold uppercase h-[50px] sm:!py-0 ${
+                  isActive ? 'active' : ''
+                }`}
+                onClick={handleClick}
+                lines={
+                  selectedVariant
+                    ? [
+                        {
+                          merchandiseId: selectedVariant.id,
+                          quantity: 1,
+                        },
+                      ]
+                    : []
+                }
+              >
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
-                  ADD TO CART
+                  {selectedVariant?.availableForSale
+                    ? 'Add to cart'
+                    : 'Sold out'}
                 </div>
-              </button>
+                <Star className="star-1 absolute -z-10 bottom-[20%] right-[20%] w-[20px]" />
+                <Star className="star-2 absolute -z-10 bottom-[45%] left-[45%] w-3" />
+                <Star className="star-3 absolute -z-10 bottom-[40%] right-[30%] w-3.5 fill-[#8ee227]" />
+              </AddToCartButton>
             </div>
           </div>
           <div className="flex items-center">
@@ -172,11 +208,31 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <AddToCartButton
+                className={`buy-pair relative px-5 bg-softPeach !text-xl text-fullGreen border-[3px] border-fullGreen hover:border-[3px] hover:border-transparent rounded-full cursor-pointer font-MontserratAlternatesBold uppercase h-[50px] sm:!py-0 ${
+                  isActiveSec ? 'active' : ''
+                }`}
+                onClick={handleClickSec}
+                lines={
+                  selectedVariant
+                    ? [
+                        {
+                          merchandiseId: selectedVariant.id,
+                          quantity: 1,
+                        },
+                      ]
+                    : []
+                }
+              >
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
-                  ADD TO CART
+                  {selectedVariant?.availableForSale
+                    ? 'Add to cart'
+                    : 'Sold out'}
                 </div>
-              </button>
+                <Star className="star-1 absolute -z-10 bottom-[20%] right-[20%] w-[20px]" />
+                <Star className="star-2 absolute -z-10 bottom-[45%] left-[45%] w-3" />
+                <Star className="star-3 absolute -z-10 bottom-[40%] right-[30%] w-3.5 fill-[#8ee227]" />
+              </AddToCartButton>
             </div>
           </div>
           <div className="flex items-center">
@@ -185,11 +241,31 @@ export default function Product() {
               <h4 className="font-MontserratBold text-[28px] mb-5">
                 Curly <span className="block text-2xl">THB 350</span>
               </h4>
-              <button className="button_pair 2xl:text-xl text-base font-MontserratBold text-fullGreen hover:text-white border-[3px] border-fullGreen rounded-full flex items-center justify-center px-4 py-2">
+              <AddToCartButton
+                className={`buy-pair relative px-5 bg-softPeach !text-xl text-fullGreen border-[3px] border-fullGreen hover:border-[3px] hover:border-transparent rounded-full cursor-pointer font-MontserratAlternatesBold uppercase h-[50px] sm:!py-0 ${
+                  isActiveThird ? 'active' : ''
+                }`}
+                onClick={handleClickThird}
+                lines={
+                  selectedVariant
+                    ? [
+                        {
+                          merchandiseId: selectedVariant.id,
+                          quantity: 1,
+                        },
+                      ]
+                    : []
+                }
+              >
                 <div className="[transition:transform_.2s] hover:[transform:_scale(0.9)]">
-                  ADD TO CART
+                  {selectedVariant?.availableForSale
+                    ? 'Add to cart'
+                    : 'Sold out'}
                 </div>
-              </button>
+                <Star className="star-1 absolute -z-10 bottom-[20%] right-[20%] w-[20px]" />
+                <Star className="star-2 absolute -z-10 bottom-[45%] left-[45%] w-3" />
+                <Star className="star-3 absolute -z-10 bottom-[40%] right-[30%] w-3.5 fill-[#8ee227]" />
+              </AddToCartButton>
             </div>
           </div>
         </div>
@@ -320,7 +396,9 @@ function ProductImage({
       </div>
       <div className="flex 2xl:gap-12 gap-4 mt-7">
         <AddToCartButton
-          className={`sparkle ${isActive ? 'active' : ''}`}
+          className={`sparkle relative px-7 bg-softPeach text-[28px] text-fullGreen border-4 border-fullGreen rounded-full cursor-pointer font-MontserratAlternatesBold uppercase h-16 sm:!py-0 ${
+            isActive ? 'active' : ''
+          }`}
           onClick={handleClick}
           lines={
             selectedVariant
@@ -334,30 +412,9 @@ function ProductImage({
           }
         >
           {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
-          <div className="star-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
-          <div className="star-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
-          <div className="star-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
+          <Star className="star-1 absolute -z-10 bottom-[20%] left-[20%] w-[25px]" />
+          <Star className="star-2 absolute -z-10 bottom-[45%] left-[45%] w-[15px] text-[#8EE227]" />
+          <Star className="star-3 absolute -z-10 bottom-[40%] right-[30%] w-[15px] text-[#8EE227]" />
         </AddToCartButton>
         <Button
           variant="buyGreen"
@@ -367,30 +424,9 @@ function ProductImage({
           onClick={handleClickBuy}
         >
           BUY NOW
-          <div className="star-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
-          <div className="star-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
-          <div className="star-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
-              <path
-                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                className="fil0"
-              ></path>
-            </svg>
-          </div>
+          <img src="/Shop/buy_ZigZag.svg" alt="" className="star-1" />
+          <img src="/Shop/buy_yellow.svg" alt="" className="star-2" />
+          <img src="/Shop/buy_music.svg" alt="" className="star-3" />
         </Button>
       </div>
     </div>
@@ -640,7 +676,6 @@ function AddToCartButton({
             value={JSON.stringify(analytics)}
           />
           <Button
-            // variant="addGreen"
             type="submit"
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
